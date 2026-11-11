@@ -25,7 +25,7 @@ from cobot_interfaces.msg import BlockTarget, BlockTargetArray
 # USER SETTINGS
 # ============================================================
 
-VERSION = 'RGY-publish-top-corners-2026-11-11'
+VERSION = 'RGY-depth-gated-2026-11-11'
 
 RGB_TOPIC = '/camera/camera/color/image_raw'
 
@@ -41,7 +41,9 @@ MIN_DEPTH_M = 0.20
 MAX_DEPTH_M = 1.50
 
 MAX_DEPTH_AGE_S = 0.8
-MAX_STAMP_GAP_S = 0.5
+# Conservative maximum timestamp separation for a moving robot.
+# Do not increase to hide stale RGB/depth mismatches.
+MAX_STAMP_GAP_S = 0.15
 
 # Yellow object's top-face dimensions, measured by the team (metres).
 # Other colours/shapes are NOT assumed to share these dimensions.
@@ -303,6 +305,11 @@ class Object3DDetector(Node):
 
         self.depth_seq = 0
         self.last_depth_decoded_seq = -1
+        # A depth frame is consumed only once to avoid repeatedly pairing
+        # new RGB images with old depth data while depth is lagging.
+        self.last_processed_depth_seq = -1
+        self.last_valid_pair_time = None
+        self.last_depth_wait_log = 0.0
 
         self.depth_image = None
         self.depth_encoding = None
@@ -369,7 +376,7 @@ class Object3DDetector(Node):
             10
         )
 
-        # Process newest RGB image
+        # Process a fresh RGB/depth pair (at most once per depth image).
         self.timer = self.create_timer(
             0.02,
             self.process_frame
@@ -925,19 +932,47 @@ class Object3DDetector(Node):
 
     def process_frame(self):
 
-        if self.rgb_msg is None:
-
+        # Only run expensive colour / yellow-plane detection on a new,
+        # timestamp-compatible RGB + aligned-depth pair. Previously the
+        # 50 Hz timer could repeatedly process RGB with an unchanged depth
+        # frame, producing intermittent empty arrays when depth lagged.
+        if self.rgb_msg is None or self.depth_msg is None:
             self.handle_key()
             return
 
-        if self.rgb_seq == self.last_processed_rgb_seq:
+        if self.intrinsics is None:
+            self.handle_key()
+            return
 
+        if (self.rgb_seq == self.last_processed_rgb_seq or
+                self.depth_seq == self.last_processed_depth_seq):
             self.handle_key()
             return
 
         msg = self.rgb_msg
 
+        # Use the image metadata for dimensions, before converting RGB.
+        # The depth reader rejects stale data, mismatched timestamps,
+        # invalid depth encodings, and different image dimensions.
+        depth = self.get_recent_depth(msg, msg.height, msg.width)
+        if depth is None:
+            # No valid 3D observation exists, so do not publish a misleading
+            # blocks: [] from this RGB frame. Downstream nodes MUST enforce
+            # a message timeout and stop grasping on stale detections.
+            now = time.monotonic()
+            if now - self.last_depth_wait_log >= 5.0:
+                self.get_logger().warning(
+                    'Waiting for fresh, timestamp-matched aligned depth; '
+                    'no /vision/blocks output until a valid pair arrives.'
+                )
+                self.last_depth_wait_log = now
+            self.handle_key()
+            return
+
+        # Reserve each depth frame for at most one RGB processing cycle.
         self.last_processed_rgb_seq = self.rgb_seq
+        self.last_processed_depth_seq = self.depth_seq
+        self.last_valid_pair_time = time.monotonic()
 
         try:
 
@@ -994,11 +1029,8 @@ class Object3DDetector(Node):
             self.green_hue_center
         )
 
-        depth = self.get_recent_depth(
-            msg,
-            h,
-            w
-        )
+        # depth was validated before RGB processing and belongs to this
+        # RGB/depth pair. Do not reuse an older depth frame here.
 
         counts = {
             name: 0
@@ -1332,7 +1364,7 @@ class Object3DDetector(Node):
             frame,
             (
                 f'{VERSION}  '
-                f'RGB: {self.fps:.1f} FPS'
+                f'RGB-D: {self.fps:.1f} FPS'
             ),
             (8, 21),
             (255, 255, 255),
@@ -1388,9 +1420,10 @@ class Object3DDetector(Node):
                 0.55
             )
 
-        # Publish valid-depth candidates for this RGB frame.
-        # If nothing has valid depth, send blocks: [].
-        # All should_grasp fields remain False pending physical validation.
+        # Publish one batch only for a valid RGB/depth pair. An empty
+        # array here means no objects yielded valid 3D candidates despite
+        # receiving synchronised image data; it never means the depth frame
+        # was stale or missing. All should_grasp flags remain False.
         self.blocks_pub.publish(blocks_msg)
 
         cv2.imshow(
