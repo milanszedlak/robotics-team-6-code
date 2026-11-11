@@ -82,6 +82,6 @@ target position, freshness, reachability and grasp safety.
 
 ## Version
 
-RGY-publish-top-corners-2026-11-11
+RGY-perspective-size-filter-2026-11-11
 
 Maintainer: Team 6 Vision Module

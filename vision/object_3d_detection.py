@@ -1,4 +1,4 @@
-"""ROS2 Jazzy + RealSense: colour blocks with conservative HSV and ROI.
+"""ROS2 Jazzy + RealSense: oblique-view RGB-D block detection with 3D size filtering.
 
 Keys:
   R - click four corners of the block workspace
@@ -25,7 +25,7 @@ from cobot_interfaces.msg import BlockTarget, BlockTargetArray
 # USER SETTINGS
 # ============================================================
 
-VERSION = 'RGY-depth-gated-2026-11-11'
+VERSION = 'RGY-perspective-size-filter-2026-11-11'
 
 RGB_TOPIC = '/camera/camera/color/image_raw'
 
@@ -45,10 +45,53 @@ MAX_DEPTH_AGE_S = 0.8
 # Do not increase to hide stale RGB/depth mismatches.
 MAX_STAMP_GAP_S = 0.15
 
-# Yellow object's top-face dimensions, measured by the team (metres).
-# Other colours/shapes are NOT assumed to share these dimensions.
-YELLOW_TOP_LENGTH_M = 0.060
-YELLOW_TOP_WIDTH_M = 0.030
+# Team-measured block dimensions (metres): L, W, H.
+# Use them to reject OBVIOUSLY oversized targets, not to infer a grasp pose.
+# Red is a 2 cm cube; green and yellow are 6 x 3 x 1.6 cm prisms.
+KNOWN_BLOCK_DIMS_M = {
+    'Red': (0.020, 0.020, 0.020),
+    'Green': (0.060, 0.030, 0.016),
+    'Yellow': (0.060, 0.030, 0.016),
+}
+YELLOW_TOP_LENGTH_M = KNOWN_BLOCK_DIMS_M['Yellow'][0]
+YELLOW_TOP_WIDTH_M = KNOWN_BLOCK_DIMS_M['Yellow'][1]
+
+# Conservative upper limits for perspective-aware candidate REJECTION.
+# A tilted block is not required to have a square/rectangular image outline.
+# The AABB of valid mask pixels is estimated in camera XYZ coordinates;
+# percentiles reduce edge/depth outliers. Limits are intentionally generous.
+# Values are in metres and should be tested across working distances.
+MAX_OBSERVED_3D_DIAGONAL_M = {
+    'Red': 0.065,
+    'Green': 0.125,
+    'Yellow': 0.125,
+}
+# Extra safeguard when depth is sparse: entire colour contour at median
+# depth must not project to an implausibly huge footprint (e.g. a bin).
+MAX_PROJECTED_CONTOUR_DIAGONAL_M = {
+    'Red': 0.075,
+    'Green': 0.160,
+    'Yellow': 0.160,
+}
+# At least this many reasonably distributed coloured depth pixels required.
+SIZE_SAMPLE_STRIDE = 3
+SIZE_MIN_VALID_POINTS = 15
+SIZE_MIN_VALID_RATIO = 0.30
+
+# Reject pale yellow/brown background and geometrically implausible objects.
+# These ranges apply ONLY to yellow; red/green detection is unchanged.
+# Perspective foreshortening is allowed: the camera need not be overhead.
+YELLOW_MIN_LONG_SIDE_M = 0.028
+YELLOW_MAX_LONG_SIDE_M = 0.105
+YELLOW_MIN_SHORT_SIDE_M = 0.010
+YELLOW_MAX_SHORT_SIDE_M = 0.075
+YELLOW_MIN_IMAGE_ASPECT = 1.0  # Do not assume an overhead/face-on rectangle
+
+# Strict mode: publish a yellow block only when its depth-supported top
+# geometry is consistent with the known 6 x 3 cm top face. This strongly
+# reduces false positives inside bins, but may MISS a real block if the
+# top surface is occluded or the depth plane cannot be fitted reliably.
+YELLOW_REQUIRE_PLAUSIBLE_TOP = True
 
 # Publish preliminary yellow top-face corners for TF2 / interface testing.
 # Do not enable physical grasp until geometry and camera-to-arm TF are validated.
@@ -80,7 +123,7 @@ HSV_RANGES = {
     ],
 
     'Yellow': [
-        ((17, 75, 55), (39, 255, 255))
+        ((18, 145, 75), (38, 255, 255))
     ]
 
 }
@@ -100,8 +143,6 @@ BGR_BOX_COLORS = {
     'Red': (0, 0, 255),
 
     'Green': (0, 235, 0),
-
-    'Blue': (255, 85, 0),
 
     'Yellow': (0, 230, 255)
 
@@ -272,15 +313,134 @@ def get_colour_regions(mask):
             u = x + width // 2
             v = y + height // 2
 
+        # Keep the actual contour: perspective-skewed faces should not be
+        # drawn or dimensioned as though minAreaRect were the true outline.
         objects.append(
             (
                 rect,
                 (x, y, width, height),
-                (u, v)
+                (u, v),
+                cnt
             )
         )
 
     return objects
+
+
+def yellow_footprint_plausible(rect, z_metres, intrinsics):
+    """Loose physical-size pre-filter before the expensive 3D plane check.
+
+    Converts the 2D rotated bounding-box sides to approximate dimensions
+    at the measured depth. It is only a rejection test: because of camera
+    perspective, pixel dimensions alone are NOT ground-truth 3D sizes.
+    """
+    if intrinsics is None or z_metres is None or not np.isfinite(z_metres):
+        return False
+    fx, fy = float(intrinsics[0]), float(intrinsics[1])
+    if fx <= 0.0 or fy <= 0.0:
+        return False
+    side_a_px, side_b_px = rect[1]
+    longer_px, shorter_px = sorted((side_a_px, side_b_px), reverse=True)
+    if shorter_px <= 0:
+        return False
+    if longer_px / shorter_px < YELLOW_MIN_IMAGE_ASPECT:
+        return False
+    # Approximation, not an assertion that the face is perpendicular to the
+    # optical axis. Wide bounds allow for moderate oblique camera views.
+    focal = np.sqrt(fx * fy)
+    longer_m = longer_px * z_metres / focal
+    shorter_m = shorter_px * z_metres / focal
+    return (
+        YELLOW_MIN_LONG_SIDE_M <= longer_m <= YELLOW_MAX_LONG_SIDE_M
+        and YELLOW_MIN_SHORT_SIDE_M <= shorter_m <= YELLOW_MAX_SHORT_SIDE_M
+    )
+
+
+def measure_candidate_3d_extent(
+    depth, colour_mask, contour, bbox, intrinsics, depth_encoding
+):
+    """Measure *visible* coloured surface extent in camera XYZ.
+
+    The source contour can be skewed, trapezoidal or irregular. No rectangle
+    or frontal camera view is assumed. Depth is sampled inside the actual
+    colour contour, using aligned depth and RGB camera intrinsics.
+
+    Returns None when depth support is insufficient; it never fabricates a
+    size. Robust axis spreads are a coarse rejection test, NOT exact block
+    dimensions, object pose, or collision-safe geometry.
+    """
+    if depth is None or intrinsics is None:
+        return None
+    fx, fy, cx, cy = map(float, intrinsics)
+    if fx <= 0 or fy <= 0:
+        return None
+
+    x, y, bw, bh = bbox
+    h, w = depth.shape[:2]
+    x0, y0 = max(0, x), max(0, y)
+    x1, y1 = min(w, x + bw), min(h, y + bh)
+    if x1 <= x0 or y1 <= y0:
+        return None
+
+    # Isolate this connected contour, not the union of all masks of a colour.
+    local = np.zeros((y1-y0, x1-x0), dtype=np.uint8)
+    offset_contour = contour.astype(np.int32) - np.array([x0, y0], np.int32)
+    cv2.drawContours(local, [offset_contour], -1, 255, thickness=-1)
+    local = cv2.bitwise_and(local, colour_mask[y0:y1, x0:x1])
+    interior = cv2.erode(local, np.ones((3, 3), np.uint8), iterations=1)
+    if cv2.countNonZero(interior) < SIZE_MIN_VALID_POINTS:
+        return None
+
+    iy, ix = np.nonzero(interior[::SIZE_SAMPLE_STRIDE,
+                                   ::SIZE_SAMPLE_STRIDE])
+    if len(ix) < SIZE_MIN_VALID_POINTS:
+        return None
+    us = x0 + ix * SIZE_SAMPLE_STRIDE
+    vs = y0 + iy * SIZE_SAMPLE_STRIDE
+    zs = depth[vs, us].astype(np.float64)
+    if depth_encoding == '16UC1':
+        zs *= 0.001
+    elif depth_encoding != '32FC1':
+        return None
+
+    valid = (np.isfinite(zs) & (zs >= MIN_DEPTH_M) &
+             (zs <= MAX_DEPTH_M))
+    nvalid = int(np.count_nonzero(valid))
+    if (nvalid < SIZE_MIN_VALID_POINTS or
+            nvalid / len(zs) < SIZE_MIN_VALID_RATIO):
+        return None
+
+    us, vs, zs = us[valid], vs[valid], zs[valid]
+    xyz = np.column_stack(((us - cx) * zs / fx,
+                           (vs - cy) * zs / fy,
+                           zs))
+    # Outlier-tolerant 3D AABB; can be slanted relative to the optical axes.
+    lo = np.percentile(xyz, 5, axis=0)
+    hi = np.percentile(xyz, 95, axis=0)
+    xyz_spans = np.maximum(hi - lo, 0.0)
+    median_z = float(np.median(zs))
+
+    # Conservative silhouette extent for rejecting a huge surface when only
+    # a small patch of it has valid depth. This is NOT a shape fit.
+    projected_diag = median_z * float(np.hypot(bw / fx, bh / fy))
+    return {
+        'xyz_spans': xyz_spans,
+        'xyz_diagonal': float(np.linalg.norm(xyz_spans)),
+        'projected_diagonal': projected_diag,
+        'valid_points': nvalid,
+        'valid_ratio': float(nvalid / len(valid)),
+    }
+
+
+def is_plausible_block_size(colour, observed):
+    """Loose block-vs-bin filter; tolerant to oblique/slanted viewpoints."""
+    if observed is None:
+        return False
+    return (
+        observed['xyz_diagonal'] <= MAX_OBSERVED_3D_DIAGONAL_M[colour]
+        and observed['projected_diagonal'] <=
+        MAX_PROJECTED_CONTOUR_DIAGONAL_M[colour]
+    )
 
 
 # ============================================================
@@ -1049,7 +1209,40 @@ class Object3DDetector(Node):
 
             regions = get_colour_regions(mask)
 
-            for rect, bbox, centre in regions:
+            for rect, bbox, centre, contour in regions:
+
+                # Reject coloured bins and other obviously oversized surfaces
+                # using *3D* extents sampled within the actual contour.
+                # Perspective/skew are allowed. If depth is insufficient, do
+                # NOT offer this candidate to the robot arm.
+                observed = measure_candidate_3d_extent(
+                    depth, mask, contour, bbox,
+                    self.intrinsics, self.depth_encoding
+                )
+                if not is_plausible_block_size(colour, observed):
+                    continue
+
+                # Yellow is the 6 x 3 cm BLOCK, not a generic yellow-coloured
+                # surface. Reject pale/brown bin interiors (HSV), objects with
+                # the wrong depth-corrected footprint, and candidates whose
+                # 3D top face cannot be validated. The last check is strict
+                # and may reject a partially occluded real block.
+                yellow_depth = None
+                yellow_geometry = None
+                if colour == 'Yellow':
+                    yellow_depth = self.depth_at_object(
+                        depth, mask, bbox, centre
+                    )
+                    if not yellow_footprint_plausible(
+                            rect, yellow_depth, self.intrinsics):
+                        continue
+                    if YELLOW_REQUIRE_PLAUSIBLE_TOP:
+                        yellow_geometry = self.estimate_yellow_corner_geometry(
+                            depth, mask, bbox, rect
+                        )
+                        if (yellow_geometry is None or
+                                not yellow_geometry['plausible']):
+                            continue
 
                 counts[colour] += 1
 
@@ -1071,11 +1264,9 @@ class Object3DDetector(Node):
                     and self.intrinsics is not None
                 ):
 
-                    z = self.depth_at_object(
-                        depth,
-                        mask,
-                        bbox,
-                        centre
+                    z = (
+                        yellow_depth if colour == 'Yellow' else
+                        self.depth_at_object(depth, mask, bbox, centre)
                     )
 
                     if z is not None:
@@ -1126,8 +1317,11 @@ class Object3DDetector(Node):
                 # Debug three-dimensional geometry without changing the
                 # published /vision/blocks message or grasp eligibility.
                 if colour == 'Yellow':
-                    geometry = self.estimate_yellow_corner_geometry(
-                        depth, mask, bbox, rect
+                    geometry = (
+                        yellow_geometry if yellow_geometry is not None else
+                        self.estimate_yellow_corner_geometry(
+                            depth, mask, bbox, rect
+                        )
                     )
                     if geometry is None:
                         corner_status = '3D corners: no reliable plane'
@@ -1173,83 +1367,25 @@ class Object3DDetector(Node):
                         self.last_corner_debug_log = time.monotonic()
 
                 # ============================================
-                # DRAW ROTATED BOUNDING BOX
+                # SINGLE DISPLAY OUTLINE (SAME UI FOR R/G/Y)
                 # ============================================
-
-                points = cv2.boxPoints(
-                    rect
-                ).astype(np.int32)
-
-                cv2.polylines(
-                    frame,
-                    [points],
-                    True,
-                    color_bgr,
-                    2
-                )
-
-                # ============================================
-                # DEBUG: YELLOW OBJECT 2D BOUNDING-BOX CORNERS
-                # These are image pixels, NOT verified 3D
-                # corners of the physical object's top face.
-                # ============================================
-                if colour == 'Yellow':
-                    for i, (px, py) in enumerate(points):
-                        px = int(px)
-                        py = int(py)
-
-                        cv2.circle(
-                            frame,
-                            (px, py),
-                            5,
-                            (255, 0, 255),
-                            -1
-                        )
-
-                        cv2.putText(
-                            frame,
-                            f'P{i + 1}',
-                            (max(0, min(w - 30, px + 6)),
-                             max(16, min(h - 6, py - 6))),
-                            cv2.FONT_HERSHEY_SIMPLEX,
-                            0.5,
-                            (255, 0, 255),
-                            2,
-                            cv2.LINE_AA
-                        )
-
-                # Cyan T1..T4 = estimated top-plane corners.
-                # Magenta P1..P4 = original full-colour bounding box.
-                # Estimated corners are published only for yellow when
-                # geometry checks pass. Grasp is still prohibited.
-                if colour == 'Yellow' and geometry is not None:
-                    top_pixels = np.rint(
+                # This is a VISUALISATION change only: the HSV/depth
+                # candidate pipeline and /vision/blocks data are unchanged.
+                # Yellow has a validated top-plane rectangle; display that
+                # one rather than stacking full-colour, P1..P4, and T1..T4.
+                # Red/green show the *actual colour contour*, not a box.
+                if (colour == 'Yellow' and geometry is not None
+                        and geometry['plausible']):
+                    display_points = np.rint(
                         geometry['corner_pixels']
                     ).astype(np.int32)
                     cv2.polylines(
-                        frame, [top_pixels], True, (255, 255, 0), 2
+                        frame, [display_points], True, color_bgr, 2
                     )
-                    for i, (px, py) in enumerate(top_pixels):
-                        px, py = int(px), int(py)
-                        cv2.circle(frame, (px, py), 4, (255, 255, 0), -1)
-                        cv2.putText(
-                            frame, f'T{i + 1}',
-                            (max(0, min(w - 32, px - 23)),
-                             max(14, min(h - 5, py + 17))),
-                            cv2.FONT_HERSHEY_SIMPLEX, 0.42,
-                            (255, 255, 0), 1, cv2.LINE_AA
-                        )
-
-                if colour == 'Yellow':
-                    # Diagnostic overlay; numerical corners are available
-                    # on /vision/blocks when preliminary checks pass.
-                    self.draw_text(
-                        frame,
-                        corner_status,
-                        (max(4, x), min(h - 5, y + bh + 31)),
-                        (255, 0, 255),
-                        0.37
-                    )
+                else:
+                    # A rotated rectangle is NOT the true silhouette of an
+                    # obliquely viewed cube / prism. Draw the real contour.
+                    cv2.drawContours(frame, [contour], -1, color_bgr, 2)
 
                 cv2.circle(
                     frame,
