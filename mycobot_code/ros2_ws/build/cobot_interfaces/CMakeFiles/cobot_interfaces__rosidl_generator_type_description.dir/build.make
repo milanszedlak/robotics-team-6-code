@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/student/ros2_ws/src/cobot_interfaces
+CMAKE_SOURCE_DIR = /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/student/ros2_ws/build/cobot_interfaces
+CMAKE_BINARY_DIR = /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces
 
 # Utility rule file for cobot_interfaces__rosidl_generator_type_description.
 
@@ -81,8 +81,8 @@ rosidl_generator_type_description/cobot_interfaces/msg/BlockTarget.json: rosidl_
 rosidl_generator_type_description/cobot_interfaces/msg/BlockTarget.json: rosidl_adapter/cobot_interfaces/srv/LocateBlocks.idl
 rosidl_generator_type_description/cobot_interfaces/msg/BlockTarget.json: rosidl_adapter/cobot_interfaces/action/PickBlock.idl
 rosidl_generator_type_description/cobot_interfaces/msg/BlockTarget.json: rosidl_adapter/cobot_interfaces/action/PlaceBlock.idl
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/student/ros2_ws/build/cobot_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating type hashes for ROS interfaces"
-	/usr/bin/python3 /opt/ros/jazzy/lib/rosidl_generator_type_description/rosidl_generator_type_description --generator-arguments-file /home/student/ros2_ws/build/cobot_interfaces/rosidl_generator_type_description__arguments.json
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating type hashes for ROS interfaces"
+	/usr/bin/python3 /opt/ros/jazzy/lib/rosidl_generator_type_description/rosidl_generator_type_description --generator-arguments-file /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_generator_type_description__arguments.json
 
 rosidl_generator_type_description/cobot_interfaces/msg/BlockTargetArray.json: rosidl_generator_type_description/cobot_interfaces/msg/BlockTarget.json
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_type_description/cobot_interfaces/msg/BlockTargetArray.json
@@ -118,6 +118,6 @@ CMakeFiles/cobot_interfaces__rosidl_generator_type_description.dir/clean:
 .PHONY : CMakeFiles/cobot_interfaces__rosidl_generator_type_description.dir/clean
 
 CMakeFiles/cobot_interfaces__rosidl_generator_type_description.dir/depend:
-	cd /home/student/ros2_ws/build/cobot_interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/student/ros2_ws/src/cobot_interfaces /home/student/ros2_ws/src/cobot_interfaces /home/student/ros2_ws/build/cobot_interfaces /home/student/ros2_ws/build/cobot_interfaces /home/student/ros2_ws/build/cobot_interfaces/CMakeFiles/cobot_interfaces__rosidl_generator_type_description.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/CMakeFiles/cobot_interfaces__rosidl_generator_type_description.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/cobot_interfaces__rosidl_generator_type_description.dir/depend
 

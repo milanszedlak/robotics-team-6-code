@@ -1,1 +1,1 @@
-/home/student/ros2_ws/src/mycobot_vision_grasp/launch/real_robot.launch.py
+/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/mycobot_vision_grasp/launch/real_robot.launch.py

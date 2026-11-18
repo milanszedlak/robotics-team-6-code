@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/student/ros2_ws/src/cobot_interfaces
+CMAKE_SOURCE_DIR = /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/student/ros2_ws/build/cobot_interfaces
+CMAKE_BINARY_DIR = /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces
 
 # Include any dependencies generated for this target.
 include CMakeFiles/cobot_interfaces_s__rosidl_typesupport_fastrtps_c.dir/depend.make
@@ -72,16 +72,16 @@ include CMakeFiles/cobot_interfaces_s__rosidl_typesupport_fastrtps_c.dir/flags.m
 CMakeFiles/cobot_interfaces_s__rosidl_typesupport_fastrtps_c.dir/rosidl_generator_py/cobot_interfaces/_cobot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c.o: CMakeFiles/cobot_interfaces_s__rosidl_typesupport_fastrtps_c.dir/flags.make
 CMakeFiles/cobot_interfaces_s__rosidl_typesupport_fastrtps_c.dir/rosidl_generator_py/cobot_interfaces/_cobot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c.o: rosidl_generator_py/cobot_interfaces/_cobot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
 CMakeFiles/cobot_interfaces_s__rosidl_typesupport_fastrtps_c.dir/rosidl_generator_py/cobot_interfaces/_cobot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c.o: CMakeFiles/cobot_interfaces_s__rosidl_typesupport_fastrtps_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/student/ros2_ws/build/cobot_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/cobot_interfaces_s__rosidl_typesupport_fastrtps_c.dir/rosidl_generator_py/cobot_interfaces/_cobot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/cobot_interfaces_s__rosidl_typesupport_fastrtps_c.dir/rosidl_generator_py/cobot_interfaces/_cobot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c.o -MF CMakeFiles/cobot_interfaces_s__rosidl_typesupport_fastrtps_c.dir/rosidl_generator_py/cobot_interfaces/_cobot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c.o.d -o CMakeFiles/cobot_interfaces_s__rosidl_typesupport_fastrtps_c.dir/rosidl_generator_py/cobot_interfaces/_cobot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c.o -c /home/student/ros2_ws/build/cobot_interfaces/rosidl_generator_py/cobot_interfaces/_cobot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/cobot_interfaces_s__rosidl_typesupport_fastrtps_c.dir/rosidl_generator_py/cobot_interfaces/_cobot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/cobot_interfaces_s__rosidl_typesupport_fastrtps_c.dir/rosidl_generator_py/cobot_interfaces/_cobot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c.o -MF CMakeFiles/cobot_interfaces_s__rosidl_typesupport_fastrtps_c.dir/rosidl_generator_py/cobot_interfaces/_cobot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c.o.d -o CMakeFiles/cobot_interfaces_s__rosidl_typesupport_fastrtps_c.dir/rosidl_generator_py/cobot_interfaces/_cobot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c.o -c /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_generator_py/cobot_interfaces/_cobot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
 
 CMakeFiles/cobot_interfaces_s__rosidl_typesupport_fastrtps_c.dir/rosidl_generator_py/cobot_interfaces/_cobot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/cobot_interfaces_s__rosidl_typesupport_fastrtps_c.dir/rosidl_generator_py/cobot_interfaces/_cobot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/student/ros2_ws/build/cobot_interfaces/rosidl_generator_py/cobot_interfaces/_cobot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c > CMakeFiles/cobot_interfaces_s__rosidl_typesupport_fastrtps_c.dir/rosidl_generator_py/cobot_interfaces/_cobot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_generator_py/cobot_interfaces/_cobot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c > CMakeFiles/cobot_interfaces_s__rosidl_typesupport_fastrtps_c.dir/rosidl_generator_py/cobot_interfaces/_cobot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c.i
 
 CMakeFiles/cobot_interfaces_s__rosidl_typesupport_fastrtps_c.dir/rosidl_generator_py/cobot_interfaces/_cobot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/cobot_interfaces_s__rosidl_typesupport_fastrtps_c.dir/rosidl_generator_py/cobot_interfaces/_cobot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/student/ros2_ws/build/cobot_interfaces/rosidl_generator_py/cobot_interfaces/_cobot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c -o CMakeFiles/cobot_interfaces_s__rosidl_typesupport_fastrtps_c.dir/rosidl_generator_py/cobot_interfaces/_cobot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_generator_py/cobot_interfaces/_cobot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c -o CMakeFiles/cobot_interfaces_s__rosidl_typesupport_fastrtps_c.dir/rosidl_generator_py/cobot_interfaces/_cobot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c.s
 
 # Object files for target cobot_interfaces_s__rosidl_typesupport_fastrtps_c
 cobot_interfaces_s__rosidl_typesupport_fastrtps_c_OBJECTS = \
@@ -124,7 +124,7 @@ rosidl_generator_py/cobot_interfaces/cobot_interfaces_s__rosidl_typesupport_fast
 rosidl_generator_py/cobot_interfaces/cobot_interfaces_s__rosidl_typesupport_fastrtps_c.so: /opt/ros/jazzy/lib/librosidl_runtime_c.so
 rosidl_generator_py/cobot_interfaces/cobot_interfaces_s__rosidl_typesupport_fastrtps_c.so: /opt/ros/jazzy/lib/librcutils.so
 rosidl_generator_py/cobot_interfaces/cobot_interfaces_s__rosidl_typesupport_fastrtps_c.so: CMakeFiles/cobot_interfaces_s__rosidl_typesupport_fastrtps_c.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/student/ros2_ws/build/cobot_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C shared module rosidl_generator_py/cobot_interfaces/cobot_interfaces_s__rosidl_typesupport_fastrtps_c.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C shared module rosidl_generator_py/cobot_interfaces/cobot_interfaces_s__rosidl_typesupport_fastrtps_c.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cobot_interfaces_s__rosidl_typesupport_fastrtps_c.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -136,6 +136,6 @@ CMakeFiles/cobot_interfaces_s__rosidl_typesupport_fastrtps_c.dir/clean:
 .PHONY : CMakeFiles/cobot_interfaces_s__rosidl_typesupport_fastrtps_c.dir/clean
 
 CMakeFiles/cobot_interfaces_s__rosidl_typesupport_fastrtps_c.dir/depend:
-	cd /home/student/ros2_ws/build/cobot_interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/student/ros2_ws/src/cobot_interfaces /home/student/ros2_ws/src/cobot_interfaces /home/student/ros2_ws/build/cobot_interfaces /home/student/ros2_ws/build/cobot_interfaces /home/student/ros2_ws/build/cobot_interfaces/CMakeFiles/cobot_interfaces_s__rosidl_typesupport_fastrtps_c.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/CMakeFiles/cobot_interfaces_s__rosidl_typesupport_fastrtps_c.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/cobot_interfaces_s__rosidl_typesupport_fastrtps_c.dir/depend
 

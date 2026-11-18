@@ -53,37 +53,37 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/student/ros2_ws/src/cobot_interfaces
+CMAKE_SOURCE_DIR = /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/student/ros2_ws/build/cobot_interfaces
+CMAKE_BINARY_DIR = /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces
 
 # Utility rule file for cobot_interfaces__py.
 
 # Include any custom commands dependencies for this target.
-include /home/student/ros2_ws/build/cobot_interfaces/cobot_interfaces__py/CMakeFiles/cobot_interfaces__py.dir/compiler_depend.make
+include /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/cobot_interfaces__py/CMakeFiles/cobot_interfaces__py.dir/compiler_depend.make
 
 # Include the progress variables for this target.
-include /home/student/ros2_ws/build/cobot_interfaces/cobot_interfaces__py/CMakeFiles/cobot_interfaces__py.dir/progress.make
+include /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/cobot_interfaces__py/CMakeFiles/cobot_interfaces__py.dir/progress.make
 
-/home/student/ros2_ws/build/cobot_interfaces/cobot_interfaces__py/CMakeFiles/cobot_interfaces__py: rosidl_generator_py/cobot_interfaces/_cobot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
-/home/student/ros2_ws/build/cobot_interfaces/cobot_interfaces__py/CMakeFiles/cobot_interfaces__py: rosidl_generator_py/cobot_interfaces/_cobot_interfaces_s.ep.rosidl_typesupport_introspection_c.c
-/home/student/ros2_ws/build/cobot_interfaces/cobot_interfaces__py/CMakeFiles/cobot_interfaces__py: rosidl_generator_py/cobot_interfaces/_cobot_interfaces_s.ep.rosidl_typesupport_c.c
-/home/student/ros2_ws/build/cobot_interfaces/cobot_interfaces__py/CMakeFiles/cobot_interfaces__py: rosidl_generator_py/cobot_interfaces/msg/_block_target.py
-/home/student/ros2_ws/build/cobot_interfaces/cobot_interfaces__py/CMakeFiles/cobot_interfaces__py: rosidl_generator_py/cobot_interfaces/msg/_block_target_array.py
-/home/student/ros2_ws/build/cobot_interfaces/cobot_interfaces__py/CMakeFiles/cobot_interfaces__py: rosidl_generator_py/cobot_interfaces/msg/_block_info.py
-/home/student/ros2_ws/build/cobot_interfaces/cobot_interfaces__py/CMakeFiles/cobot_interfaces__py: rosidl_generator_py/cobot_interfaces/srv/_locate_blocks.py
-/home/student/ros2_ws/build/cobot_interfaces/cobot_interfaces__py/CMakeFiles/cobot_interfaces__py: rosidl_generator_py/cobot_interfaces/action/_pick_block.py
-/home/student/ros2_ws/build/cobot_interfaces/cobot_interfaces__py/CMakeFiles/cobot_interfaces__py: rosidl_generator_py/cobot_interfaces/action/_place_block.py
-/home/student/ros2_ws/build/cobot_interfaces/cobot_interfaces__py/CMakeFiles/cobot_interfaces__py: rosidl_generator_py/cobot_interfaces/msg/__init__.py
-/home/student/ros2_ws/build/cobot_interfaces/cobot_interfaces__py/CMakeFiles/cobot_interfaces__py: rosidl_generator_py/cobot_interfaces/srv/__init__.py
-/home/student/ros2_ws/build/cobot_interfaces/cobot_interfaces__py/CMakeFiles/cobot_interfaces__py: rosidl_generator_py/cobot_interfaces/action/__init__.py
-/home/student/ros2_ws/build/cobot_interfaces/cobot_interfaces__py/CMakeFiles/cobot_interfaces__py: rosidl_generator_py/cobot_interfaces/msg/_block_target_s.c
-/home/student/ros2_ws/build/cobot_interfaces/cobot_interfaces__py/CMakeFiles/cobot_interfaces__py: rosidl_generator_py/cobot_interfaces/msg/_block_target_array_s.c
-/home/student/ros2_ws/build/cobot_interfaces/cobot_interfaces__py/CMakeFiles/cobot_interfaces__py: rosidl_generator_py/cobot_interfaces/msg/_block_info_s.c
-/home/student/ros2_ws/build/cobot_interfaces/cobot_interfaces__py/CMakeFiles/cobot_interfaces__py: rosidl_generator_py/cobot_interfaces/srv/_locate_blocks_s.c
-/home/student/ros2_ws/build/cobot_interfaces/cobot_interfaces__py/CMakeFiles/cobot_interfaces__py: rosidl_generator_py/cobot_interfaces/action/_pick_block_s.c
-/home/student/ros2_ws/build/cobot_interfaces/cobot_interfaces__py/CMakeFiles/cobot_interfaces__py: rosidl_generator_py/cobot_interfaces/action/_place_block_s.c
+/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/cobot_interfaces__py/CMakeFiles/cobot_interfaces__py: rosidl_generator_py/cobot_interfaces/_cobot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
+/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/cobot_interfaces__py/CMakeFiles/cobot_interfaces__py: rosidl_generator_py/cobot_interfaces/_cobot_interfaces_s.ep.rosidl_typesupport_introspection_c.c
+/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/cobot_interfaces__py/CMakeFiles/cobot_interfaces__py: rosidl_generator_py/cobot_interfaces/_cobot_interfaces_s.ep.rosidl_typesupport_c.c
+/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/cobot_interfaces__py/CMakeFiles/cobot_interfaces__py: rosidl_generator_py/cobot_interfaces/msg/_block_target.py
+/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/cobot_interfaces__py/CMakeFiles/cobot_interfaces__py: rosidl_generator_py/cobot_interfaces/msg/_block_target_array.py
+/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/cobot_interfaces__py/CMakeFiles/cobot_interfaces__py: rosidl_generator_py/cobot_interfaces/msg/_block_info.py
+/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/cobot_interfaces__py/CMakeFiles/cobot_interfaces__py: rosidl_generator_py/cobot_interfaces/srv/_locate_blocks.py
+/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/cobot_interfaces__py/CMakeFiles/cobot_interfaces__py: rosidl_generator_py/cobot_interfaces/action/_pick_block.py
+/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/cobot_interfaces__py/CMakeFiles/cobot_interfaces__py: rosidl_generator_py/cobot_interfaces/action/_place_block.py
+/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/cobot_interfaces__py/CMakeFiles/cobot_interfaces__py: rosidl_generator_py/cobot_interfaces/msg/__init__.py
+/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/cobot_interfaces__py/CMakeFiles/cobot_interfaces__py: rosidl_generator_py/cobot_interfaces/srv/__init__.py
+/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/cobot_interfaces__py/CMakeFiles/cobot_interfaces__py: rosidl_generator_py/cobot_interfaces/action/__init__.py
+/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/cobot_interfaces__py/CMakeFiles/cobot_interfaces__py: rosidl_generator_py/cobot_interfaces/msg/_block_target_s.c
+/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/cobot_interfaces__py/CMakeFiles/cobot_interfaces__py: rosidl_generator_py/cobot_interfaces/msg/_block_target_array_s.c
+/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/cobot_interfaces__py/CMakeFiles/cobot_interfaces__py: rosidl_generator_py/cobot_interfaces/msg/_block_info_s.c
+/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/cobot_interfaces__py/CMakeFiles/cobot_interfaces__py: rosidl_generator_py/cobot_interfaces/srv/_locate_blocks_s.c
+/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/cobot_interfaces__py/CMakeFiles/cobot_interfaces__py: rosidl_generator_py/cobot_interfaces/action/_pick_block_s.c
+/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/cobot_interfaces__py/CMakeFiles/cobot_interfaces__py: rosidl_generator_py/cobot_interfaces/action/_place_block_s.c
 
 rosidl_generator_py/cobot_interfaces/_cobot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/jazzy/lib/rosidl_generator_py/rosidl_generator_py
 rosidl_generator_py/cobot_interfaces/_cobot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/jazzy/lib/python3.12/site-packages/rosidl_generator_py/__init__.py
@@ -175,8 +175,8 @@ rosidl_generator_py/cobot_interfaces/_cobot_interfaces_s.ep.rosidl_typesupport_f
 rosidl_generator_py/cobot_interfaces/_cobot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/jazzy/share/action_msgs/msg/GoalStatusArray.idl
 rosidl_generator_py/cobot_interfaces/_cobot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/jazzy/share/action_msgs/srv/CancelGoal.idl
 rosidl_generator_py/cobot_interfaces/_cobot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/jazzy/share/unique_identifier_msgs/msg/UUID.idl
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/student/ros2_ws/build/cobot_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python code for ROS interfaces"
-	cd /home/student/ros2_ws/build/cobot_interfaces/cobot_interfaces__py && /usr/bin/python3 /opt/ros/jazzy/share/rosidl_generator_py/cmake/../../../lib/rosidl_generator_py/rosidl_generator_py --generator-arguments-file /home/student/ros2_ws/build/cobot_interfaces/rosidl_generator_py__arguments.json --typesupport-impls "rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c;rosidl_typesupport_c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python code for ROS interfaces"
+	cd /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/cobot_interfaces__py && /usr/bin/python3 /opt/ros/jazzy/share/rosidl_generator_py/cmake/../../../lib/rosidl_generator_py/rosidl_generator_py --generator-arguments-file /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_generator_py__arguments.json --typesupport-impls "rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c;rosidl_typesupport_c"
 
 rosidl_generator_py/cobot_interfaces/_cobot_interfaces_s.ep.rosidl_typesupport_introspection_c.c: rosidl_generator_py/cobot_interfaces/_cobot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/cobot_interfaces/_cobot_interfaces_s.ep.rosidl_typesupport_introspection_c.c
@@ -229,7 +229,7 @@ rosidl_generator_py/cobot_interfaces/action/_pick_block_s.c: rosidl_generator_py
 rosidl_generator_py/cobot_interfaces/action/_place_block_s.c: rosidl_generator_py/cobot_interfaces/_cobot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/cobot_interfaces/action/_place_block_s.c
 
-cobot_interfaces__py: /home/student/ros2_ws/build/cobot_interfaces/cobot_interfaces__py/CMakeFiles/cobot_interfaces__py
+cobot_interfaces__py: /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/cobot_interfaces__py/CMakeFiles/cobot_interfaces__py
 cobot_interfaces__py: rosidl_generator_py/cobot_interfaces/_cobot_interfaces_s.ep.rosidl_typesupport_c.c
 cobot_interfaces__py: rosidl_generator_py/cobot_interfaces/_cobot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
 cobot_interfaces__py: rosidl_generator_py/cobot_interfaces/_cobot_interfaces_s.ep.rosidl_typesupport_introspection_c.c
@@ -248,18 +248,18 @@ cobot_interfaces__py: rosidl_generator_py/cobot_interfaces/msg/_block_target_s.c
 cobot_interfaces__py: rosidl_generator_py/cobot_interfaces/srv/__init__.py
 cobot_interfaces__py: rosidl_generator_py/cobot_interfaces/srv/_locate_blocks.py
 cobot_interfaces__py: rosidl_generator_py/cobot_interfaces/srv/_locate_blocks_s.c
-cobot_interfaces__py: /home/student/ros2_ws/build/cobot_interfaces/cobot_interfaces__py/CMakeFiles/cobot_interfaces__py.dir/build.make
+cobot_interfaces__py: /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/cobot_interfaces__py/CMakeFiles/cobot_interfaces__py.dir/build.make
 .PHONY : cobot_interfaces__py
 
 # Rule to build all files generated by this target.
-/home/student/ros2_ws/build/cobot_interfaces/cobot_interfaces__py/CMakeFiles/cobot_interfaces__py.dir/build: cobot_interfaces__py
-.PHONY : /home/student/ros2_ws/build/cobot_interfaces/cobot_interfaces__py/CMakeFiles/cobot_interfaces__py.dir/build
+/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/cobot_interfaces__py/CMakeFiles/cobot_interfaces__py.dir/build: cobot_interfaces__py
+.PHONY : /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/cobot_interfaces__py/CMakeFiles/cobot_interfaces__py.dir/build
 
-/home/student/ros2_ws/build/cobot_interfaces/cobot_interfaces__py/CMakeFiles/cobot_interfaces__py.dir/clean:
-	cd /home/student/ros2_ws/build/cobot_interfaces/cobot_interfaces__py && $(CMAKE_COMMAND) -P CMakeFiles/cobot_interfaces__py.dir/cmake_clean.cmake
-.PHONY : /home/student/ros2_ws/build/cobot_interfaces/cobot_interfaces__py/CMakeFiles/cobot_interfaces__py.dir/clean
+/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/cobot_interfaces__py/CMakeFiles/cobot_interfaces__py.dir/clean:
+	cd /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/cobot_interfaces__py && $(CMAKE_COMMAND) -P CMakeFiles/cobot_interfaces__py.dir/cmake_clean.cmake
+.PHONY : /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/cobot_interfaces__py/CMakeFiles/cobot_interfaces__py.dir/clean
 
-/home/student/ros2_ws/build/cobot_interfaces/cobot_interfaces__py/CMakeFiles/cobot_interfaces__py.dir/depend:
-	cd /home/student/ros2_ws/build/cobot_interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/student/ros2_ws/src/cobot_interfaces /home/student/ros2_ws/build/cobot_interfaces/cobot_interfaces__py /home/student/ros2_ws/build/cobot_interfaces /home/student/ros2_ws/build/cobot_interfaces/cobot_interfaces__py /home/student/ros2_ws/build/cobot_interfaces/cobot_interfaces__py/CMakeFiles/cobot_interfaces__py.dir/DependInfo.cmake "--color=$(COLOR)"
-.PHONY : /home/student/ros2_ws/build/cobot_interfaces/cobot_interfaces__py/CMakeFiles/cobot_interfaces__py.dir/depend
+/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/cobot_interfaces__py/CMakeFiles/cobot_interfaces__py.dir/depend:
+	cd /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/cobot_interfaces__py /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/cobot_interfaces__py /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/cobot_interfaces__py/CMakeFiles/cobot_interfaces__py.dir/DependInfo.cmake "--color=$(COLOR)"
+.PHONY : /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/cobot_interfaces__py/CMakeFiles/cobot_interfaces__py.dir/depend
 

@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/student/ros2_ws/src/cobot_interfaces
+CMAKE_SOURCE_DIR = /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/student/ros2_ws/build/cobot_interfaces
+CMAKE_BINARY_DIR = /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces
 
 # Utility rule file for ament_cmake_python_symlink_cobot_interfaces.
 
@@ -67,7 +67,7 @@ include CMakeFiles/ament_cmake_python_symlink_cobot_interfaces.dir/compiler_depe
 include CMakeFiles/ament_cmake_python_symlink_cobot_interfaces.dir/progress.make
 
 CMakeFiles/ament_cmake_python_symlink_cobot_interfaces:
-	/usr/bin/cmake -E create_symlink /home/student/ros2_ws/build/cobot_interfaces/rosidl_generator_py/cobot_interfaces /home/student/ros2_ws/build/cobot_interfaces/ament_cmake_python/cobot_interfaces/cobot_interfaces
+	/usr/bin/cmake -E create_symlink /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_generator_py/cobot_interfaces /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/ament_cmake_python/cobot_interfaces/cobot_interfaces
 
 ament_cmake_python_symlink_cobot_interfaces: CMakeFiles/ament_cmake_python_symlink_cobot_interfaces
 ament_cmake_python_symlink_cobot_interfaces: CMakeFiles/ament_cmake_python_symlink_cobot_interfaces.dir/build.make
@@ -82,6 +82,6 @@ CMakeFiles/ament_cmake_python_symlink_cobot_interfaces.dir/clean:
 .PHONY : CMakeFiles/ament_cmake_python_symlink_cobot_interfaces.dir/clean
 
 CMakeFiles/ament_cmake_python_symlink_cobot_interfaces.dir/depend:
-	cd /home/student/ros2_ws/build/cobot_interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/student/ros2_ws/src/cobot_interfaces /home/student/ros2_ws/src/cobot_interfaces /home/student/ros2_ws/build/cobot_interfaces /home/student/ros2_ws/build/cobot_interfaces /home/student/ros2_ws/build/cobot_interfaces/CMakeFiles/ament_cmake_python_symlink_cobot_interfaces.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/CMakeFiles/ament_cmake_python_symlink_cobot_interfaces.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/ament_cmake_python_symlink_cobot_interfaces.dir/depend
 

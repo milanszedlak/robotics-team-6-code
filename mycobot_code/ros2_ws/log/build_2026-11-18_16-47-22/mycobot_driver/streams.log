@@ -1,0 +1,28 @@
+[0.930s] Invoking command in '/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/mycobot_driver': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/mycobot_driver/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/install/mycobot_driver/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/mycobot_driver/build --no-deps symlink_data
+[1.182s] running develop
+[1.317s] running egg_info
+[1.317s] creating mycobot_driver.egg-info
+[1.331s] writing mycobot_driver.egg-info/PKG-INFO
+[1.331s] writing dependency_links to mycobot_driver.egg-info/dependency_links.txt
+[1.331s] writing entry points to mycobot_driver.egg-info/entry_points.txt
+[1.331s] writing requirements to mycobot_driver.egg-info/requires.txt
+[1.332s] writing top-level names to mycobot_driver.egg-info/top_level.txt
+[1.332s] writing manifest file 'mycobot_driver.egg-info/SOURCES.txt'
+[1.359s] reading manifest file 'mycobot_driver.egg-info/SOURCES.txt'
+[1.360s] writing manifest file 'mycobot_driver.egg-info/SOURCES.txt'
+[1.374s] running build_ext
+[1.374s] Creating /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/install/mycobot_driver/lib/python3.12/site-packages/mycobot-driver.egg-link (link to .)
+[1.375s] Installing mycobot_driver_node script to /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/install/mycobot_driver/lib/mycobot_driver
+[1.375s] 
+[1.375s] Installed /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/mycobot_driver
+[1.375s] running symlink_data
+[1.375s] creating /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/install/mycobot_driver/share/ament_index
+[1.375s] creating /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/install/mycobot_driver/share/ament_index/resource_index
+[1.376s] creating /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/install/mycobot_driver/share/ament_index/resource_index/packages
+[1.376s] symbolically linking /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/mycobot_driver/resource/mycobot_driver -> /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/install/mycobot_driver/share/ament_index/resource_index/packages
+[1.376s] symbolically linking /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/mycobot_driver/package.xml -> /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/install/mycobot_driver/share/mycobot_driver
+[1.376s] creating /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/install/mycobot_driver/share/mycobot_driver/launch
+[1.376s] symbolically linking /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/mycobot_driver/launch/driver.launch.py -> /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/install/mycobot_driver/share/mycobot_driver/launch
+[1.376s] creating /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/install/mycobot_driver/share/mycobot_driver/config
+[1.376s] symbolically linking /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/mycobot_driver/config/driver.yaml -> /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/install/mycobot_driver/share/mycobot_driver/config
+[1.418s] Invoked command in '/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/mycobot_driver' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/mycobot_driver/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/install/mycobot_driver/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/mycobot_driver/build --no-deps symlink_data

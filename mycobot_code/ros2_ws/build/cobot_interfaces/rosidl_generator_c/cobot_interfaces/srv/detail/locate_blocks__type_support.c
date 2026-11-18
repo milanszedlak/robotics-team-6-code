@@ -4,10 +4,10 @@
 
 #include <string.h>
 
-#include "rosidl_typesupport_interface/macros.h"
-#include "cobot_interfaces/srv/detail/locate_blocks__type_support.h"
 #include "cobot_interfaces/srv/detail/locate_blocks__functions.h"
 #include "cobot_interfaces/srv/detail/locate_blocks__struct.h"
+#include "cobot_interfaces/srv/detail/locate_blocks__type_support.h"
+#include "rosidl_typesupport_interface/macros.h"
 
 #ifdef __cplusplus
 extern "C"

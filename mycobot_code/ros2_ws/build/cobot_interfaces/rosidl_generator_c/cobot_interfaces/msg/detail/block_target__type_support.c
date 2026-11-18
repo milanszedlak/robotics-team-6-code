@@ -4,10 +4,10 @@
 
 #include <string.h>
 
-#include "rosidl_typesupport_interface/macros.h"
+#include "cobot_interfaces/msg/detail/block_target__type_support.h"
 #include "cobot_interfaces/msg/detail/block_target__functions.h"
 #include "cobot_interfaces/msg/detail/block_target__struct.h"
-#include "cobot_interfaces/msg/detail/block_target__type_support.h"
+#include "rosidl_typesupport_interface/macros.h"
 
 #ifdef __cplusplus
 extern "C"

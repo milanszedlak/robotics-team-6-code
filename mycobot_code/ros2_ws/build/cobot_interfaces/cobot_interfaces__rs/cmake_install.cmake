@@ -1,8 +1,8 @@
-# Install script for directory: /home/student/ros2_ws/build/cobot_interfaces/cobot_interfaces__rs
+# Install script for directory: /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/cobot_interfaces__rs
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/student/ros2_ws/install/cobot_interfaces")
+  set(CMAKE_INSTALL_PREFIX "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/install/cobot_interfaces")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 

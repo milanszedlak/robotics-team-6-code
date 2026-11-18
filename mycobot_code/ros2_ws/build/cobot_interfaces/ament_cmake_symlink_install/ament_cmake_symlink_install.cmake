@@ -23,7 +23,7 @@ function(ament_cmake_symlink_install_directory cmake_current_source_dir)
 
   # make destination absolute path and ensure that it exists
   if(NOT IS_ABSOLUTE "${ARG_DESTINATION}")
-    set(ARG_DESTINATION "/home/student/ros2_ws/install/cobot_interfaces/${ARG_DESTINATION}")
+    set(ARG_DESTINATION "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/install/cobot_interfaces/${ARG_DESTINATION}")
   endif()
   if(NOT EXISTS "${ARG_DESTINATION}")
     file(MAKE_DIRECTORY "${ARG_DESTINATION}")
@@ -128,7 +128,7 @@ function(ament_cmake_symlink_install_files cmake_current_source_dir)
 
   # make destination an absolute path and ensure that it exists
   if(NOT IS_ABSOLUTE "${ARG_DESTINATION}")
-    set(ARG_DESTINATION "/home/student/ros2_ws/install/cobot_interfaces/${ARG_DESTINATION}")
+    set(ARG_DESTINATION "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/install/cobot_interfaces/${ARG_DESTINATION}")
   endif()
   if(NOT EXISTS "${ARG_DESTINATION}")
     file(MAKE_DIRECTORY "${ARG_DESTINATION}")
@@ -186,7 +186,7 @@ function(ament_cmake_symlink_install_programs cmake_current_source_dir)
 
   # make destination an absolute path and ensure that it exists
   if(NOT IS_ABSOLUTE "${ARG_DESTINATION}")
-    set(ARG_DESTINATION "/home/student/ros2_ws/install/cobot_interfaces/${ARG_DESTINATION}")
+    set(ARG_DESTINATION "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/install/cobot_interfaces/${ARG_DESTINATION}")
   endif()
   if(NOT EXISTS "${ARG_DESTINATION}")
     file(MAKE_DIRECTORY "${ARG_DESTINATION}")
@@ -256,7 +256,7 @@ function(ament_cmake_symlink_install_targets)
 
     # make destination an absolute path and ensure that it exists
     if(NOT IS_ABSOLUTE "${destination}")
-      set(destination "/home/student/ros2_ws/install/cobot_interfaces/${destination}")
+      set(destination "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/install/cobot_interfaces/${destination}")
     endif()
     if(NOT EXISTS "${destination}")
       file(MAKE_DIRECTORY "${destination}")
@@ -315,173 +315,173 @@ message(STATUS "Execute custom install script")
 
 # begin of custom install code
 
-# install(FILES "/home/student/ros2_ws/build/cobot_interfaces/ament_cmake_index/share/ament_index/resource_index/rosidl_interfaces/cobot_interfaces" "DESTINATION" "share/ament_index/resource_index/rosidl_interfaces")
-ament_cmake_symlink_install_files("/home/student/ros2_ws/src/cobot_interfaces" FILES "/home/student/ros2_ws/build/cobot_interfaces/ament_cmake_index/share/ament_index/resource_index/rosidl_interfaces/cobot_interfaces" "DESTINATION" "share/ament_index/resource_index/rosidl_interfaces")
+# install(FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/ament_cmake_index/share/ament_index/resource_index/rosidl_interfaces/cobot_interfaces" "DESTINATION" "share/ament_index/resource_index/rosidl_interfaces")
+ament_cmake_symlink_install_files("/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces" FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/ament_cmake_index/share/ament_index/resource_index/rosidl_interfaces/cobot_interfaces" "DESTINATION" "share/ament_index/resource_index/rosidl_interfaces")
 
-# install(FILES "/home/student/ros2_ws/build/cobot_interfaces/rosidl_generator_type_description/cobot_interfaces/msg/BlockTarget.json" "DESTINATION" "share/cobot_interfaces/msg")
-ament_cmake_symlink_install_files("/home/student/ros2_ws/src/cobot_interfaces" FILES "/home/student/ros2_ws/build/cobot_interfaces/rosidl_generator_type_description/cobot_interfaces/msg/BlockTarget.json" "DESTINATION" "share/cobot_interfaces/msg")
+# install(FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_generator_type_description/cobot_interfaces/msg/BlockTarget.json" "DESTINATION" "share/cobot_interfaces/msg")
+ament_cmake_symlink_install_files("/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces" FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_generator_type_description/cobot_interfaces/msg/BlockTarget.json" "DESTINATION" "share/cobot_interfaces/msg")
 
-# install(FILES "/home/student/ros2_ws/build/cobot_interfaces/rosidl_generator_type_description/cobot_interfaces/msg/BlockTargetArray.json" "DESTINATION" "share/cobot_interfaces/msg")
-ament_cmake_symlink_install_files("/home/student/ros2_ws/src/cobot_interfaces" FILES "/home/student/ros2_ws/build/cobot_interfaces/rosidl_generator_type_description/cobot_interfaces/msg/BlockTargetArray.json" "DESTINATION" "share/cobot_interfaces/msg")
+# install(FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_generator_type_description/cobot_interfaces/msg/BlockTargetArray.json" "DESTINATION" "share/cobot_interfaces/msg")
+ament_cmake_symlink_install_files("/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces" FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_generator_type_description/cobot_interfaces/msg/BlockTargetArray.json" "DESTINATION" "share/cobot_interfaces/msg")
 
-# install(FILES "/home/student/ros2_ws/build/cobot_interfaces/rosidl_generator_type_description/cobot_interfaces/msg/BlockInfo.json" "DESTINATION" "share/cobot_interfaces/msg")
-ament_cmake_symlink_install_files("/home/student/ros2_ws/src/cobot_interfaces" FILES "/home/student/ros2_ws/build/cobot_interfaces/rosidl_generator_type_description/cobot_interfaces/msg/BlockInfo.json" "DESTINATION" "share/cobot_interfaces/msg")
+# install(FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_generator_type_description/cobot_interfaces/msg/BlockInfo.json" "DESTINATION" "share/cobot_interfaces/msg")
+ament_cmake_symlink_install_files("/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces" FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_generator_type_description/cobot_interfaces/msg/BlockInfo.json" "DESTINATION" "share/cobot_interfaces/msg")
 
-# install(FILES "/home/student/ros2_ws/build/cobot_interfaces/rosidl_generator_type_description/cobot_interfaces/srv/LocateBlocks.json" "DESTINATION" "share/cobot_interfaces/srv")
-ament_cmake_symlink_install_files("/home/student/ros2_ws/src/cobot_interfaces" FILES "/home/student/ros2_ws/build/cobot_interfaces/rosidl_generator_type_description/cobot_interfaces/srv/LocateBlocks.json" "DESTINATION" "share/cobot_interfaces/srv")
+# install(FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_generator_type_description/cobot_interfaces/srv/LocateBlocks.json" "DESTINATION" "share/cobot_interfaces/srv")
+ament_cmake_symlink_install_files("/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces" FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_generator_type_description/cobot_interfaces/srv/LocateBlocks.json" "DESTINATION" "share/cobot_interfaces/srv")
 
-# install(FILES "/home/student/ros2_ws/build/cobot_interfaces/rosidl_generator_type_description/cobot_interfaces/action/PickBlock.json" "DESTINATION" "share/cobot_interfaces/action")
-ament_cmake_symlink_install_files("/home/student/ros2_ws/src/cobot_interfaces" FILES "/home/student/ros2_ws/build/cobot_interfaces/rosidl_generator_type_description/cobot_interfaces/action/PickBlock.json" "DESTINATION" "share/cobot_interfaces/action")
+# install(FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_generator_type_description/cobot_interfaces/action/PickBlock.json" "DESTINATION" "share/cobot_interfaces/action")
+ament_cmake_symlink_install_files("/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces" FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_generator_type_description/cobot_interfaces/action/PickBlock.json" "DESTINATION" "share/cobot_interfaces/action")
 
-# install(FILES "/home/student/ros2_ws/build/cobot_interfaces/rosidl_generator_type_description/cobot_interfaces/action/PlaceBlock.json" "DESTINATION" "share/cobot_interfaces/action")
-ament_cmake_symlink_install_files("/home/student/ros2_ws/src/cobot_interfaces" FILES "/home/student/ros2_ws/build/cobot_interfaces/rosidl_generator_type_description/cobot_interfaces/action/PlaceBlock.json" "DESTINATION" "share/cobot_interfaces/action")
+# install(FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_generator_type_description/cobot_interfaces/action/PlaceBlock.json" "DESTINATION" "share/cobot_interfaces/action")
+ament_cmake_symlink_install_files("/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces" FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_generator_type_description/cobot_interfaces/action/PlaceBlock.json" "DESTINATION" "share/cobot_interfaces/action")
 
-# install(DIRECTORY "/home/student/ros2_ws/build/cobot_interfaces/rosidl_generator_c/cobot_interfaces/" "DESTINATION" "include/cobot_interfaces/cobot_interfaces" "PATTERN" "*.h")
-ament_cmake_symlink_install_directory("/home/student/ros2_ws/src/cobot_interfaces" DIRECTORY "/home/student/ros2_ws/build/cobot_interfaces/rosidl_generator_c/cobot_interfaces/" "DESTINATION" "include/cobot_interfaces/cobot_interfaces" "PATTERN" "*.h")
+# install(DIRECTORY "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_generator_c/cobot_interfaces/" "DESTINATION" "include/cobot_interfaces/cobot_interfaces" "PATTERN" "*.h")
+ament_cmake_symlink_install_directory("/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces" DIRECTORY "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_generator_c/cobot_interfaces/" "DESTINATION" "include/cobot_interfaces/cobot_interfaces" "PATTERN" "*.h")
 
 # install(FILES "/opt/ros/jazzy/lib/python3.12/site-packages/ament_package/template/environment_hook/library_path.sh" "DESTINATION" "share/cobot_interfaces/environment")
-ament_cmake_symlink_install_files("/home/student/ros2_ws/src/cobot_interfaces" FILES "/opt/ros/jazzy/lib/python3.12/site-packages/ament_package/template/environment_hook/library_path.sh" "DESTINATION" "share/cobot_interfaces/environment")
+ament_cmake_symlink_install_files("/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces" FILES "/opt/ros/jazzy/lib/python3.12/site-packages/ament_package/template/environment_hook/library_path.sh" "DESTINATION" "share/cobot_interfaces/environment")
 
-# install(FILES "/home/student/ros2_ws/build/cobot_interfaces/ament_cmake_environment_hooks/library_path.dsv" "DESTINATION" "share/cobot_interfaces/environment")
-ament_cmake_symlink_install_files("/home/student/ros2_ws/src/cobot_interfaces" FILES "/home/student/ros2_ws/build/cobot_interfaces/ament_cmake_environment_hooks/library_path.dsv" "DESTINATION" "share/cobot_interfaces/environment")
+# install(FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/ament_cmake_environment_hooks/library_path.dsv" "DESTINATION" "share/cobot_interfaces/environment")
+ament_cmake_symlink_install_files("/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces" FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/ament_cmake_environment_hooks/library_path.dsv" "DESTINATION" "share/cobot_interfaces/environment")
 
-# install(DIRECTORY "/home/student/ros2_ws/build/cobot_interfaces/rosidl_typesupport_fastrtps_c/cobot_interfaces/" "DESTINATION" "include/cobot_interfaces/cobot_interfaces" "PATTERN_EXCLUDE" "*.cpp")
-ament_cmake_symlink_install_directory("/home/student/ros2_ws/src/cobot_interfaces" DIRECTORY "/home/student/ros2_ws/build/cobot_interfaces/rosidl_typesupport_fastrtps_c/cobot_interfaces/" "DESTINATION" "include/cobot_interfaces/cobot_interfaces" "PATTERN_EXCLUDE" "*.cpp")
+# install(DIRECTORY "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_typesupport_fastrtps_c/cobot_interfaces/" "DESTINATION" "include/cobot_interfaces/cobot_interfaces" "PATTERN_EXCLUDE" "*.cpp")
+ament_cmake_symlink_install_directory("/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces" DIRECTORY "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_typesupport_fastrtps_c/cobot_interfaces/" "DESTINATION" "include/cobot_interfaces/cobot_interfaces" "PATTERN_EXCLUDE" "*.cpp")
 
-# install(DIRECTORY "/home/student/ros2_ws/build/cobot_interfaces/rosidl_typesupport_introspection_c/cobot_interfaces/" "DESTINATION" "include/cobot_interfaces/cobot_interfaces" "PATTERN" "*.h")
-ament_cmake_symlink_install_directory("/home/student/ros2_ws/src/cobot_interfaces" DIRECTORY "/home/student/ros2_ws/build/cobot_interfaces/rosidl_typesupport_introspection_c/cobot_interfaces/" "DESTINATION" "include/cobot_interfaces/cobot_interfaces" "PATTERN" "*.h")
+# install(DIRECTORY "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_typesupport_introspection_c/cobot_interfaces/" "DESTINATION" "include/cobot_interfaces/cobot_interfaces" "PATTERN" "*.h")
+ament_cmake_symlink_install_directory("/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces" DIRECTORY "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_typesupport_introspection_c/cobot_interfaces/" "DESTINATION" "include/cobot_interfaces/cobot_interfaces" "PATTERN" "*.h")
 
-# install(DIRECTORY "/home/student/ros2_ws/build/cobot_interfaces/rosidl_generator_cpp/cobot_interfaces/" "DESTINATION" "include/cobot_interfaces/cobot_interfaces" "PATTERN" "*.hpp")
-ament_cmake_symlink_install_directory("/home/student/ros2_ws/src/cobot_interfaces" DIRECTORY "/home/student/ros2_ws/build/cobot_interfaces/rosidl_generator_cpp/cobot_interfaces/" "DESTINATION" "include/cobot_interfaces/cobot_interfaces" "PATTERN" "*.hpp")
+# install(DIRECTORY "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_generator_cpp/cobot_interfaces/" "DESTINATION" "include/cobot_interfaces/cobot_interfaces" "PATTERN" "*.hpp")
+ament_cmake_symlink_install_directory("/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces" DIRECTORY "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_generator_cpp/cobot_interfaces/" "DESTINATION" "include/cobot_interfaces/cobot_interfaces" "PATTERN" "*.hpp")
 
-# install(DIRECTORY "/home/student/ros2_ws/build/cobot_interfaces/rosidl_typesupport_fastrtps_cpp/cobot_interfaces/" "DESTINATION" "include/cobot_interfaces/cobot_interfaces" "PATTERN_EXCLUDE" "*.cpp")
-ament_cmake_symlink_install_directory("/home/student/ros2_ws/src/cobot_interfaces" DIRECTORY "/home/student/ros2_ws/build/cobot_interfaces/rosidl_typesupport_fastrtps_cpp/cobot_interfaces/" "DESTINATION" "include/cobot_interfaces/cobot_interfaces" "PATTERN_EXCLUDE" "*.cpp")
+# install(DIRECTORY "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_typesupport_fastrtps_cpp/cobot_interfaces/" "DESTINATION" "include/cobot_interfaces/cobot_interfaces" "PATTERN_EXCLUDE" "*.cpp")
+ament_cmake_symlink_install_directory("/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces" DIRECTORY "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_typesupport_fastrtps_cpp/cobot_interfaces/" "DESTINATION" "include/cobot_interfaces/cobot_interfaces" "PATTERN_EXCLUDE" "*.cpp")
 
-# install(DIRECTORY "/home/student/ros2_ws/build/cobot_interfaces/rosidl_typesupport_introspection_cpp/cobot_interfaces/" "DESTINATION" "include/cobot_interfaces/cobot_interfaces" "PATTERN" "*.hpp")
-ament_cmake_symlink_install_directory("/home/student/ros2_ws/src/cobot_interfaces" DIRECTORY "/home/student/ros2_ws/build/cobot_interfaces/rosidl_typesupport_introspection_cpp/cobot_interfaces/" "DESTINATION" "include/cobot_interfaces/cobot_interfaces" "PATTERN" "*.hpp")
+# install(DIRECTORY "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_typesupport_introspection_cpp/cobot_interfaces/" "DESTINATION" "include/cobot_interfaces/cobot_interfaces" "PATTERN" "*.hpp")
+ament_cmake_symlink_install_directory("/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces" DIRECTORY "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_typesupport_introspection_cpp/cobot_interfaces/" "DESTINATION" "include/cobot_interfaces/cobot_interfaces" "PATTERN" "*.hpp")
 
-# install(FILES "/home/student/ros2_ws/build/cobot_interfaces/ament_cmake_environment_hooks/pythonpath.sh" "DESTINATION" "share/cobot_interfaces/environment")
-ament_cmake_symlink_install_files("/home/student/ros2_ws/src/cobot_interfaces" FILES "/home/student/ros2_ws/build/cobot_interfaces/ament_cmake_environment_hooks/pythonpath.sh" "DESTINATION" "share/cobot_interfaces/environment")
+# install(FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/ament_cmake_environment_hooks/pythonpath.sh" "DESTINATION" "share/cobot_interfaces/environment")
+ament_cmake_symlink_install_files("/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces" FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/ament_cmake_environment_hooks/pythonpath.sh" "DESTINATION" "share/cobot_interfaces/environment")
 
-# install(FILES "/home/student/ros2_ws/build/cobot_interfaces/ament_cmake_environment_hooks/pythonpath.dsv" "DESTINATION" "share/cobot_interfaces/environment")
-ament_cmake_symlink_install_files("/home/student/ros2_ws/src/cobot_interfaces" FILES "/home/student/ros2_ws/build/cobot_interfaces/ament_cmake_environment_hooks/pythonpath.dsv" "DESTINATION" "share/cobot_interfaces/environment")
+# install(FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/ament_cmake_environment_hooks/pythonpath.dsv" "DESTINATION" "share/cobot_interfaces/environment")
+ament_cmake_symlink_install_files("/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces" FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/ament_cmake_environment_hooks/pythonpath.dsv" "DESTINATION" "share/cobot_interfaces/environment")
 
-# install(DIRECTORY "/home/student/ros2_ws/build/cobot_interfaces/ament_cmake_python/cobot_interfaces/cobot_interfaces.egg-info/" "DESTINATION" "lib/python3.12/site-packages/cobot_interfaces-0.1.0-py3.12.egg-info")
-ament_cmake_symlink_install_directory("/home/student/ros2_ws/src/cobot_interfaces" DIRECTORY "/home/student/ros2_ws/build/cobot_interfaces/ament_cmake_python/cobot_interfaces/cobot_interfaces.egg-info/" "DESTINATION" "lib/python3.12/site-packages/cobot_interfaces-0.1.0-py3.12.egg-info")
+# install(DIRECTORY "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/ament_cmake_python/cobot_interfaces/cobot_interfaces.egg-info/" "DESTINATION" "lib/python3.12/site-packages/cobot_interfaces-0.1.0-py3.12.egg-info")
+ament_cmake_symlink_install_directory("/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces" DIRECTORY "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/ament_cmake_python/cobot_interfaces/cobot_interfaces.egg-info/" "DESTINATION" "lib/python3.12/site-packages/cobot_interfaces-0.1.0-py3.12.egg-info")
 
-# install(DIRECTORY "/home/student/ros2_ws/build/cobot_interfaces/rosidl_generator_py/cobot_interfaces/" "DESTINATION" "lib/python3.12/site-packages/cobot_interfaces" "PATTERN_EXCLUDE" "*.pyc" "PATTERN_EXCLUDE" "__pycache__")
-ament_cmake_symlink_install_directory("/home/student/ros2_ws/src/cobot_interfaces" DIRECTORY "/home/student/ros2_ws/build/cobot_interfaces/rosidl_generator_py/cobot_interfaces/" "DESTINATION" "lib/python3.12/site-packages/cobot_interfaces" "PATTERN_EXCLUDE" "*.pyc" "PATTERN_EXCLUDE" "__pycache__")
+# install(DIRECTORY "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_generator_py/cobot_interfaces/" "DESTINATION" "lib/python3.12/site-packages/cobot_interfaces" "PATTERN_EXCLUDE" "*.pyc" "PATTERN_EXCLUDE" "__pycache__")
+ament_cmake_symlink_install_directory("/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces" DIRECTORY "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_generator_py/cobot_interfaces/" "DESTINATION" "lib/python3.12/site-packages/cobot_interfaces" "PATTERN_EXCLUDE" "*.pyc" "PATTERN_EXCLUDE" "__pycache__")
 
 # install("TARGETS" "cobot_interfaces_s__rosidl_typesupport_fastrtps_c" "DESTINATION" "lib/python3.12/site-packages/cobot_interfaces")
-include("/home/student/ros2_ws/build/cobot_interfaces/ament_cmake_symlink_install_targets_0_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
+include("/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/ament_cmake_symlink_install_targets_0_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
 # install("TARGETS" "cobot_interfaces_s__rosidl_typesupport_introspection_c" "DESTINATION" "lib/python3.12/site-packages/cobot_interfaces")
-include("/home/student/ros2_ws/build/cobot_interfaces/ament_cmake_symlink_install_targets_1_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
+include("/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/ament_cmake_symlink_install_targets_1_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
 # install("TARGETS" "cobot_interfaces_s__rosidl_typesupport_c" "DESTINATION" "lib/python3.12/site-packages/cobot_interfaces")
-include("/home/student/ros2_ws/build/cobot_interfaces/ament_cmake_symlink_install_targets_2_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
+include("/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/ament_cmake_symlink_install_targets_2_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
-# install(DIRECTORY "/home/student/ros2_ws/build/cobot_interfaces/rosidl_generator_rs/cobot_interfaces/rust" "DESTINATION" "share/cobot_interfaces")
-ament_cmake_symlink_install_directory("/home/student/ros2_ws/src/cobot_interfaces" DIRECTORY "/home/student/ros2_ws/build/cobot_interfaces/rosidl_generator_rs/cobot_interfaces/rust" "DESTINATION" "share/cobot_interfaces")
+# install(DIRECTORY "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_generator_rs/cobot_interfaces/rust" "DESTINATION" "share/cobot_interfaces")
+ament_cmake_symlink_install_directory("/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces" DIRECTORY "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_generator_rs/cobot_interfaces/rust" "DESTINATION" "share/cobot_interfaces")
 
-# install(FILES "/home/student/ros2_ws/build/cobot_interfaces/rosidl_adapter/cobot_interfaces/msg/BlockTarget.idl" "DESTINATION" "share/cobot_interfaces/msg")
-ament_cmake_symlink_install_files("/home/student/ros2_ws/src/cobot_interfaces" FILES "/home/student/ros2_ws/build/cobot_interfaces/rosidl_adapter/cobot_interfaces/msg/BlockTarget.idl" "DESTINATION" "share/cobot_interfaces/msg")
+# install(FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_adapter/cobot_interfaces/msg/BlockTarget.idl" "DESTINATION" "share/cobot_interfaces/msg")
+ament_cmake_symlink_install_files("/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces" FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_adapter/cobot_interfaces/msg/BlockTarget.idl" "DESTINATION" "share/cobot_interfaces/msg")
 
-# install(FILES "/home/student/ros2_ws/build/cobot_interfaces/rosidl_adapter/cobot_interfaces/msg/BlockTargetArray.idl" "DESTINATION" "share/cobot_interfaces/msg")
-ament_cmake_symlink_install_files("/home/student/ros2_ws/src/cobot_interfaces" FILES "/home/student/ros2_ws/build/cobot_interfaces/rosidl_adapter/cobot_interfaces/msg/BlockTargetArray.idl" "DESTINATION" "share/cobot_interfaces/msg")
+# install(FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_adapter/cobot_interfaces/msg/BlockTargetArray.idl" "DESTINATION" "share/cobot_interfaces/msg")
+ament_cmake_symlink_install_files("/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces" FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_adapter/cobot_interfaces/msg/BlockTargetArray.idl" "DESTINATION" "share/cobot_interfaces/msg")
 
-# install(FILES "/home/student/ros2_ws/build/cobot_interfaces/rosidl_adapter/cobot_interfaces/msg/BlockInfo.idl" "DESTINATION" "share/cobot_interfaces/msg")
-ament_cmake_symlink_install_files("/home/student/ros2_ws/src/cobot_interfaces" FILES "/home/student/ros2_ws/build/cobot_interfaces/rosidl_adapter/cobot_interfaces/msg/BlockInfo.idl" "DESTINATION" "share/cobot_interfaces/msg")
+# install(FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_adapter/cobot_interfaces/msg/BlockInfo.idl" "DESTINATION" "share/cobot_interfaces/msg")
+ament_cmake_symlink_install_files("/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces" FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_adapter/cobot_interfaces/msg/BlockInfo.idl" "DESTINATION" "share/cobot_interfaces/msg")
 
-# install(FILES "/home/student/ros2_ws/build/cobot_interfaces/rosidl_adapter/cobot_interfaces/srv/LocateBlocks.idl" "DESTINATION" "share/cobot_interfaces/srv")
-ament_cmake_symlink_install_files("/home/student/ros2_ws/src/cobot_interfaces" FILES "/home/student/ros2_ws/build/cobot_interfaces/rosidl_adapter/cobot_interfaces/srv/LocateBlocks.idl" "DESTINATION" "share/cobot_interfaces/srv")
+# install(FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_adapter/cobot_interfaces/srv/LocateBlocks.idl" "DESTINATION" "share/cobot_interfaces/srv")
+ament_cmake_symlink_install_files("/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces" FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_adapter/cobot_interfaces/srv/LocateBlocks.idl" "DESTINATION" "share/cobot_interfaces/srv")
 
-# install(FILES "/home/student/ros2_ws/build/cobot_interfaces/rosidl_adapter/cobot_interfaces/action/PickBlock.idl" "DESTINATION" "share/cobot_interfaces/action")
-ament_cmake_symlink_install_files("/home/student/ros2_ws/src/cobot_interfaces" FILES "/home/student/ros2_ws/build/cobot_interfaces/rosidl_adapter/cobot_interfaces/action/PickBlock.idl" "DESTINATION" "share/cobot_interfaces/action")
+# install(FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_adapter/cobot_interfaces/action/PickBlock.idl" "DESTINATION" "share/cobot_interfaces/action")
+ament_cmake_symlink_install_files("/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces" FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_adapter/cobot_interfaces/action/PickBlock.idl" "DESTINATION" "share/cobot_interfaces/action")
 
-# install(FILES "/home/student/ros2_ws/build/cobot_interfaces/rosidl_adapter/cobot_interfaces/action/PlaceBlock.idl" "DESTINATION" "share/cobot_interfaces/action")
-ament_cmake_symlink_install_files("/home/student/ros2_ws/src/cobot_interfaces" FILES "/home/student/ros2_ws/build/cobot_interfaces/rosidl_adapter/cobot_interfaces/action/PlaceBlock.idl" "DESTINATION" "share/cobot_interfaces/action")
+# install(FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_adapter/cobot_interfaces/action/PlaceBlock.idl" "DESTINATION" "share/cobot_interfaces/action")
+ament_cmake_symlink_install_files("/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces" FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_adapter/cobot_interfaces/action/PlaceBlock.idl" "DESTINATION" "share/cobot_interfaces/action")
 
-# install(FILES "/home/student/ros2_ws/src/cobot_interfaces/msg/BlockTarget.msg" "DESTINATION" "share/cobot_interfaces/msg")
-ament_cmake_symlink_install_files("/home/student/ros2_ws/src/cobot_interfaces" FILES "/home/student/ros2_ws/src/cobot_interfaces/msg/BlockTarget.msg" "DESTINATION" "share/cobot_interfaces/msg")
+# install(FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces/msg/BlockTarget.msg" "DESTINATION" "share/cobot_interfaces/msg")
+ament_cmake_symlink_install_files("/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces" FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces/msg/BlockTarget.msg" "DESTINATION" "share/cobot_interfaces/msg")
 
-# install(FILES "/home/student/ros2_ws/src/cobot_interfaces/msg/BlockTargetArray.msg" "DESTINATION" "share/cobot_interfaces/msg")
-ament_cmake_symlink_install_files("/home/student/ros2_ws/src/cobot_interfaces" FILES "/home/student/ros2_ws/src/cobot_interfaces/msg/BlockTargetArray.msg" "DESTINATION" "share/cobot_interfaces/msg")
+# install(FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces/msg/BlockTargetArray.msg" "DESTINATION" "share/cobot_interfaces/msg")
+ament_cmake_symlink_install_files("/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces" FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces/msg/BlockTargetArray.msg" "DESTINATION" "share/cobot_interfaces/msg")
 
-# install(FILES "/home/student/ros2_ws/src/cobot_interfaces/msg/BlockInfo.msg" "DESTINATION" "share/cobot_interfaces/msg")
-ament_cmake_symlink_install_files("/home/student/ros2_ws/src/cobot_interfaces" FILES "/home/student/ros2_ws/src/cobot_interfaces/msg/BlockInfo.msg" "DESTINATION" "share/cobot_interfaces/msg")
+# install(FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces/msg/BlockInfo.msg" "DESTINATION" "share/cobot_interfaces/msg")
+ament_cmake_symlink_install_files("/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces" FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces/msg/BlockInfo.msg" "DESTINATION" "share/cobot_interfaces/msg")
 
-# install(FILES "/home/student/ros2_ws/src/cobot_interfaces/srv/LocateBlocks.srv" "DESTINATION" "share/cobot_interfaces/srv")
-ament_cmake_symlink_install_files("/home/student/ros2_ws/src/cobot_interfaces" FILES "/home/student/ros2_ws/src/cobot_interfaces/srv/LocateBlocks.srv" "DESTINATION" "share/cobot_interfaces/srv")
+# install(FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces/srv/LocateBlocks.srv" "DESTINATION" "share/cobot_interfaces/srv")
+ament_cmake_symlink_install_files("/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces" FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces/srv/LocateBlocks.srv" "DESTINATION" "share/cobot_interfaces/srv")
 
-# install(FILES "/home/student/ros2_ws/src/cobot_interfaces/action/PickBlock.action" "DESTINATION" "share/cobot_interfaces/action")
-ament_cmake_symlink_install_files("/home/student/ros2_ws/src/cobot_interfaces" FILES "/home/student/ros2_ws/src/cobot_interfaces/action/PickBlock.action" "DESTINATION" "share/cobot_interfaces/action")
+# install(FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces/action/PickBlock.action" "DESTINATION" "share/cobot_interfaces/action")
+ament_cmake_symlink_install_files("/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces" FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces/action/PickBlock.action" "DESTINATION" "share/cobot_interfaces/action")
 
-# install(FILES "/home/student/ros2_ws/src/cobot_interfaces/action/PlaceBlock.action" "DESTINATION" "share/cobot_interfaces/action")
-ament_cmake_symlink_install_files("/home/student/ros2_ws/src/cobot_interfaces" FILES "/home/student/ros2_ws/src/cobot_interfaces/action/PlaceBlock.action" "DESTINATION" "share/cobot_interfaces/action")
+# install(FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces/action/PlaceBlock.action" "DESTINATION" "share/cobot_interfaces/action")
+ament_cmake_symlink_install_files("/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces" FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces/action/PlaceBlock.action" "DESTINATION" "share/cobot_interfaces/action")
 
-# install(FILES "/home/student/ros2_ws/build/cobot_interfaces/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/cobot_interfaces" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
-ament_cmake_symlink_install_files("/home/student/ros2_ws/src/cobot_interfaces" FILES "/home/student/ros2_ws/build/cobot_interfaces/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/cobot_interfaces" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
+# install(FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/cobot_interfaces" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
+ament_cmake_symlink_install_files("/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces" FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/cobot_interfaces" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
 
-# install(FILES "/home/student/ros2_ws/build/cobot_interfaces/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/cobot_interfaces" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
-ament_cmake_symlink_install_files("/home/student/ros2_ws/src/cobot_interfaces" FILES "/home/student/ros2_ws/build/cobot_interfaces/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/cobot_interfaces" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
+# install(FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/cobot_interfaces" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
+ament_cmake_symlink_install_files("/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces" FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/cobot_interfaces" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
 
 # install(FILES "/opt/ros/jazzy/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/cobot_interfaces/environment")
-ament_cmake_symlink_install_files("/home/student/ros2_ws/src/cobot_interfaces" FILES "/opt/ros/jazzy/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/cobot_interfaces/environment")
+ament_cmake_symlink_install_files("/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces" FILES "/opt/ros/jazzy/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/cobot_interfaces/environment")
 
-# install(FILES "/home/student/ros2_ws/build/cobot_interfaces/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/cobot_interfaces/environment")
-ament_cmake_symlink_install_files("/home/student/ros2_ws/src/cobot_interfaces" FILES "/home/student/ros2_ws/build/cobot_interfaces/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/cobot_interfaces/environment")
+# install(FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/cobot_interfaces/environment")
+ament_cmake_symlink_install_files("/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces" FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/cobot_interfaces/environment")
 
 # install(FILES "/opt/ros/jazzy/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/cobot_interfaces/environment")
-ament_cmake_symlink_install_files("/home/student/ros2_ws/src/cobot_interfaces" FILES "/opt/ros/jazzy/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/cobot_interfaces/environment")
+ament_cmake_symlink_install_files("/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces" FILES "/opt/ros/jazzy/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/cobot_interfaces/environment")
 
-# install(FILES "/home/student/ros2_ws/build/cobot_interfaces/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/cobot_interfaces/environment")
-ament_cmake_symlink_install_files("/home/student/ros2_ws/src/cobot_interfaces" FILES "/home/student/ros2_ws/build/cobot_interfaces/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/cobot_interfaces/environment")
+# install(FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/cobot_interfaces/environment")
+ament_cmake_symlink_install_files("/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces" FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/cobot_interfaces/environment")
 
-# install(FILES "/home/student/ros2_ws/build/cobot_interfaces/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/cobot_interfaces")
-ament_cmake_symlink_install_files("/home/student/ros2_ws/src/cobot_interfaces" FILES "/home/student/ros2_ws/build/cobot_interfaces/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/cobot_interfaces")
+# install(FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/cobot_interfaces")
+ament_cmake_symlink_install_files("/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces" FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/cobot_interfaces")
 
-# install(FILES "/home/student/ros2_ws/build/cobot_interfaces/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/cobot_interfaces")
-ament_cmake_symlink_install_files("/home/student/ros2_ws/src/cobot_interfaces" FILES "/home/student/ros2_ws/build/cobot_interfaces/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/cobot_interfaces")
+# install(FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/cobot_interfaces")
+ament_cmake_symlink_install_files("/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces" FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/cobot_interfaces")
 
-# install(FILES "/home/student/ros2_ws/build/cobot_interfaces/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/cobot_interfaces")
-ament_cmake_symlink_install_files("/home/student/ros2_ws/src/cobot_interfaces" FILES "/home/student/ros2_ws/build/cobot_interfaces/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/cobot_interfaces")
+# install(FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/cobot_interfaces")
+ament_cmake_symlink_install_files("/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces" FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/cobot_interfaces")
 
-# install(FILES "/home/student/ros2_ws/build/cobot_interfaces/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/cobot_interfaces")
-ament_cmake_symlink_install_files("/home/student/ros2_ws/src/cobot_interfaces" FILES "/home/student/ros2_ws/build/cobot_interfaces/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/cobot_interfaces")
+# install(FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/cobot_interfaces")
+ament_cmake_symlink_install_files("/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces" FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/cobot_interfaces")
 
-# install(FILES "/home/student/ros2_ws/build/cobot_interfaces/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/cobot_interfaces")
-ament_cmake_symlink_install_files("/home/student/ros2_ws/src/cobot_interfaces" FILES "/home/student/ros2_ws/build/cobot_interfaces/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/cobot_interfaces")
+# install(FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/cobot_interfaces")
+ament_cmake_symlink_install_files("/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces" FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/cobot_interfaces")
 
-# install(FILES "/home/student/ros2_ws/build/cobot_interfaces/ament_cmake_index/share/ament_index/resource_index/packages/cobot_interfaces" "DESTINATION" "share/ament_index/resource_index/packages")
-ament_cmake_symlink_install_files("/home/student/ros2_ws/src/cobot_interfaces" FILES "/home/student/ros2_ws/build/cobot_interfaces/ament_cmake_index/share/ament_index/resource_index/packages/cobot_interfaces" "DESTINATION" "share/ament_index/resource_index/packages")
+# install(FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/ament_cmake_index/share/ament_index/resource_index/packages/cobot_interfaces" "DESTINATION" "share/ament_index/resource_index/packages")
+ament_cmake_symlink_install_files("/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces" FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/ament_cmake_index/share/ament_index/resource_index/packages/cobot_interfaces" "DESTINATION" "share/ament_index/resource_index/packages")
 
-# install(FILES "/home/student/ros2_ws/build/cobot_interfaces/rosidl_cmake/rosidl_cmake-extras.cmake" "DESTINATION" "share/cobot_interfaces/cmake")
-ament_cmake_symlink_install_files("/home/student/ros2_ws/src/cobot_interfaces" FILES "/home/student/ros2_ws/build/cobot_interfaces/rosidl_cmake/rosidl_cmake-extras.cmake" "DESTINATION" "share/cobot_interfaces/cmake")
+# install(FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_cmake/rosidl_cmake-extras.cmake" "DESTINATION" "share/cobot_interfaces/cmake")
+ament_cmake_symlink_install_files("/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces" FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_cmake/rosidl_cmake-extras.cmake" "DESTINATION" "share/cobot_interfaces/cmake")
 
-# install(FILES "/home/student/ros2_ws/build/cobot_interfaces/ament_cmake_export_dependencies/ament_cmake_export_dependencies-extras.cmake" "DESTINATION" "share/cobot_interfaces/cmake")
-ament_cmake_symlink_install_files("/home/student/ros2_ws/src/cobot_interfaces" FILES "/home/student/ros2_ws/build/cobot_interfaces/ament_cmake_export_dependencies/ament_cmake_export_dependencies-extras.cmake" "DESTINATION" "share/cobot_interfaces/cmake")
+# install(FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/ament_cmake_export_dependencies/ament_cmake_export_dependencies-extras.cmake" "DESTINATION" "share/cobot_interfaces/cmake")
+ament_cmake_symlink_install_files("/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces" FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/ament_cmake_export_dependencies/ament_cmake_export_dependencies-extras.cmake" "DESTINATION" "share/cobot_interfaces/cmake")
 
-# install(FILES "/home/student/ros2_ws/build/cobot_interfaces/ament_cmake_export_include_directories/ament_cmake_export_include_directories-extras.cmake" "DESTINATION" "share/cobot_interfaces/cmake")
-ament_cmake_symlink_install_files("/home/student/ros2_ws/src/cobot_interfaces" FILES "/home/student/ros2_ws/build/cobot_interfaces/ament_cmake_export_include_directories/ament_cmake_export_include_directories-extras.cmake" "DESTINATION" "share/cobot_interfaces/cmake")
+# install(FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/ament_cmake_export_include_directories/ament_cmake_export_include_directories-extras.cmake" "DESTINATION" "share/cobot_interfaces/cmake")
+ament_cmake_symlink_install_files("/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces" FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/ament_cmake_export_include_directories/ament_cmake_export_include_directories-extras.cmake" "DESTINATION" "share/cobot_interfaces/cmake")
 
-# install(FILES "/home/student/ros2_ws/build/cobot_interfaces/ament_cmake_export_libraries/ament_cmake_export_libraries-extras.cmake" "DESTINATION" "share/cobot_interfaces/cmake")
-ament_cmake_symlink_install_files("/home/student/ros2_ws/src/cobot_interfaces" FILES "/home/student/ros2_ws/build/cobot_interfaces/ament_cmake_export_libraries/ament_cmake_export_libraries-extras.cmake" "DESTINATION" "share/cobot_interfaces/cmake")
+# install(FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/ament_cmake_export_libraries/ament_cmake_export_libraries-extras.cmake" "DESTINATION" "share/cobot_interfaces/cmake")
+ament_cmake_symlink_install_files("/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces" FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/ament_cmake_export_libraries/ament_cmake_export_libraries-extras.cmake" "DESTINATION" "share/cobot_interfaces/cmake")
 
-# install(FILES "/home/student/ros2_ws/build/cobot_interfaces/ament_cmake_export_targets/ament_cmake_export_targets-extras.cmake" "DESTINATION" "share/cobot_interfaces/cmake")
-ament_cmake_symlink_install_files("/home/student/ros2_ws/src/cobot_interfaces" FILES "/home/student/ros2_ws/build/cobot_interfaces/ament_cmake_export_targets/ament_cmake_export_targets-extras.cmake" "DESTINATION" "share/cobot_interfaces/cmake")
+# install(FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/ament_cmake_export_targets/ament_cmake_export_targets-extras.cmake" "DESTINATION" "share/cobot_interfaces/cmake")
+ament_cmake_symlink_install_files("/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces" FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/ament_cmake_export_targets/ament_cmake_export_targets-extras.cmake" "DESTINATION" "share/cobot_interfaces/cmake")
 
-# install(FILES "/home/student/ros2_ws/build/cobot_interfaces/rosidl_cmake/rosidl_cmake_export_typesupport_targets-extras.cmake" "DESTINATION" "share/cobot_interfaces/cmake")
-ament_cmake_symlink_install_files("/home/student/ros2_ws/src/cobot_interfaces" FILES "/home/student/ros2_ws/build/cobot_interfaces/rosidl_cmake/rosidl_cmake_export_typesupport_targets-extras.cmake" "DESTINATION" "share/cobot_interfaces/cmake")
+# install(FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_cmake/rosidl_cmake_export_typesupport_targets-extras.cmake" "DESTINATION" "share/cobot_interfaces/cmake")
+ament_cmake_symlink_install_files("/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces" FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_cmake/rosidl_cmake_export_typesupport_targets-extras.cmake" "DESTINATION" "share/cobot_interfaces/cmake")
 
-# install(FILES "/home/student/ros2_ws/build/cobot_interfaces/rosidl_cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake" "DESTINATION" "share/cobot_interfaces/cmake")
-ament_cmake_symlink_install_files("/home/student/ros2_ws/src/cobot_interfaces" FILES "/home/student/ros2_ws/build/cobot_interfaces/rosidl_cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake" "DESTINATION" "share/cobot_interfaces/cmake")
+# install(FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake" "DESTINATION" "share/cobot_interfaces/cmake")
+ament_cmake_symlink_install_files("/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces" FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake" "DESTINATION" "share/cobot_interfaces/cmake")
 
-# install(FILES "/home/student/ros2_ws/build/cobot_interfaces/rosidl_cmake/rosidl_cmake_aggregate_target-extras.cmake" "DESTINATION" "share/cobot_interfaces/cmake")
-ament_cmake_symlink_install_files("/home/student/ros2_ws/src/cobot_interfaces" FILES "/home/student/ros2_ws/build/cobot_interfaces/rosidl_cmake/rosidl_cmake_aggregate_target-extras.cmake" "DESTINATION" "share/cobot_interfaces/cmake")
+# install(FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_cmake/rosidl_cmake_aggregate_target-extras.cmake" "DESTINATION" "share/cobot_interfaces/cmake")
+ament_cmake_symlink_install_files("/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces" FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_cmake/rosidl_cmake_aggregate_target-extras.cmake" "DESTINATION" "share/cobot_interfaces/cmake")
 
-# install(FILES "/home/student/ros2_ws/build/cobot_interfaces/ament_cmake_core/cobot_interfacesConfig.cmake" "/home/student/ros2_ws/build/cobot_interfaces/ament_cmake_core/cobot_interfacesConfig-version.cmake" "DESTINATION" "share/cobot_interfaces/cmake")
-ament_cmake_symlink_install_files("/home/student/ros2_ws/src/cobot_interfaces" FILES "/home/student/ros2_ws/build/cobot_interfaces/ament_cmake_core/cobot_interfacesConfig.cmake" "/home/student/ros2_ws/build/cobot_interfaces/ament_cmake_core/cobot_interfacesConfig-version.cmake" "DESTINATION" "share/cobot_interfaces/cmake")
+# install(FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/ament_cmake_core/cobot_interfacesConfig.cmake" "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/ament_cmake_core/cobot_interfacesConfig-version.cmake" "DESTINATION" "share/cobot_interfaces/cmake")
+ament_cmake_symlink_install_files("/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces" FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/ament_cmake_core/cobot_interfacesConfig.cmake" "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/ament_cmake_core/cobot_interfacesConfig-version.cmake" "DESTINATION" "share/cobot_interfaces/cmake")
 
-# install(FILES "/home/student/ros2_ws/src/cobot_interfaces/package.xml" "DESTINATION" "share/cobot_interfaces")
-ament_cmake_symlink_install_files("/home/student/ros2_ws/src/cobot_interfaces" FILES "/home/student/ros2_ws/src/cobot_interfaces/package.xml" "DESTINATION" "share/cobot_interfaces")
+# install(FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces/package.xml" "DESTINATION" "share/cobot_interfaces")
+ament_cmake_symlink_install_files("/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces" FILES "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces/package.xml" "DESTINATION" "share/cobot_interfaces")

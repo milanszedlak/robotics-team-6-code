@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/student/ros2_ws/src/cobot_interfaces
+CMAKE_SOURCE_DIR = /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/student/ros2_ws/build/cobot_interfaces
+CMAKE_BINARY_DIR = /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces
 
 # Utility rule file for cobot_interfaces.
 
@@ -66,12 +66,12 @@ include CMakeFiles/cobot_interfaces.dir/compiler_depend.make
 # Include the progress variables for this target.
 include CMakeFiles/cobot_interfaces.dir/progress.make
 
-CMakeFiles/cobot_interfaces: /home/student/ros2_ws/src/cobot_interfaces/msg/BlockTarget.msg
-CMakeFiles/cobot_interfaces: /home/student/ros2_ws/src/cobot_interfaces/msg/BlockTargetArray.msg
-CMakeFiles/cobot_interfaces: /home/student/ros2_ws/src/cobot_interfaces/msg/BlockInfo.msg
-CMakeFiles/cobot_interfaces: /home/student/ros2_ws/src/cobot_interfaces/srv/LocateBlocks.srv
-CMakeFiles/cobot_interfaces: /home/student/ros2_ws/src/cobot_interfaces/action/PickBlock.action
-CMakeFiles/cobot_interfaces: /home/student/ros2_ws/src/cobot_interfaces/action/PlaceBlock.action
+CMakeFiles/cobot_interfaces: /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces/msg/BlockTarget.msg
+CMakeFiles/cobot_interfaces: /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces/msg/BlockTargetArray.msg
+CMakeFiles/cobot_interfaces: /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces/msg/BlockInfo.msg
+CMakeFiles/cobot_interfaces: /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces/srv/LocateBlocks.srv
+CMakeFiles/cobot_interfaces: /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces/action/PickBlock.action
+CMakeFiles/cobot_interfaces: /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces/action/PlaceBlock.action
 CMakeFiles/cobot_interfaces: /opt/ros/jazzy/share/std_msgs/msg/Bool.idl
 CMakeFiles/cobot_interfaces: /opt/ros/jazzy/share/std_msgs/msg/Byte.idl
 CMakeFiles/cobot_interfaces: /opt/ros/jazzy/share/std_msgs/msg/ByteMultiArray.idl
@@ -154,6 +154,6 @@ CMakeFiles/cobot_interfaces.dir/clean:
 .PHONY : CMakeFiles/cobot_interfaces.dir/clean
 
 CMakeFiles/cobot_interfaces.dir/depend:
-	cd /home/student/ros2_ws/build/cobot_interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/student/ros2_ws/src/cobot_interfaces /home/student/ros2_ws/src/cobot_interfaces /home/student/ros2_ws/build/cobot_interfaces /home/student/ros2_ws/build/cobot_interfaces /home/student/ros2_ws/build/cobot_interfaces/CMakeFiles/cobot_interfaces.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/CMakeFiles/cobot_interfaces.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/cobot_interfaces.dir/depend
 

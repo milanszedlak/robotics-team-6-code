@@ -1,0 +1,9 @@
+# /arm/pick_block: find a block with the camera, grasp it and lift it to the carry pose.
+string color        # colour to pick; "" = the best graspable block of any colour
+---
+bool success
+string message
+string color                    # colour actually picked
+geometry_msgs/Point position    # where it was picked (top-face centre, base_link) [m]
+---
+string stage                    # e.g. "locating", "approaching", "descending", "grasping", "lifting"

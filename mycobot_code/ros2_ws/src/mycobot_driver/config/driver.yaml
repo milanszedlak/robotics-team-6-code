@@ -1,0 +1,41 @@
+mycobot_driver:
+  ros__parameters:
+    # This node runs ON THE ARM'S PI and owns the serial port.
+    backend: serial                    # serial = real arm; fake = simulated arm (testing without hardware)
+    serial_port: /dev/ttyAMA0          # myCobot 280 Pi: the arm's servos are on the Pi's UART
+    baud: 1000000
+
+    # Frames published from the arm's forward kinematics (TF base_frame -> flange_frame)
+    publish_tf: true
+    base_frame: base_link              # = the arm firmware's base frame (get_coords)
+    flange_frame: link6_flange
+
+    # Must match the URDF / MoveIt config and mycobot_vision_grasp/config/arm_task.yaml
+    joint_names:
+      - link1_to_link2
+      - link2_to_link3
+      - link3_to_link4
+      - link4_to_link5
+      - link5_to_link6
+      - link6_to_link6_flange
+    publish_rate: 10.0                 # /joint_states rate [Hz]
+
+    default_speed: 40                  # myCobot speed 1-100 for /arm/joint_command and /arm/go_home
+    home_angles_deg: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]   # straight up
+    max_deg_per_s_at_speed_100: 160.0  # rough; used to turn trajectory timing into a speed %
+
+    # Trajectory execution
+    arm_action: /arm_controller/follow_joint_trajectory
+    goal_tolerance_deg: 2.0            # final point
+    waypoint_tolerance_deg: 6.0        # intermediate points
+    min_point_interval: 0.3            # drop trajectory points closer together than this [s]
+    extra_time: 3.0                    # allowed lateness at the final point [s]
+
+    # Gripper (positions use the same scale as arm_task.yaml)
+    gripper_action: /gripper_action_controller/gripper_cmd
+    publish_gripper_joint: true
+    gripper_joint: gripper_controller
+    gripper_open_position: 0.0         # -> myCobot gripper value 100
+    gripper_closed_position: -0.7      # -> myCobot gripper value 0
+    gripper_speed: 50
+    gripper_move_time: 1.5

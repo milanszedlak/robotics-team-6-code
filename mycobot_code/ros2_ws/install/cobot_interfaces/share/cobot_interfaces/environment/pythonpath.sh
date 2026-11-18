@@ -1,1 +1,1 @@
-/home/student/ros2_ws/build/cobot_interfaces/ament_cmake_environment_hooks/pythonpath.sh
+/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/ament_cmake_environment_hooks/pythonpath.sh

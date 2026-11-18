@@ -53,22 +53,22 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/student/ros2_ws/src/cobot_interfaces
+CMAKE_SOURCE_DIR = /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/student/ros2_ws/build/cobot_interfaces
+CMAKE_BINARY_DIR = /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces
 
 # Utility rule file for cobot_interfaces__rs.
 
 # Include any custom commands dependencies for this target.
-include /home/student/ros2_ws/build/cobot_interfaces/cobot_interfaces__rs/CMakeFiles/cobot_interfaces__rs.dir/compiler_depend.make
+include /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/cobot_interfaces__rs/CMakeFiles/cobot_interfaces__rs.dir/compiler_depend.make
 
 # Include the progress variables for this target.
-include /home/student/ros2_ws/build/cobot_interfaces/cobot_interfaces__rs/CMakeFiles/cobot_interfaces__rs.dir/progress.make
+include /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/cobot_interfaces__rs/CMakeFiles/cobot_interfaces__rs.dir/progress.make
 
-/home/student/ros2_ws/build/cobot_interfaces/cobot_interfaces__rs/CMakeFiles/cobot_interfaces__rs: rosidl_generator_rs/cobot_interfaces/rust/src/lib.rs
-/home/student/ros2_ws/build/cobot_interfaces/cobot_interfaces__rs/CMakeFiles/cobot_interfaces__rs: rosidl_generator_rs/cobot_interfaces/rust/build.rs
-/home/student/ros2_ws/build/cobot_interfaces/cobot_interfaces__rs/CMakeFiles/cobot_interfaces__rs: rosidl_generator_rs/cobot_interfaces/rust/Cargo.toml
+/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/cobot_interfaces__rs/CMakeFiles/cobot_interfaces__rs: rosidl_generator_rs/cobot_interfaces/rust/src/lib.rs
+/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/cobot_interfaces__rs/CMakeFiles/cobot_interfaces__rs: rosidl_generator_rs/cobot_interfaces/rust/build.rs
+/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/cobot_interfaces__rs/CMakeFiles/cobot_interfaces__rs: rosidl_generator_rs/cobot_interfaces/rust/Cargo.toml
 
 rosidl_generator_rs/cobot_interfaces/rust/src/lib.rs: /opt/ros/jazzy/lib/rosidl_generator_rs/rosidl_generator_rs
 rosidl_generator_rs/cobot_interfaces/rust/src/lib.rs: /opt/ros/jazzy/lib/python3.12/site-packages/rosidl_generator_rs/__init__.py
@@ -162,8 +162,8 @@ rosidl_generator_rs/cobot_interfaces/rust/src/lib.rs: /opt/ros/jazzy/share/actio
 rosidl_generator_rs/cobot_interfaces/rust/src/lib.rs: /opt/ros/jazzy/share/action_msgs/msg/GoalStatusArray.idl
 rosidl_generator_rs/cobot_interfaces/rust/src/lib.rs: /opt/ros/jazzy/share/action_msgs/srv/CancelGoal.idl
 rosidl_generator_rs/cobot_interfaces/rust/src/lib.rs: /opt/ros/jazzy/share/unique_identifier_msgs/msg/UUID.idl
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/student/ros2_ws/build/cobot_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Rust code for ROS interfaces"
-	cd /home/student/ros2_ws/build/cobot_interfaces/cobot_interfaces__rs && /usr/bin/python3 /opt/ros/jazzy/share/rosidl_generator_rs/cmake/../../../lib/rosidl_generator_rs/rosidl_generator_rs --generator-arguments-file /home/student/ros2_ws/build/cobot_interfaces/rosidl_generator_rs__arguments.json --typesupport-impls "rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c;rosidl_typesupport_c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Rust code for ROS interfaces"
+	cd /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/cobot_interfaces__rs && /usr/bin/python3 /opt/ros/jazzy/share/rosidl_generator_rs/cmake/../../../lib/rosidl_generator_rs/rosidl_generator_rs --generator-arguments-file /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_generator_rs__arguments.json --typesupport-impls "rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c;rosidl_typesupport_c"
 
 rosidl_generator_rs/cobot_interfaces/rust/build.rs: rosidl_generator_rs/cobot_interfaces/rust/src/lib.rs
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_rs/cobot_interfaces/rust/build.rs
@@ -171,22 +171,22 @@ rosidl_generator_rs/cobot_interfaces/rust/build.rs: rosidl_generator_rs/cobot_in
 rosidl_generator_rs/cobot_interfaces/rust/Cargo.toml: rosidl_generator_rs/cobot_interfaces/rust/src/lib.rs
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_rs/cobot_interfaces/rust/Cargo.toml
 
-cobot_interfaces__rs: /home/student/ros2_ws/build/cobot_interfaces/cobot_interfaces__rs/CMakeFiles/cobot_interfaces__rs
+cobot_interfaces__rs: /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/cobot_interfaces__rs/CMakeFiles/cobot_interfaces__rs
 cobot_interfaces__rs: rosidl_generator_rs/cobot_interfaces/rust/Cargo.toml
 cobot_interfaces__rs: rosidl_generator_rs/cobot_interfaces/rust/build.rs
 cobot_interfaces__rs: rosidl_generator_rs/cobot_interfaces/rust/src/lib.rs
-cobot_interfaces__rs: /home/student/ros2_ws/build/cobot_interfaces/cobot_interfaces__rs/CMakeFiles/cobot_interfaces__rs.dir/build.make
+cobot_interfaces__rs: /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/cobot_interfaces__rs/CMakeFiles/cobot_interfaces__rs.dir/build.make
 .PHONY : cobot_interfaces__rs
 
 # Rule to build all files generated by this target.
-/home/student/ros2_ws/build/cobot_interfaces/cobot_interfaces__rs/CMakeFiles/cobot_interfaces__rs.dir/build: cobot_interfaces__rs
-.PHONY : /home/student/ros2_ws/build/cobot_interfaces/cobot_interfaces__rs/CMakeFiles/cobot_interfaces__rs.dir/build
+/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/cobot_interfaces__rs/CMakeFiles/cobot_interfaces__rs.dir/build: cobot_interfaces__rs
+.PHONY : /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/cobot_interfaces__rs/CMakeFiles/cobot_interfaces__rs.dir/build
 
-/home/student/ros2_ws/build/cobot_interfaces/cobot_interfaces__rs/CMakeFiles/cobot_interfaces__rs.dir/clean:
-	cd /home/student/ros2_ws/build/cobot_interfaces/cobot_interfaces__rs && $(CMAKE_COMMAND) -P CMakeFiles/cobot_interfaces__rs.dir/cmake_clean.cmake
-.PHONY : /home/student/ros2_ws/build/cobot_interfaces/cobot_interfaces__rs/CMakeFiles/cobot_interfaces__rs.dir/clean
+/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/cobot_interfaces__rs/CMakeFiles/cobot_interfaces__rs.dir/clean:
+	cd /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/cobot_interfaces__rs && $(CMAKE_COMMAND) -P CMakeFiles/cobot_interfaces__rs.dir/cmake_clean.cmake
+.PHONY : /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/cobot_interfaces__rs/CMakeFiles/cobot_interfaces__rs.dir/clean
 
-/home/student/ros2_ws/build/cobot_interfaces/cobot_interfaces__rs/CMakeFiles/cobot_interfaces__rs.dir/depend:
-	cd /home/student/ros2_ws/build/cobot_interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/student/ros2_ws/src/cobot_interfaces /home/student/ros2_ws/build/cobot_interfaces/cobot_interfaces__rs /home/student/ros2_ws/build/cobot_interfaces /home/student/ros2_ws/build/cobot_interfaces/cobot_interfaces__rs /home/student/ros2_ws/build/cobot_interfaces/cobot_interfaces__rs/CMakeFiles/cobot_interfaces__rs.dir/DependInfo.cmake "--color=$(COLOR)"
-.PHONY : /home/student/ros2_ws/build/cobot_interfaces/cobot_interfaces__rs/CMakeFiles/cobot_interfaces__rs.dir/depend
+/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/cobot_interfaces__rs/CMakeFiles/cobot_interfaces__rs.dir/depend:
+	cd /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/src/cobot_interfaces /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/cobot_interfaces__rs /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/cobot_interfaces__rs /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/cobot_interfaces__rs/CMakeFiles/cobot_interfaces__rs.dir/DependInfo.cmake "--color=$(COLOR)"
+.PHONY : /home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/cobot_interfaces__rs/CMakeFiles/cobot_interfaces__rs.dir/depend
 

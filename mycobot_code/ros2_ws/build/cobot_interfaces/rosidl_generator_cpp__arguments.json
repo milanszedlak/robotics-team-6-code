@@ -1,14 +1,14 @@
 {
   "package_name": "cobot_interfaces",
-  "output_dir": "/home/student/ros2_ws/build/cobot_interfaces/rosidl_generator_cpp/cobot_interfaces",
+  "output_dir": "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_generator_cpp/cobot_interfaces",
   "template_dir": "/opt/ros/jazzy/share/rosidl_generator_cpp/cmake/../resource",
   "idl_tuples": [
-    "/home/student/ros2_ws/build/cobot_interfaces/rosidl_adapter/cobot_interfaces:msg/BlockTarget.idl",
-    "/home/student/ros2_ws/build/cobot_interfaces/rosidl_adapter/cobot_interfaces:msg/BlockTargetArray.idl",
-    "/home/student/ros2_ws/build/cobot_interfaces/rosidl_adapter/cobot_interfaces:msg/BlockInfo.idl",
-    "/home/student/ros2_ws/build/cobot_interfaces/rosidl_adapter/cobot_interfaces:srv/LocateBlocks.idl",
-    "/home/student/ros2_ws/build/cobot_interfaces/rosidl_adapter/cobot_interfaces:action/PickBlock.idl",
-    "/home/student/ros2_ws/build/cobot_interfaces/rosidl_adapter/cobot_interfaces:action/PlaceBlock.idl"
+    "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_adapter/cobot_interfaces:msg/BlockTarget.idl",
+    "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_adapter/cobot_interfaces:msg/BlockTargetArray.idl",
+    "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_adapter/cobot_interfaces:msg/BlockInfo.idl",
+    "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_adapter/cobot_interfaces:srv/LocateBlocks.idl",
+    "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_adapter/cobot_interfaces:action/PickBlock.idl",
+    "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_adapter/cobot_interfaces:action/PlaceBlock.idl"
   ],
   "ros_interface_dependencies": [
     "std_msgs:/opt/ros/jazzy/share/std_msgs/msg/Bool.idl",
@@ -103,12 +103,12 @@
     "/opt/ros/jazzy/share/rosidl_generator_cpp/cmake/../resource/srv__struct.hpp.em",
     "/opt/ros/jazzy/share/rosidl_generator_cpp/cmake/../resource/srv__traits.hpp.em",
     "/opt/ros/jazzy/share/rosidl_generator_cpp/cmake/../resource/srv__type_support.hpp.em",
-    "/home/student/ros2_ws/build/cobot_interfaces/rosidl_adapter/cobot_interfaces/msg/BlockTarget.idl",
-    "/home/student/ros2_ws/build/cobot_interfaces/rosidl_adapter/cobot_interfaces/msg/BlockTargetArray.idl",
-    "/home/student/ros2_ws/build/cobot_interfaces/rosidl_adapter/cobot_interfaces/msg/BlockInfo.idl",
-    "/home/student/ros2_ws/build/cobot_interfaces/rosidl_adapter/cobot_interfaces/srv/LocateBlocks.idl",
-    "/home/student/ros2_ws/build/cobot_interfaces/rosidl_adapter/cobot_interfaces/action/PickBlock.idl",
-    "/home/student/ros2_ws/build/cobot_interfaces/rosidl_adapter/cobot_interfaces/action/PlaceBlock.idl",
+    "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_adapter/cobot_interfaces/msg/BlockTarget.idl",
+    "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_adapter/cobot_interfaces/msg/BlockTargetArray.idl",
+    "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_adapter/cobot_interfaces/msg/BlockInfo.idl",
+    "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_adapter/cobot_interfaces/srv/LocateBlocks.idl",
+    "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_adapter/cobot_interfaces/action/PickBlock.idl",
+    "/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_adapter/cobot_interfaces/action/PlaceBlock.idl",
     "/opt/ros/jazzy/share/std_msgs/msg/Bool.idl",
     "/opt/ros/jazzy/share/std_msgs/msg/Byte.idl",
     "/opt/ros/jazzy/share/std_msgs/msg/ByteMultiArray.idl",
@@ -182,11 +182,11 @@
     "/opt/ros/jazzy/share/unique_identifier_msgs/msg/UUID.idl"
   ],
   "type_description_tuples": [
-    "msg/BlockTarget.idl:/home/student/ros2_ws/build/cobot_interfaces/rosidl_generator_type_description/cobot_interfaces/msg/BlockTarget.json",
-    "msg/BlockTargetArray.idl:/home/student/ros2_ws/build/cobot_interfaces/rosidl_generator_type_description/cobot_interfaces/msg/BlockTargetArray.json",
-    "msg/BlockInfo.idl:/home/student/ros2_ws/build/cobot_interfaces/rosidl_generator_type_description/cobot_interfaces/msg/BlockInfo.json",
-    "srv/LocateBlocks.idl:/home/student/ros2_ws/build/cobot_interfaces/rosidl_generator_type_description/cobot_interfaces/srv/LocateBlocks.json",
-    "action/PickBlock.idl:/home/student/ros2_ws/build/cobot_interfaces/rosidl_generator_type_description/cobot_interfaces/action/PickBlock.json",
-    "action/PlaceBlock.idl:/home/student/ros2_ws/build/cobot_interfaces/rosidl_generator_type_description/cobot_interfaces/action/PlaceBlock.json"
+    "msg/BlockTarget.idl:/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_generator_type_description/cobot_interfaces/msg/BlockTarget.json",
+    "msg/BlockTargetArray.idl:/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_generator_type_description/cobot_interfaces/msg/BlockTargetArray.json",
+    "msg/BlockInfo.idl:/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_generator_type_description/cobot_interfaces/msg/BlockInfo.json",
+    "srv/LocateBlocks.idl:/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_generator_type_description/cobot_interfaces/srv/LocateBlocks.json",
+    "action/PickBlock.idl:/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_generator_type_description/cobot_interfaces/action/PickBlock.json",
+    "action/PlaceBlock.idl:/home/student/Documents/robotics-team-6-code/mycobot_code/ros2_ws/build/cobot_interfaces/rosidl_generator_type_description/cobot_interfaces/action/PlaceBlock.json"
   ]
 }
