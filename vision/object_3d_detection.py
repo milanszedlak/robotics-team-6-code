@@ -16,7 +16,12 @@ import rclpy
 from cv_bridge import CvBridge
 from geometry_msgs.msg import Point, PointStamped
 from rclpy.node import Node
-from rclpy.qos import qos_profile_sensor_data
+from rclpy.qos import (
+    qos_profile_sensor_data,
+    QoSProfile,
+    ReliabilityPolicy,
+    DurabilityPolicy,
+)
 from sensor_msgs.msg import CameraInfo, Image
 from cobot_interfaces.msg import BlockTarget, BlockTargetArray
 
@@ -498,18 +503,25 @@ class Object3DDetector(Node):
         # ROS 2 Subscribers
         # ====================================================
 
+        # Reliable RGB-D image transport
+        image_qos = QoSProfile(
+            depth=5,
+            reliability=ReliabilityPolicy.RELIABLE,
+            durability=DurabilityPolicy.VOLATILE,
+        )
+
         self.rgb_sub = self.create_subscription(
             Image,
             RGB_TOPIC,
             self.on_rgb,
-            qos_profile_sensor_data
+            image_qos
         )
 
         self.depth_sub = self.create_subscription(
             Image,
             DEPTH_TOPIC,
             self.on_depth,
-            qos_profile_sensor_data
+            image_qos
         )
 
         self.info_sub = self.create_subscription(

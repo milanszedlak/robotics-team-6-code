@@ -85,3 +85,33 @@ target position, freshness, reachability and grasp safety.
 RGY-perspective-size-filter-2026-11-11
 
 Maintainer: Team 6 Vision Module
+
+## RGB-D QoS Fix (2026-11-18)
+
+The RGB and aligned depth image subscriptions use:
+
+- Reliability: RELIABLE
+- Durability: VOLATILE
+
+This configuration was tested with the RealSense D435i
+on the Team 6 NUC running ROS 2 Jazzy.
+
+Test configuration:
+- RGB: 640x480 at 15 FPS
+- Depth: 640x480 at 15 FPS
+- RGB-D synchronization enabled
+- Aligned depth enabled
+
+Observed /vision/blocks publication rate:
+approximately 15 Hz, compared with 2-5 Hz previously.
+
+The red, green and yellow block detection algorithms
+remain unchanged.
+
+Current interface notes:
+- All three colours provide XYZ centre coordinates.
+- Yellow also provides four estimated 3D corners.
+- Red and green corners remain NaN placeholders.
+- should_grasp and confidence are not yet validated
+  for autonomous grasp decisions.
+
