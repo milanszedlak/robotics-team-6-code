@@ -1,0 +1,28 @@
+running develop
+running egg_info
+creating mycobot_driver.egg-info
+writing mycobot_driver.egg-info/PKG-INFO
+writing dependency_links to mycobot_driver.egg-info/dependency_links.txt
+writing entry points to mycobot_driver.egg-info/entry_points.txt
+writing requirements to mycobot_driver.egg-info/requires.txt
+writing top-level names to mycobot_driver.egg-info/top_level.txt
+writing manifest file 'mycobot_driver.egg-info/SOURCES.txt'
+reading manifest file 'mycobot_driver.egg-info/SOURCES.txt'
+writing manifest file 'mycobot_driver.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/student/ros2_ws/install/mycobot_driver/lib/python3.12/site-packages/mycobot-driver.egg-link (link to .)
+Installing mycobot_driver_node script to /home/student/ros2_ws/install/mycobot_driver/lib/mycobot_driver
+
+Installed /home/student/ros2_ws/build/mycobot_driver
+running symlink_data
+creating /home/student/ros2_ws/install/mycobot_driver/share/ament_index
+creating /home/student/ros2_ws/install/mycobot_driver/share/ament_index/resource_index
+creating /home/student/ros2_ws/install/mycobot_driver/share/ament_index/resource_index/packages
+symbolically linking /home/student/ros2_ws/build/mycobot_driver/resource/mycobot_driver -> /home/student/ros2_ws/install/mycobot_driver/share/ament_index/resource_index/packages
+symbolically linking /home/student/ros2_ws/build/mycobot_driver/package.xml -> /home/student/ros2_ws/install/mycobot_driver/share/mycobot_driver
+creating /home/student/ros2_ws/install/mycobot_driver/share/mycobot_driver/launch
+symbolically linking /home/student/ros2_ws/build/mycobot_driver/launch/driver.launch.py -> /home/student/ros2_ws/install/mycobot_driver/share/mycobot_driver/launch
+creating /home/student/ros2_ws/install/mycobot_driver/share/mycobot_driver/config
+symbolically linking /home/student/ros2_ws/build/mycobot_driver/config/driver.yaml -> /home/student/ros2_ws/install/mycobot_driver/share/mycobot_driver/config
+creating /home/student/ros2_ws/install/mycobot_driver/share/mycobot_driver/pi
+symbolically linking /home/student/ros2_ws/build/mycobot_driver/pi/arm_server.py -> /home/student/ros2_ws/install/mycobot_driver/share/mycobot_driver/pi

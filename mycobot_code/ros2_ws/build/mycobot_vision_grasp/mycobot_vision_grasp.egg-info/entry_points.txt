@@ -1,0 +1,6 @@
+[console_scripts]
+arm_task_node = mycobot_vision_grasp.grasp_node:main
+block_vision_node = mycobot_vision_grasp.block_vision_node:main
+fake_vehicle_node = mycobot_vision_grasp.fake_vehicle_node:main
+pick_place_demo = mycobot_vision_grasp.pick_place_demo:main
+sim_vision_node = mycobot_vision_grasp.block_vision_node:main

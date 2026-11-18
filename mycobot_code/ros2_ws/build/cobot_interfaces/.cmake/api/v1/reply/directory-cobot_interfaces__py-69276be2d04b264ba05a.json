@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "cobot_interfaces__py",
+		"source" : "/home/student/ros2_ws/build/cobot_interfaces/cobot_interfaces__py"
+	}
+}

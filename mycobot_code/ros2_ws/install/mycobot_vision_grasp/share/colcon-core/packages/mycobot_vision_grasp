@@ -1,0 +1,1 @@
+action_msgs:cobot_interfaces:control_msgs:cv_bridge:geometry_msgs:launch_ros:message_filters:mycobot_driver:python3-numpy:python3-opencv:python3-yaml:rclpy:realsense2_camera:sensor_msgs:std_msgs:tf2_ros:trajectory_msgs

@@ -1,0 +1,30 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from cobot_interfaces/srv/LocateBlocks.srv
+// generated code does not contain a copyright notice
+
+#include "cobot_interfaces/msg/BlockInfo.idl"
+
+module cobot_interfaces {
+  module srv {
+    @verbatim (language="comment", text=
+      "/arm/locate_blocks: report every block the camera sees, in the arm base frame.")
+    struct LocateBlocks_Request {
+      @verbatim (language="comment", text=
+        "only this colour; \"\" = all colours")
+      string color;
+
+      @verbatim (language="comment", text=
+        "true = move the arm to its home pose (out of the camera view) first")
+      boolean go_home;
+    };
+    struct LocateBlocks_Response {
+      boolean success;
+
+      string message;
+
+      @verbatim (language="comment", text=
+        "sorted: graspable first, then by confidence")
+      sequence<cobot_interfaces::msg::BlockInfo> blocks;
+    };
+  };
+};

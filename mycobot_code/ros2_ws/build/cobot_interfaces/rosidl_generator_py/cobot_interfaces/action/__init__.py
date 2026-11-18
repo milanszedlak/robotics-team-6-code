@@ -1,0 +1,14 @@
+from cobot_interfaces.action._pick_block import PickBlock  # noqa: F401
+from cobot_interfaces.action._pick_block import PickBlock_GetResult_Event  # noqa: F401
+from cobot_interfaces.action._pick_block import PickBlock_GetResult_Request  # noqa: F401
+from cobot_interfaces.action._pick_block import PickBlock_GetResult_Response  # noqa: F401
+from cobot_interfaces.action._pick_block import PickBlock_SendGoal_Event  # noqa: F401
+from cobot_interfaces.action._pick_block import PickBlock_SendGoal_Request  # noqa: F401
+from cobot_interfaces.action._pick_block import PickBlock_SendGoal_Response  # noqa: F401
+from cobot_interfaces.action._place_block import PlaceBlock  # noqa: F401
+from cobot_interfaces.action._place_block import PlaceBlock_GetResult_Event  # noqa: F401
+from cobot_interfaces.action._place_block import PlaceBlock_GetResult_Request  # noqa: F401
+from cobot_interfaces.action._place_block import PlaceBlock_GetResult_Response  # noqa: F401
+from cobot_interfaces.action._place_block import PlaceBlock_SendGoal_Event  # noqa: F401
+from cobot_interfaces.action._place_block import PlaceBlock_SendGoal_Request  # noqa: F401
+from cobot_interfaces.action._place_block import PlaceBlock_SendGoal_Response  # noqa: F401

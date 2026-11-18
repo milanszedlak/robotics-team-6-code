@@ -1,0 +1,364 @@
+[0.018s] Invoking command in '/home/student/ros2_ws/build/cobot_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/student/ros2_tutorial_workspace/install/the_simplest_python_package:/home/student/ros2_tutorial_workspace/install/python_package_with_a_node:/home/student/ros2_tutorial_workspace/install/python_package_that_uses_the_library:/home/student/ros2_tutorial_workspace/install/python_package_with_a_library:/home/student/ros2_tutorial_workspace/install/python_package_that_uses_the_services:/home/student/ros2_tutorial_workspace/install/python_package_that_uses_the_messages:/home/student/ros2_tutorial_workspace/install/python_package_that_uses_the_actions:/home/student/ros2_tutorial_workspace/install/python_package_that_uses_tf2:/home/student/ros2_tutorial_workspace/install/python_package_that_uses_parameters_and_launch_files:/home/student/ros2_tutorial_workspace/install/python_package_that_uses_geometry_msgs:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/student/ros2_ws/src/cobot_interfaces -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/student/ros2_ws/install/cobot_interfaces
+[0.324s] -- The C compiler identification is GNU 13.3.0
+[0.324s] -- The CXX compiler identification is GNU 13.3.0
+[0.324s] -- Detecting C compiler ABI info
+[0.356s] -- Detecting C compiler ABI info - done
+[0.371s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.371s] -- Detecting C compile features
+[0.372s] -- Detecting C compile features - done
+[0.388s] -- Detecting CXX compiler ABI info
+[0.554s] -- Detecting CXX compiler ABI info - done
+[0.573s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.573s] -- Detecting CXX compile features
+[0.574s] -- Detecting CXX compile features - done
+[0.578s] -- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.857s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[0.979s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[1.026s] -- Found rosidl_default_generators: 1.6.1 (/opt/ros/jazzy/share/rosidl_default_generators/cmake)
+[1.037s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.105s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.163s] -- Found rosidl_adapter: 4.6.9 (/opt/ros/jazzy/share/rosidl_adapter/cmake)
+[1.167s] -- Found std_msgs: 5.3.8 (/opt/ros/jazzy/share/std_msgs/cmake)
+[1.209s] -- Found geometry_msgs: 5.3.8 (/opt/ros/jazzy/share/geometry_msgs/cmake)
+[2.416s] -- Found ament_cmake_ros: 0.12.2 (/opt/ros/jazzy/share/ament_cmake_ros/cmake)
+[3.338s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[4.507s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[4.511s] -- Found python_cmake_module: 0.11.1 (/opt/ros/jazzy/share/python_cmake_module/cmake)
+[4.728s] -- Found PythonExtra: /usr/bin/python3  
+[5.650s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter Development NumPy Development.Module Development.Embed 
+[5.885s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[5.905s] -- Configuring done (5.9s)
+[5.977s] -- Generating done (0.0s)
+[5.993s] -- Build files have been written to: /home/student/ros2_ws/build/cobot_interfaces
+[6.006s] Invoked command in '/home/student/ros2_ws/build/cobot_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/student/ros2_tutorial_workspace/install/the_simplest_python_package:/home/student/ros2_tutorial_workspace/install/python_package_with_a_node:/home/student/ros2_tutorial_workspace/install/python_package_that_uses_the_library:/home/student/ros2_tutorial_workspace/install/python_package_with_a_library:/home/student/ros2_tutorial_workspace/install/python_package_that_uses_the_services:/home/student/ros2_tutorial_workspace/install/python_package_that_uses_the_messages:/home/student/ros2_tutorial_workspace/install/python_package_that_uses_the_actions:/home/student/ros2_tutorial_workspace/install/python_package_that_uses_tf2:/home/student/ros2_tutorial_workspace/install/python_package_that_uses_parameters_and_launch_files:/home/student/ros2_tutorial_workspace/install/python_package_that_uses_geometry_msgs:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/student/ros2_ws/src/cobot_interfaces -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/student/ros2_ws/install/cobot_interfaces
+[6.008s] Invoking command in '/home/student/ros2_ws/build/cobot_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/student/ros2_tutorial_workspace/install/the_simplest_python_package:/home/student/ros2_tutorial_workspace/install/python_package_with_a_node:/home/student/ros2_tutorial_workspace/install/python_package_that_uses_the_library:/home/student/ros2_tutorial_workspace/install/python_package_with_a_library:/home/student/ros2_tutorial_workspace/install/python_package_that_uses_the_services:/home/student/ros2_tutorial_workspace/install/python_package_that_uses_the_messages:/home/student/ros2_tutorial_workspace/install/python_package_that_uses_the_actions:/home/student/ros2_tutorial_workspace/install/python_package_that_uses_tf2:/home/student/ros2_tutorial_workspace/install/python_package_that_uses_parameters_and_launch_files:/home/student/ros2_tutorial_workspace/install/python_package_that_uses_geometry_msgs:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/student/ros2_ws/build/cobot_interfaces -- -j12 -l12
+[6.106s] [  1%] Generating type hashes for ROS interfaces
+[6.107s] [  2%] Generating Rust code for ROS interfaces
+[6.122s] [  2%] Built target ament_cmake_python_symlink_cobot_interfaces
+[6.415s] running egg_info
+[6.416s] creating cobot_interfaces.egg-info
+[6.441s] writing cobot_interfaces.egg-info/PKG-INFO
+[6.441s] writing dependency_links to cobot_interfaces.egg-info/dependency_links.txt
+[6.441s] writing top-level names to cobot_interfaces.egg-info/top_level.txt
+[6.441s] writing manifest file 'cobot_interfaces.egg-info/SOURCES.txt'
+[6.525s] reading manifest file 'cobot_interfaces.egg-info/SOURCES.txt'
+[6.526s] writing manifest file 'cobot_interfaces.egg-info/SOURCES.txt'
+[6.565s] [  2%] Built target ament_cmake_python_build_cobot_interfaces_egg
+[6.796s] [  2%] Built target cobot_interfaces__rosidl_generator_type_description
+[6.816s] [  3%] Generating C code for ROS interfaces
+[6.834s] [  4%] Generating C++ code for ROS interfaces
+[7.152s] [  4%] Built target cobot_interfaces__rs
+[8.270s] [  4%] Built target cobot_interfaces__cpp
+[8.426s] [  5%] Building C object CMakeFiles/cobot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/cobot_interfaces/msg/detail/block_target__description.c.o
+[8.426s] [  7%] Building C object CMakeFiles/cobot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/cobot_interfaces/msg/detail/block_target_array__description.c.o
+[8.428s] [  8%] Building C object CMakeFiles/cobot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/cobot_interfaces/msg/detail/block_target__functions.c.o
+[8.429s] [ 10%] Building C object CMakeFiles/cobot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/cobot_interfaces/msg/detail/block_info__description.c.o
+[8.429s] [ 10%] Building C object CMakeFiles/cobot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/cobot_interfaces/msg/detail/block_target_array__type_support.c.o
+[8.430s] [ 12%] Building C object CMakeFiles/cobot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/cobot_interfaces/msg/detail/block_info__functions.c.o
+[8.431s] [ 15%] Building C object CMakeFiles/cobot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/cobot_interfaces/srv/detail/locate_blocks__functions.c.o
+[8.432s] [ 15%] Building C object CMakeFiles/cobot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/cobot_interfaces/srv/detail/locate_blocks__description.c.o
+[8.432s] [ 11%] Building C object CMakeFiles/cobot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/cobot_interfaces/msg/detail/block_info__type_support.c.o
+[8.433s] [ 16%] Building C object CMakeFiles/cobot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/cobot_interfaces/msg/detail/block_target_array__functions.c.o
+[8.434s] [ 17%] Building C object CMakeFiles/cobot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/cobot_interfaces/msg/detail/block_target__type_support.c.o
+[8.441s] [ 18%] Building C object CMakeFiles/cobot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/cobot_interfaces/srv/detail/locate_blocks__type_support.c.o
+[8.533s] [ 20%] Building C object CMakeFiles/cobot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/cobot_interfaces/action/detail/pick_block__type_support.c.o
+[8.538s] [ 22%] Building C object CMakeFiles/cobot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/cobot_interfaces/action/detail/pick_block__functions.c.o
+[8.538s] [ 22%] Building C object CMakeFiles/cobot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/cobot_interfaces/action/detail/pick_block__description.c.o
+[8.555s] [ 23%] Building C object CMakeFiles/cobot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/cobot_interfaces/action/detail/place_block__functions.c.o
+[8.557s] [ 24%] Building C object CMakeFiles/cobot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/cobot_interfaces/action/detail/place_block__description.c.o
+[8.565s] [ 25%] Building C object CMakeFiles/cobot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/cobot_interfaces/action/detail/place_block__type_support.c.o
+[8.812s] [ 27%] Linking C shared library libcobot_interfaces__rosidl_generator_c.so
+[8.898s] [ 27%] Built target cobot_interfaces__rosidl_generator_c
+[8.927s] [ 28%] Generating C++ type support for eProsima Fast-RTPS
+[8.927s] [ 29%] Generating C type support dispatch for ROS interfaces
+[8.931s] [ 31%] Generating C type support for eProsima Fast-RTPS
+[8.931s] [ 31%] Generating C introspection for ROS interfaces
+[8.933s] [ 34%] Generating C++ type support dispatch for ROS interfaces
+[8.933s] [ 34%] Generating C++ introspection for ROS interfaces
+[10.116s] [ 36%] Building CXX object CMakeFiles/cobot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/cobot_interfaces/msg/block_info__type_support.cpp.o
+[10.116s] [ 36%] Building CXX object CMakeFiles/cobot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/cobot_interfaces/srv/locate_blocks__type_support.cpp.o
+[10.117s] [ 37%] Building CXX object CMakeFiles/cobot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/cobot_interfaces/msg/block_target__type_support.cpp.o
+[10.117s] [ 38%] Building CXX object CMakeFiles/cobot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/cobot_interfaces/action/place_block__type_support.cpp.o
+[10.120s] [ 40%] Building CXX object CMakeFiles/cobot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/cobot_interfaces/msg/block_target_array__type_support.cpp.o
+[10.121s] [ 41%] Building CXX object CMakeFiles/cobot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/cobot_interfaces/action/pick_block__type_support.cpp.o
+[10.131s] [ 42%] Building CXX object CMakeFiles/cobot_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/cobot_interfaces/msg/block_target__type_support.cpp.o
+[10.135s] [ 43%] Building CXX object CMakeFiles/cobot_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/cobot_interfaces/msg/block_target_array__type_support.cpp.o
+[10.205s] [ 44%] Building CXX object CMakeFiles/cobot_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/cobot_interfaces/msg/block_info__type_support.cpp.o
+[10.236s] [ 45%] Building CXX object CMakeFiles/cobot_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/cobot_interfaces/srv/locate_blocks__type_support.cpp.o
+[10.298s] [ 47%] Building CXX object CMakeFiles/cobot_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/cobot_interfaces/action/pick_block__type_support.cpp.o
+[10.357s] [ 48%] Building CXX object CMakeFiles/cobot_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/cobot_interfaces/action/place_block__type_support.cpp.o
+[10.496s] [ 49%] Linking CXX shared library libcobot_interfaces__rosidl_typesupport_c.so
+[10.617s] [ 49%] Built target cobot_interfaces__rosidl_typesupport_c
+[10.759s] [ 51%] Building CXX object CMakeFiles/cobot_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/cobot_interfaces/msg/detail/block_target_array__type_support.cpp.o
+[10.760s] [ 51%] Building CXX object CMakeFiles/cobot_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/cobot_interfaces/action/detail/pick_block__type_support.cpp.o
+[10.760s] [ 52%] Building CXX object CMakeFiles/cobot_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/cobot_interfaces/msg/detail/block_info__type_support.cpp.o
+[10.763s] [ 54%] Building CXX object CMakeFiles/cobot_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/cobot_interfaces/msg/detail/block_target__type_support.cpp.o
+[10.764s] [ 55%] Building CXX object CMakeFiles/cobot_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/cobot_interfaces/srv/detail/locate_blocks__type_support.cpp.o
+[10.840s] [ 56%] Building CXX object CMakeFiles/cobot_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/cobot_interfaces/action/detail/place_block__type_support.cpp.o
+[11.053s] [ 57%] Building CXX object CMakeFiles/cobot_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/cobot_interfaces/msg/detail/dds_fastrtps/block_target__type_support.cpp.o
+[11.074s] [ 58%] Building CXX object CMakeFiles/cobot_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/cobot_interfaces/msg/detail/dds_fastrtps/block_target_array__type_support.cpp.o
+[11.106s] [ 60%] Building C object CMakeFiles/cobot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/cobot_interfaces/msg/detail/block_target__type_support.c.o
+[11.199s] [ 61%] Building C object CMakeFiles/cobot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/cobot_interfaces/msg/detail/block_target_array__type_support.c.o
+[11.292s] [ 62%] Building C object CMakeFiles/cobot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/cobot_interfaces/msg/detail/block_info__type_support.c.o
+[11.375s] [ 63%] Building C object CMakeFiles/cobot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/cobot_interfaces/srv/detail/locate_blocks__type_support.c.o
+[11.396s] [ 64%] Building CXX object CMakeFiles/cobot_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/cobot_interfaces/msg/detail/dds_fastrtps/block_info__type_support.cpp.o
+[11.474s] [ 65%] Building C object CMakeFiles/cobot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/cobot_interfaces/action/detail/pick_block__type_support.c.o
+[11.531s] [ 67%] Building CXX object CMakeFiles/cobot_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/cobot_interfaces/srv/detail/dds_fastrtps/locate_blocks__type_support.cpp.o
+[11.574s] [ 68%] Building CXX object CMakeFiles/cobot_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/cobot_interfaces/action/detail/dds_fastrtps/pick_block__type_support.cpp.o
+[11.647s] [ 69%] Building C object CMakeFiles/cobot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/cobot_interfaces/action/detail/place_block__type_support.c.o
+[11.740s] [ 70%] Building CXX object CMakeFiles/cobot_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/cobot_interfaces/action/detail/dds_fastrtps/place_block__type_support.cpp.o
+[11.844s] [ 71%] Linking C shared library libcobot_interfaces__rosidl_typesupport_introspection_c.so
+[11.943s] [ 72%] Linking CXX shared library libcobot_interfaces__rosidl_typesupport_cpp.so
+[11.956s] [ 72%] Built target cobot_interfaces__rosidl_typesupport_introspection_c
+[12.030s] [ 74%] Building CXX object CMakeFiles/cobot_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/cobot_interfaces/msg/detail/block_target_array__type_support_c.cpp.o
+[12.032s] [ 75%] Building CXX object CMakeFiles/cobot_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/cobot_interfaces/msg/detail/block_info__type_support_c.cpp.o
+[12.035s] [ 76%] Building CXX object CMakeFiles/cobot_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/cobot_interfaces/msg/detail/block_target__type_support_c.cpp.o
+[12.161s] [ 77%] Building CXX object CMakeFiles/cobot_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/cobot_interfaces/srv/detail/locate_blocks__type_support_c.cpp.o
+[12.200s] [ 78%] Building CXX object CMakeFiles/cobot_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/cobot_interfaces/action/detail/pick_block__type_support_c.cpp.o
+[12.223s] [ 78%] Built target cobot_interfaces__rosidl_typesupport_cpp
+[12.245s] [ 80%] Building CXX object CMakeFiles/cobot_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/cobot_interfaces/action/detail/place_block__type_support_c.cpp.o
+[12.693s] [ 81%] Linking CXX shared library libcobot_interfaces__rosidl_typesupport_introspection_cpp.so
+[12.938s] [ 81%] Built target cobot_interfaces__rosidl_typesupport_introspection_cpp
+[13.524s] [ 82%] Linking CXX shared library libcobot_interfaces__rosidl_typesupport_fastrtps_c.so
+[13.635s] [ 82%] Built target cobot_interfaces__rosidl_typesupport_fastrtps_c
+[13.850s] [ 83%] Linking CXX shared library libcobot_interfaces__rosidl_typesupport_fastrtps_cpp.so
+[13.977s] [ 83%] Built target cobot_interfaces__rosidl_typesupport_fastrtps_cpp
+[14.009s] [ 83%] Built target cobot_interfaces
+[14.042s] [ 84%] Generating Python code for ROS interfaces
+[16.332s] [ 84%] Built target cobot_interfaces__py
+[16.369s] [ 85%] Building C object CMakeFiles/cobot_interfaces__rosidl_generator_py.dir/rosidl_generator_py/cobot_interfaces/action/_place_block_s.c.o
+[16.370s] [ 87%] Building C object CMakeFiles/cobot_interfaces__rosidl_generator_py.dir/rosidl_generator_py/cobot_interfaces/msg/_block_target_s.c.o
+[16.371s] [ 88%] Building C object CMakeFiles/cobot_interfaces__rosidl_generator_py.dir/rosidl_generator_py/cobot_interfaces/msg/_block_target_array_s.c.o
+[16.372s] [ 90%] Building C object CMakeFiles/cobot_interfaces__rosidl_generator_py.dir/rosidl_generator_py/cobot_interfaces/srv/_locate_blocks_s.c.o
+[16.372s] [ 90%] Building C object CMakeFiles/cobot_interfaces__rosidl_generator_py.dir/rosidl_generator_py/cobot_interfaces/msg/_block_info_s.c.o
+[16.373s] [ 91%] Building C object CMakeFiles/cobot_interfaces__rosidl_generator_py.dir/rosidl_generator_py/cobot_interfaces/action/_pick_block_s.c.o
+[16.746s] [ 92%] Linking C shared library libcobot_interfaces__rosidl_generator_py.so
+[16.822s] [ 92%] Built target cobot_interfaces__rosidl_generator_py
+[16.858s] [ 94%] Building C object CMakeFiles/cobot_interfaces_s__rosidl_typesupport_c.dir/rosidl_generator_py/cobot_interfaces/_cobot_interfaces_s.ep.rosidl_typesupport_c.c.o
+[16.859s] [ 95%] Building C object CMakeFiles/cobot_interfaces_s__rosidl_typesupport_fastrtps_c.dir/rosidl_generator_py/cobot_interfaces/_cobot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c.o
+[16.861s] [ 96%] Building C object CMakeFiles/cobot_interfaces_s__rosidl_typesupport_introspection_c.dir/rosidl_generator_py/cobot_interfaces/_cobot_interfaces_s.ep.rosidl_typesupport_introspection_c.c.o
+[17.074s] [ 97%] Linking C shared module rosidl_generator_py/cobot_interfaces/cobot_interfaces_s__rosidl_typesupport_c.so
+[17.076s] [ 98%] Linking C shared module rosidl_generator_py/cobot_interfaces/cobot_interfaces_s__rosidl_typesupport_fastrtps_c.so
+[17.127s] [ 98%] Built target cobot_interfaces_s__rosidl_typesupport_c
+[17.138s] [ 98%] Built target cobot_interfaces_s__rosidl_typesupport_fastrtps_c
+[17.152s] [100%] Linking C shared module rosidl_generator_py/cobot_interfaces/cobot_interfaces_s__rosidl_typesupport_introspection_c.so
+[17.212s] [100%] Built target cobot_interfaces_s__rosidl_typesupport_introspection_c
+[17.234s] Invoked command in '/home/student/ros2_ws/build/cobot_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/student/ros2_tutorial_workspace/install/the_simplest_python_package:/home/student/ros2_tutorial_workspace/install/python_package_with_a_node:/home/student/ros2_tutorial_workspace/install/python_package_that_uses_the_library:/home/student/ros2_tutorial_workspace/install/python_package_with_a_library:/home/student/ros2_tutorial_workspace/install/python_package_that_uses_the_services:/home/student/ros2_tutorial_workspace/install/python_package_that_uses_the_messages:/home/student/ros2_tutorial_workspace/install/python_package_that_uses_the_actions:/home/student/ros2_tutorial_workspace/install/python_package_that_uses_tf2:/home/student/ros2_tutorial_workspace/install/python_package_that_uses_parameters_and_launch_files:/home/student/ros2_tutorial_workspace/install/python_package_that_uses_geometry_msgs:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/student/ros2_ws/build/cobot_interfaces -- -j12 -l12
+[17.253s] Invoking command in '/home/student/ros2_ws/build/cobot_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/student/ros2_tutorial_workspace/install/the_simplest_python_package:/home/student/ros2_tutorial_workspace/install/python_package_with_a_node:/home/student/ros2_tutorial_workspace/install/python_package_that_uses_the_library:/home/student/ros2_tutorial_workspace/install/python_package_with_a_library:/home/student/ros2_tutorial_workspace/install/python_package_that_uses_the_services:/home/student/ros2_tutorial_workspace/install/python_package_that_uses_the_messages:/home/student/ros2_tutorial_workspace/install/python_package_that_uses_the_actions:/home/student/ros2_tutorial_workspace/install/python_package_that_uses_tf2:/home/student/ros2_tutorial_workspace/install/python_package_that_uses_parameters_and_launch_files:/home/student/ros2_tutorial_workspace/install/python_package_that_uses_geometry_msgs:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/student/ros2_ws/build/cobot_interfaces
+[17.264s] -- Install configuration: ""
+[17.265s] -- Execute custom install script
+[17.266s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/share/ament_index/resource_index/rosidl_interfaces/cobot_interfaces
+[17.280s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/share/cobot_interfaces/msg/BlockTarget.json
+[17.301s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/share/cobot_interfaces/msg/BlockTargetArray.json
+[17.316s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/share/cobot_interfaces/msg/BlockInfo.json
+[17.330s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/share/cobot_interfaces/srv/LocateBlocks.json
+[17.346s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/share/cobot_interfaces/action/PickBlock.json
+[17.363s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/share/cobot_interfaces/action/PlaceBlock.json
+[17.380s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/action/detail/pick_block__functions.h
+[17.397s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/action/detail/pick_block__struct.h
+[17.417s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/action/detail/pick_block__type_support.h
+[17.435s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/action/detail/place_block__functions.h
+[17.455s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/action/detail/place_block__struct.h
+[17.473s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/action/detail/place_block__type_support.h
+[17.495s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/action/pick_block.h
+[17.511s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/action/place_block.h
+[17.531s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/msg/block_info.h
+[17.546s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/msg/block_target.h
+[17.564s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/msg/block_target_array.h
+[17.584s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/msg/detail/block_info__functions.h
+[17.603s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/msg/detail/block_info__struct.h
+[17.618s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/msg/detail/block_info__type_support.h
+[17.638s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/msg/detail/block_target__functions.h
+[17.653s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/msg/detail/block_target__struct.h
+[17.667s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/msg/detail/block_target__type_support.h
+[17.680s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/msg/detail/block_target_array__functions.h
+[17.694s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/msg/detail/block_target_array__struct.h
+[17.710s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/msg/detail/block_target_array__type_support.h
+[17.724s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/msg/rosidl_generator_c__visibility_control.h
+[17.739s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/srv/detail/locate_blocks__functions.h
+[17.753s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/srv/detail/locate_blocks__struct.h
+[17.768s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/srv/detail/locate_blocks__type_support.h
+[17.784s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/srv/locate_blocks.h
+[17.798s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/share/cobot_interfaces/environment/library_path.sh
+[17.813s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/share/cobot_interfaces/environment/library_path.dsv
+[17.825s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/action/detail/pick_block__rosidl_typesupport_fastrtps_c.h
+[17.837s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/action/detail/place_block__rosidl_typesupport_fastrtps_c.h
+[17.849s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/msg/detail/block_info__rosidl_typesupport_fastrtps_c.h
+[17.862s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/msg/detail/block_target__rosidl_typesupport_fastrtps_c.h
+[17.873s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/msg/detail/block_target_array__rosidl_typesupport_fastrtps_c.h
+[17.885s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[17.897s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/srv/detail/locate_blocks__rosidl_typesupport_fastrtps_c.h
+[17.909s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/action/detail/pick_block__rosidl_typesupport_introspection_c.h
+[17.920s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/action/detail/place_block__rosidl_typesupport_introspection_c.h
+[17.934s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/msg/detail/block_info__rosidl_typesupport_introspection_c.h
+[17.947s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/msg/detail/block_target__rosidl_typesupport_introspection_c.h
+[17.957s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/msg/detail/block_target_array__rosidl_typesupport_introspection_c.h
+[17.969s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[17.980s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/srv/detail/locate_blocks__rosidl_typesupport_introspection_c.h
+[17.993s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/action/detail/pick_block__builder.hpp
+[18.006s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/action/detail/pick_block__struct.hpp
+[18.017s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/action/detail/pick_block__traits.hpp
+[18.030s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/action/detail/pick_block__type_support.hpp
+[18.043s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/action/detail/place_block__builder.hpp
+[18.056s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/action/detail/place_block__struct.hpp
+[18.071s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/action/detail/place_block__traits.hpp
+[18.086s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/action/detail/place_block__type_support.hpp
+[18.100s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/action/pick_block.hpp
+[18.114s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/action/place_block.hpp
+[18.128s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/msg/block_info.hpp
+[18.141s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/msg/block_target.hpp
+[18.157s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/msg/block_target_array.hpp
+[18.173s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/msg/detail/block_info__builder.hpp
+[18.192s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/msg/detail/block_info__struct.hpp
+[18.208s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/msg/detail/block_info__traits.hpp
+[18.232s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/msg/detail/block_info__type_support.hpp
+[18.254s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/msg/detail/block_target__builder.hpp
+[18.270s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/msg/detail/block_target__struct.hpp
+[18.286s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/msg/detail/block_target__traits.hpp
+[18.304s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/msg/detail/block_target__type_support.hpp
+[18.322s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/msg/detail/block_target_array__builder.hpp
+[18.340s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/msg/detail/block_target_array__struct.hpp
+[18.358s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/msg/detail/block_target_array__traits.hpp
+[18.375s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/msg/detail/block_target_array__type_support.hpp
+[18.393s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/msg/rosidl_generator_cpp__visibility_control.hpp
+[18.409s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/srv/detail/locate_blocks__builder.hpp
+[18.425s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/srv/detail/locate_blocks__struct.hpp
+[18.440s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/srv/detail/locate_blocks__traits.hpp
+[18.456s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/srv/detail/locate_blocks__type_support.hpp
+[18.469s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/srv/locate_blocks.hpp
+[18.484s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/action/detail/pick_block__rosidl_typesupport_fastrtps_cpp.hpp
+[18.496s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/action/detail/place_block__rosidl_typesupport_fastrtps_cpp.hpp
+[18.510s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/msg/detail/block_info__rosidl_typesupport_fastrtps_cpp.hpp
+[18.522s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/msg/detail/block_target__rosidl_typesupport_fastrtps_cpp.hpp
+[18.535s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/msg/detail/block_target_array__rosidl_typesupport_fastrtps_cpp.hpp
+[18.550s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[18.564s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/srv/detail/locate_blocks__rosidl_typesupport_fastrtps_cpp.hpp
+[18.579s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/action/detail/pick_block__rosidl_typesupport_introspection_cpp.hpp
+[18.591s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/action/detail/place_block__rosidl_typesupport_introspection_cpp.hpp
+[18.604s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/msg/detail/block_info__rosidl_typesupport_introspection_cpp.hpp
+[18.617s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/msg/detail/block_target__rosidl_typesupport_introspection_cpp.hpp
+[18.627s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/msg/detail/block_target_array__rosidl_typesupport_introspection_cpp.hpp
+[18.639s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/include/cobot_interfaces/cobot_interfaces/srv/detail/locate_blocks__rosidl_typesupport_introspection_cpp.hpp
+[18.650s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/share/cobot_interfaces/environment/pythonpath.sh
+[18.666s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/share/cobot_interfaces/environment/pythonpath.dsv
+[18.678s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/lib/python3.12/site-packages/cobot_interfaces-0.1.0-py3.12.egg-info/PKG-INFO
+[18.688s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/lib/python3.12/site-packages/cobot_interfaces-0.1.0-py3.12.egg-info/SOURCES.txt
+[18.702s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/lib/python3.12/site-packages/cobot_interfaces-0.1.0-py3.12.egg-info/dependency_links.txt
+[18.716s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/lib/python3.12/site-packages/cobot_interfaces-0.1.0-py3.12.egg-info/top_level.txt
+[18.730s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/lib/python3.12/site-packages/cobot_interfaces/__init__.py
+[18.744s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/lib/python3.12/site-packages/cobot_interfaces/_cobot_interfaces_s.ep.rosidl_typesupport_c.c
+[18.757s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/lib/python3.12/site-packages/cobot_interfaces/_cobot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
+[18.769s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/lib/python3.12/site-packages/cobot_interfaces/_cobot_interfaces_s.ep.rosidl_typesupport_introspection_c.c
+[18.781s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/lib/python3.12/site-packages/cobot_interfaces/action/__init__.py
+[18.794s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/lib/python3.12/site-packages/cobot_interfaces/action/_pick_block.py
+[18.806s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/lib/python3.12/site-packages/cobot_interfaces/action/_pick_block_s.c
+[18.820s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/lib/python3.12/site-packages/cobot_interfaces/action/_place_block.py
+[18.834s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/lib/python3.12/site-packages/cobot_interfaces/action/_place_block_s.c
+[18.849s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/lib/python3.12/site-packages/cobot_interfaces/cobot_interfaces_s__rosidl_typesupport_c.so
+[18.862s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/lib/python3.12/site-packages/cobot_interfaces/cobot_interfaces_s__rosidl_typesupport_fastrtps_c.so
+[18.874s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/lib/python3.12/site-packages/cobot_interfaces/cobot_interfaces_s__rosidl_typesupport_introspection_c.so
+[18.887s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/lib/python3.12/site-packages/cobot_interfaces/msg/__init__.py
+[18.898s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/lib/python3.12/site-packages/cobot_interfaces/msg/_block_info.py
+[18.909s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/lib/python3.12/site-packages/cobot_interfaces/msg/_block_info_s.c
+[18.923s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/lib/python3.12/site-packages/cobot_interfaces/msg/_block_target.py
+[18.934s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/lib/python3.12/site-packages/cobot_interfaces/msg/_block_target_array.py
+[18.945s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/lib/python3.12/site-packages/cobot_interfaces/msg/_block_target_array_s.c
+[18.957s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/lib/python3.12/site-packages/cobot_interfaces/msg/_block_target_s.c
+[18.969s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/lib/python3.12/site-packages/cobot_interfaces/srv/__init__.py
+[18.982s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/lib/python3.12/site-packages/cobot_interfaces/srv/_locate_blocks.py
+[18.994s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/lib/python3.12/site-packages/cobot_interfaces/srv/_locate_blocks_s.c
+[19.007s] -- Up-to-date symlink: /home/student/ros2_ws/install/cobot_interfaces/lib/python3.12/site-packages/cobot_interfaces/cobot_interfaces_s__rosidl_typesupport_fastrtps_c.so
+[19.007s] -- Up-to-date symlink: /home/student/ros2_ws/install/cobot_interfaces/lib/python3.12/site-packages/cobot_interfaces/cobot_interfaces_s__rosidl_typesupport_introspection_c.so
+[19.008s] -- Up-to-date symlink: /home/student/ros2_ws/install/cobot_interfaces/lib/python3.12/site-packages/cobot_interfaces/cobot_interfaces_s__rosidl_typesupport_c.so
+[19.008s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/share/cobot_interfaces/rust/Cargo.toml
+[19.021s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/share/cobot_interfaces/rust/build.rs
+[19.032s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/share/cobot_interfaces/rust/src/action.rs
+[19.045s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/share/cobot_interfaces/rust/src/action/rmw.rs
+[19.057s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/share/cobot_interfaces/rust/src/lib.rs
+[19.070s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/share/cobot_interfaces/rust/src/msg.rs
+[19.082s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/share/cobot_interfaces/rust/src/msg/rmw.rs
+[19.092s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/share/cobot_interfaces/rust/src/srv.rs
+[19.105s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/share/cobot_interfaces/rust/src/srv/rmw.rs
+[19.116s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/share/cobot_interfaces/msg/BlockTarget.idl
+[19.128s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/share/cobot_interfaces/msg/BlockTargetArray.idl
+[19.141s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/share/cobot_interfaces/msg/BlockInfo.idl
+[19.153s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/share/cobot_interfaces/srv/LocateBlocks.idl
+[19.166s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/share/cobot_interfaces/action/PickBlock.idl
+[19.178s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/share/cobot_interfaces/action/PlaceBlock.idl
+[19.190s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/share/cobot_interfaces/msg/BlockTarget.msg
+[19.202s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/share/cobot_interfaces/msg/BlockTargetArray.msg
+[19.214s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/share/cobot_interfaces/msg/BlockInfo.msg
+[19.231s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/share/cobot_interfaces/srv/LocateBlocks.srv
+[19.247s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/share/cobot_interfaces/action/PickBlock.action
+[19.260s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/share/cobot_interfaces/action/PlaceBlock.action
+[19.276s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/share/ament_index/resource_index/package_run_dependencies/cobot_interfaces
+[19.288s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/share/ament_index/resource_index/parent_prefix_path/cobot_interfaces
+[19.302s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/share/cobot_interfaces/environment/ament_prefix_path.sh
+[19.317s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/share/cobot_interfaces/environment/ament_prefix_path.dsv
+[19.331s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/share/cobot_interfaces/environment/path.sh
+[19.345s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/share/cobot_interfaces/environment/path.dsv
+[19.358s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/share/cobot_interfaces/local_setup.bash
+[19.370s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/share/cobot_interfaces/local_setup.sh
+[19.384s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/share/cobot_interfaces/local_setup.zsh
+[19.398s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/share/cobot_interfaces/local_setup.dsv
+[19.412s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/share/cobot_interfaces/package.dsv
+[19.424s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/share/ament_index/resource_index/packages/cobot_interfaces
+[19.439s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/share/cobot_interfaces/cmake/rosidl_cmake-extras.cmake
+[19.456s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/share/cobot_interfaces/cmake/ament_cmake_export_dependencies-extras.cmake
+[19.471s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/share/cobot_interfaces/cmake/ament_cmake_export_include_directories-extras.cmake
+[19.484s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/share/cobot_interfaces/cmake/ament_cmake_export_libraries-extras.cmake
+[19.497s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/share/cobot_interfaces/cmake/ament_cmake_export_targets-extras.cmake
+[19.510s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/share/cobot_interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[19.524s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/share/cobot_interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[19.538s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/share/cobot_interfaces/cmake/rosidl_cmake_aggregate_target-extras.cmake
+[19.554s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/share/cobot_interfaces/cmake/cobot_interfacesConfig.cmake
+[19.569s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/share/cobot_interfaces/cmake/cobot_interfacesConfig-version.cmake
+[19.583s] -- Symlinking: /home/student/ros2_ws/install/cobot_interfaces/share/cobot_interfaces/package.xml
+[19.596s] -- Installing: /home/student/ros2_ws/install/cobot_interfaces/lib/libcobot_interfaces__rosidl_generator_c.so
+[19.597s] -- Set non-toolchain portion of runtime path of "/home/student/ros2_ws/install/cobot_interfaces/lib/libcobot_interfaces__rosidl_generator_c.so" to ""
+[19.597s] -- Installing: /home/student/ros2_ws/install/cobot_interfaces/lib/libcobot_interfaces__rosidl_typesupport_fastrtps_c.so
+[19.598s] -- Set non-toolchain portion of runtime path of "/home/student/ros2_ws/install/cobot_interfaces/lib/libcobot_interfaces__rosidl_typesupport_fastrtps_c.so" to ""
+[19.599s] -- Installing: /home/student/ros2_ws/install/cobot_interfaces/lib/libcobot_interfaces__rosidl_typesupport_introspection_c.so
+[19.599s] -- Set non-toolchain portion of runtime path of "/home/student/ros2_ws/install/cobot_interfaces/lib/libcobot_interfaces__rosidl_typesupport_introspection_c.so" to ""
+[19.599s] -- Installing: /home/student/ros2_ws/install/cobot_interfaces/lib/libcobot_interfaces__rosidl_typesupport_c.so
+[19.599s] -- Set non-toolchain portion of runtime path of "/home/student/ros2_ws/install/cobot_interfaces/lib/libcobot_interfaces__rosidl_typesupport_c.so" to ""
+[19.599s] -- Installing: /home/student/ros2_ws/install/cobot_interfaces/lib/libcobot_interfaces__rosidl_typesupport_fastrtps_cpp.so
+[19.600s] -- Set non-toolchain portion of runtime path of "/home/student/ros2_ws/install/cobot_interfaces/lib/libcobot_interfaces__rosidl_typesupport_fastrtps_cpp.so" to ""
+[19.600s] -- Installing: /home/student/ros2_ws/install/cobot_interfaces/lib/libcobot_interfaces__rosidl_typesupport_introspection_cpp.so
+[19.601s] -- Set non-toolchain portion of runtime path of "/home/student/ros2_ws/install/cobot_interfaces/lib/libcobot_interfaces__rosidl_typesupport_introspection_cpp.so" to ""
+[19.601s] -- Installing: /home/student/ros2_ws/install/cobot_interfaces/lib/libcobot_interfaces__rosidl_typesupport_cpp.so
+[19.602s] -- Set non-toolchain portion of runtime path of "/home/student/ros2_ws/install/cobot_interfaces/lib/libcobot_interfaces__rosidl_typesupport_cpp.so" to ""
+[19.707s] Listing '/home/student/ros2_ws/install/cobot_interfaces/lib/python3.12/site-packages/cobot_interfaces'...
+[19.707s] Compiling '/home/student/ros2_ws/install/cobot_interfaces/lib/python3.12/site-packages/cobot_interfaces/__init__.py'...
+[19.707s] Listing '/home/student/ros2_ws/install/cobot_interfaces/lib/python3.12/site-packages/cobot_interfaces/action'...
+[19.708s] Compiling '/home/student/ros2_ws/install/cobot_interfaces/lib/python3.12/site-packages/cobot_interfaces/action/__init__.py'...
+[19.708s] Compiling '/home/student/ros2_ws/install/cobot_interfaces/lib/python3.12/site-packages/cobot_interfaces/action/_pick_block.py'...
+[19.708s] Compiling '/home/student/ros2_ws/install/cobot_interfaces/lib/python3.12/site-packages/cobot_interfaces/action/_place_block.py'...
+[19.708s] Listing '/home/student/ros2_ws/install/cobot_interfaces/lib/python3.12/site-packages/cobot_interfaces/msg'...
+[19.708s] Compiling '/home/student/ros2_ws/install/cobot_interfaces/lib/python3.12/site-packages/cobot_interfaces/msg/__init__.py'...
+[19.708s] Compiling '/home/student/ros2_ws/install/cobot_interfaces/lib/python3.12/site-packages/cobot_interfaces/msg/_block_info.py'...
+[19.708s] Compiling '/home/student/ros2_ws/install/cobot_interfaces/lib/python3.12/site-packages/cobot_interfaces/msg/_block_target.py'...
+[19.708s] Compiling '/home/student/ros2_ws/install/cobot_interfaces/lib/python3.12/site-packages/cobot_interfaces/msg/_block_target_array.py'...
+[19.708s] Listing '/home/student/ros2_ws/install/cobot_interfaces/lib/python3.12/site-packages/cobot_interfaces/srv'...
+[19.708s] Compiling '/home/student/ros2_ws/install/cobot_interfaces/lib/python3.12/site-packages/cobot_interfaces/srv/__init__.py'...
+[19.708s] Compiling '/home/student/ros2_ws/install/cobot_interfaces/lib/python3.12/site-packages/cobot_interfaces/srv/_locate_blocks.py'...
+[19.716s] -- Installing: /home/student/ros2_ws/install/cobot_interfaces/lib/libcobot_interfaces__rosidl_generator_py.so
+[19.716s] -- Set non-toolchain portion of runtime path of "/home/student/ros2_ws/install/cobot_interfaces/lib/libcobot_interfaces__rosidl_generator_py.so" to ""
+[19.716s] -- Installing: /home/student/ros2_ws/install/cobot_interfaces/share/cobot_interfaces/cmake/export_cobot_interfaces__rosidl_generator_cExport.cmake
+[19.717s] -- Installing: /home/student/ros2_ws/install/cobot_interfaces/share/cobot_interfaces/cmake/export_cobot_interfaces__rosidl_generator_cExport-noconfig.cmake
+[19.717s] -- Installing: /home/student/ros2_ws/install/cobot_interfaces/share/cobot_interfaces/cmake/export_cobot_interfaces__rosidl_typesupport_fastrtps_cExport.cmake
+[19.717s] -- Installing: /home/student/ros2_ws/install/cobot_interfaces/share/cobot_interfaces/cmake/export_cobot_interfaces__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[19.718s] -- Installing: /home/student/ros2_ws/install/cobot_interfaces/share/cobot_interfaces/cmake/cobot_interfaces__rosidl_typesupport_introspection_cExport.cmake
+[19.718s] -- Installing: /home/student/ros2_ws/install/cobot_interfaces/share/cobot_interfaces/cmake/cobot_interfaces__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[19.718s] -- Installing: /home/student/ros2_ws/install/cobot_interfaces/share/cobot_interfaces/cmake/cobot_interfaces__rosidl_typesupport_cExport.cmake
+[19.718s] -- Installing: /home/student/ros2_ws/install/cobot_interfaces/share/cobot_interfaces/cmake/cobot_interfaces__rosidl_typesupport_cExport-noconfig.cmake
+[19.718s] -- Installing: /home/student/ros2_ws/install/cobot_interfaces/share/cobot_interfaces/cmake/export_cobot_interfaces__rosidl_generator_cppExport.cmake
+[19.718s] -- Installing: /home/student/ros2_ws/install/cobot_interfaces/share/cobot_interfaces/cmake/export_cobot_interfaces__rosidl_typesupport_fastrtps_cppExport.cmake
+[19.718s] -- Installing: /home/student/ros2_ws/install/cobot_interfaces/share/cobot_interfaces/cmake/export_cobot_interfaces__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[19.718s] -- Installing: /home/student/ros2_ws/install/cobot_interfaces/share/cobot_interfaces/cmake/cobot_interfaces__rosidl_typesupport_introspection_cppExport.cmake
+[19.718s] -- Installing: /home/student/ros2_ws/install/cobot_interfaces/share/cobot_interfaces/cmake/cobot_interfaces__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[19.718s] -- Installing: /home/student/ros2_ws/install/cobot_interfaces/share/cobot_interfaces/cmake/cobot_interfaces__rosidl_typesupport_cppExport.cmake
+[19.719s] -- Installing: /home/student/ros2_ws/install/cobot_interfaces/share/cobot_interfaces/cmake/cobot_interfaces__rosidl_typesupport_cppExport-noconfig.cmake
+[19.719s] -- Installing: /home/student/ros2_ws/install/cobot_interfaces/share/cobot_interfaces/cmake/export_cobot_interfaces__rosidl_generator_pyExport.cmake
+[19.719s] -- Installing: /home/student/ros2_ws/install/cobot_interfaces/share/cobot_interfaces/cmake/export_cobot_interfaces__rosidl_generator_pyExport-noconfig.cmake
+[19.722s] Invoked command in '/home/student/ros2_ws/build/cobot_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/student/ros2_tutorial_workspace/install/the_simplest_python_package:/home/student/ros2_tutorial_workspace/install/python_package_with_a_node:/home/student/ros2_tutorial_workspace/install/python_package_that_uses_the_library:/home/student/ros2_tutorial_workspace/install/python_package_with_a_library:/home/student/ros2_tutorial_workspace/install/python_package_that_uses_the_services:/home/student/ros2_tutorial_workspace/install/python_package_that_uses_the_messages:/home/student/ros2_tutorial_workspace/install/python_package_that_uses_the_actions:/home/student/ros2_tutorial_workspace/install/python_package_that_uses_tf2:/home/student/ros2_tutorial_workspace/install/python_package_that_uses_parameters_and_launch_files:/home/student/ros2_tutorial_workspace/install/python_package_that_uses_geometry_msgs:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/student/ros2_ws/build/cobot_interfaces
