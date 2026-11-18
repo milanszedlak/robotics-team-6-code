@@ -1,0 +1,20 @@
+{
+  "package_name": "cobot_interfaces",
+  "output_dir": "/home/student/ros2_ws/build/cobot_interfaces/rosidl_generator_type_description/cobot_interfaces",
+  "idl_tuples": [
+    "/home/student/ros2_ws/build/cobot_interfaces/rosidl_adapter/cobot_interfaces:msg/BlockTarget.idl",
+    "/home/student/ros2_ws/build/cobot_interfaces/rosidl_adapter/cobot_interfaces:msg/BlockTargetArray.idl",
+    "/home/student/ros2_ws/build/cobot_interfaces/rosidl_adapter/cobot_interfaces:msg/BlockInfo.idl",
+    "/home/student/ros2_ws/build/cobot_interfaces/rosidl_adapter/cobot_interfaces:srv/LocateBlocks.idl",
+    "/home/student/ros2_ws/build/cobot_interfaces/rosidl_adapter/cobot_interfaces:action/PickBlock.idl",
+    "/home/student/ros2_ws/build/cobot_interfaces/rosidl_adapter/cobot_interfaces:action/PlaceBlock.idl"
+  ],
+  "include_paths": [
+    "std_msgs:/opt/ros/jazzy/share/std_msgs",
+    "builtin_interfaces:/opt/ros/jazzy/share/builtin_interfaces",
+    "geometry_msgs:/opt/ros/jazzy/share/geometry_msgs",
+    "service_msgs:/opt/ros/jazzy/share/service_msgs",
+    "action_msgs:/opt/ros/jazzy/share/action_msgs",
+    "unique_identifier_msgs:/opt/ros/jazzy/share/unique_identifier_msgs"
+  ]
+}

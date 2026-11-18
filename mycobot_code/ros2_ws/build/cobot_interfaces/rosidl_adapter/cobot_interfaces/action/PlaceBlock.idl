@@ -1,0 +1,35 @@
+// generated from rosidl_adapter/resource/action.idl.em
+// with input from cobot_interfaces/action/PlaceBlock.action
+// generated code does not contain a copyright notice
+
+#include "geometry_msgs/msg/Point.idl"
+
+module cobot_interfaces {
+  module action {
+    @verbatim (language="comment", text=
+      "/arm/place_block: put down / drop the block currently held." "\n"
+      "" "\n"
+      "Either a named pose (use_position = false):" "\n"
+      "  location = \"place\" (default, place_joints) | \"carry\" | \"home\"  -> move there and open the gripper" "\n"
+      "or a point (use_position = true):" "\n"
+      "  position = where the GRIPPER CENTRE should be when the fingers open, in base_link;" "\n"
+      "  the arm comes from above, descends vertically, opens, and lifts back up.")
+    struct PlaceBlock_Goal {
+      string location;
+
+      boolean use_position;
+
+      geometry_msgs::msg::Point position;
+    };
+    struct PlaceBlock_Result {
+      boolean success;
+
+      string message;
+    };
+    struct PlaceBlock_Feedback {
+      @verbatim (language="comment", text=
+        "e.g. \"moving\", \"descending\", \"releasing\", \"retreating\"")
+      string stage;
+    };
+  };
+};

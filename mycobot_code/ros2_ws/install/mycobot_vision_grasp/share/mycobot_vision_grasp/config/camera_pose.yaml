@@ -1,0 +1,31 @@
+# ★ Mounting pose of the FIXED camera: once measured, only this file needs to change
+#   (both simulation and the real robot read it)
+#
+# Describes camera_link relative to the arm base frame base_link
+#   base_link origin:   centre of the bottom of the arm base (on the joint-1 axis);
+#                       x = straight ahead of the arm, y = left, z = up
+#   camera_link origin: centre of the D435i body (for a real robot, the middle of the camera module)
+#                       camera_link +X = lens looking direction, +Y = left of the lens, +Z = up
+#
+# Angles are in DEGREES, same order as URDF: roll about X, then pitch about Y, then yaw about Z
+# (all about the fixed base axes)
+#   lens pointing straight down:                 pitch = 90
+#   lens tilted 45° down, looking back at arm:   pitch = 45, yaw = 180 (camera in front of the arm)
+camera_pose:
+  parent_frame: base_link
+  child_frame: camera_link
+  x: 0.25        # [m]
+  y: 0.00        # [m]
+  z: 0.60        # [m]
+  roll: 0.0      # [deg]
+  pitch: 90.0    # [deg]
+  yaw: 0.0       # [deg]
+
+# Simulation only: pose of the arm base in the Gazebo world (used to place the simulated camera
+# at the same relative pose). If you spawn the robot at a different x, y, z, yaw in Gazebo,
+# enter the same values here.
+robot_in_world:
+  x: 0.0
+  y: 0.0
+  z: 0.0
+  yaw: 0.0       # [deg]

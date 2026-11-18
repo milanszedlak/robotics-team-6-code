@@ -1,0 +1,47 @@
+[1.017s] Invoking command in '/home/student/ros2_ws/build/mycobot_driver': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/student/ros2_ws/build/mycobot_driver/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/student/ros2_ws/install/mycobot_driver/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/student/ros2_ws/build/mycobot_driver/build
+[1.398s] running develop
+[1.672s] Removing /home/student/ros2_ws/install/mycobot_driver/lib/python3.12/site-packages/mycobot-driver.egg-link (link to .)
+[1.719s] Invoked command in '/home/student/ros2_ws/build/mycobot_driver' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/student/ros2_ws/build/mycobot_driver/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/student/ros2_ws/install/mycobot_driver/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/student/ros2_ws/build/mycobot_driver/build
+[1.721s] Invoking command in '/home/student/ros2_ws/src/mycobot_driver': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/student/ros2_ws/build/mycobot_driver/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/student/ros2_ws/install/mycobot_driver/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../../ros2_ws/build/mycobot_driver build --build-base /home/student/ros2_ws/build/mycobot_driver/build install --record /home/student/ros2_ws/build/mycobot_driver/install.log --install-scripts $base/lib/mycobot_driver --single-version-externally-managed install_data --force
+[2.113s] running egg_info
+[2.137s] writing ../../../../ros2_ws/build/mycobot_driver/mycobot_driver.egg-info/PKG-INFO
+[2.137s] writing dependency_links to ../../../../ros2_ws/build/mycobot_driver/mycobot_driver.egg-info/dependency_links.txt
+[2.137s] writing entry points to ../../../../ros2_ws/build/mycobot_driver/mycobot_driver.egg-info/entry_points.txt
+[2.137s] writing requirements to ../../../../ros2_ws/build/mycobot_driver/mycobot_driver.egg-info/requires.txt
+[2.137s] writing top-level names to ../../../../ros2_ws/build/mycobot_driver/mycobot_driver.egg-info/top_level.txt
+[2.186s] reading manifest file '../../../../ros2_ws/build/mycobot_driver/mycobot_driver.egg-info/SOURCES.txt'
+[2.187s] writing manifest file '../../../../ros2_ws/build/mycobot_driver/mycobot_driver.egg-info/SOURCES.txt'
+[2.187s] running build
+[2.188s] running build_py
+[2.188s] creating /home/student/ros2_ws/build/mycobot_driver/build
+[2.188s] creating /home/student/ros2_ws/build/mycobot_driver/build/lib
+[2.188s] creating /home/student/ros2_ws/build/mycobot_driver/build/lib/mycobot_driver
+[2.188s] copying mycobot_driver/kinematics.py -> /home/student/ros2_ws/build/mycobot_driver/build/lib/mycobot_driver
+[2.188s] copying mycobot_driver/conversions.py -> /home/student/ros2_ws/build/mycobot_driver/build/lib/mycobot_driver
+[2.188s] copying mycobot_driver/hardware.py -> /home/student/ros2_ws/build/mycobot_driver/build/lib/mycobot_driver
+[2.189s] copying mycobot_driver/driver_node.py -> /home/student/ros2_ws/build/mycobot_driver/build/lib/mycobot_driver
+[2.189s] copying mycobot_driver/__init__.py -> /home/student/ros2_ws/build/mycobot_driver/build/lib/mycobot_driver
+[2.189s] running install
+[2.196s] running install_lib
+[2.221s] creating /home/student/ros2_ws/install/mycobot_driver/lib/python3.12/site-packages/mycobot_driver
+[2.222s] copying /home/student/ros2_ws/build/mycobot_driver/build/lib/mycobot_driver/kinematics.py -> /home/student/ros2_ws/install/mycobot_driver/lib/python3.12/site-packages/mycobot_driver
+[2.222s] copying /home/student/ros2_ws/build/mycobot_driver/build/lib/mycobot_driver/conversions.py -> /home/student/ros2_ws/install/mycobot_driver/lib/python3.12/site-packages/mycobot_driver
+[2.222s] copying /home/student/ros2_ws/build/mycobot_driver/build/lib/mycobot_driver/hardware.py -> /home/student/ros2_ws/install/mycobot_driver/lib/python3.12/site-packages/mycobot_driver
+[2.222s] copying /home/student/ros2_ws/build/mycobot_driver/build/lib/mycobot_driver/driver_node.py -> /home/student/ros2_ws/install/mycobot_driver/lib/python3.12/site-packages/mycobot_driver
+[2.222s] copying /home/student/ros2_ws/build/mycobot_driver/build/lib/mycobot_driver/__init__.py -> /home/student/ros2_ws/install/mycobot_driver/lib/python3.12/site-packages/mycobot_driver
+[2.223s] byte-compiling /home/student/ros2_ws/install/mycobot_driver/lib/python3.12/site-packages/mycobot_driver/kinematics.py to kinematics.cpython-312.pyc
+[2.225s] byte-compiling /home/student/ros2_ws/install/mycobot_driver/lib/python3.12/site-packages/mycobot_driver/conversions.py to conversions.cpython-312.pyc
+[2.226s] byte-compiling /home/student/ros2_ws/install/mycobot_driver/lib/python3.12/site-packages/mycobot_driver/hardware.py to hardware.cpython-312.pyc
+[2.228s] byte-compiling /home/student/ros2_ws/install/mycobot_driver/lib/python3.12/site-packages/mycobot_driver/driver_node.py to driver_node.cpython-312.pyc
+[2.233s] byte-compiling /home/student/ros2_ws/install/mycobot_driver/lib/python3.12/site-packages/mycobot_driver/__init__.py to __init__.cpython-312.pyc
+[2.233s] running install_data
+[2.233s] copying resource/mycobot_driver -> /home/student/ros2_ws/install/mycobot_driver/share/ament_index/resource_index/packages
+[2.233s] copying package.xml -> /home/student/ros2_ws/install/mycobot_driver/share/mycobot_driver
+[2.234s] copying launch/driver.launch.py -> /home/student/ros2_ws/install/mycobot_driver/share/mycobot_driver/launch
+[2.234s] copying config/driver.yaml -> /home/student/ros2_ws/install/mycobot_driver/share/mycobot_driver/config
+[2.234s] running install_egg_info
+[2.260s] Copying ../../../../ros2_ws/build/mycobot_driver/mycobot_driver.egg-info to /home/student/ros2_ws/install/mycobot_driver/lib/python3.12/site-packages/mycobot_driver-0.1.0-py3.12.egg-info
+[2.261s] running install_scripts
+[2.423s] Installing mycobot_driver_node script to /home/student/ros2_ws/install/mycobot_driver/lib/mycobot_driver
+[2.424s] writing list of installed files to '/home/student/ros2_ws/build/mycobot_driver/install.log'
+[2.463s] Invoked command in '/home/student/ros2_ws/src/mycobot_driver' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/student/ros2_ws/build/mycobot_driver/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/student/ros2_ws/install/mycobot_driver/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../../ros2_ws/build/mycobot_driver build --build-base /home/student/ros2_ws/build/mycobot_driver/build install --record /home/student/ros2_ws/build/mycobot_driver/install.log --install-scripts $base/lib/mycobot_driver --single-version-externally-managed install_data --force

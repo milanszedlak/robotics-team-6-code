@@ -1,0 +1,12 @@
+action/PickBlock.action
+action/PickBlock.idl
+action/PlaceBlock.action
+action/PlaceBlock.idl
+msg/BlockInfo.idl
+msg/BlockInfo.msg
+msg/BlockTarget.idl
+msg/BlockTarget.msg
+msg/BlockTargetArray.idl
+msg/BlockTargetArray.msg
+srv/LocateBlocks.idl
+srv/LocateBlocks.srv

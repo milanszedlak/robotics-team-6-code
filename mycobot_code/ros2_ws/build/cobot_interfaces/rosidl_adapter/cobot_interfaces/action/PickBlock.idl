@@ -1,0 +1,36 @@
+// generated from rosidl_adapter/resource/action.idl.em
+// with input from cobot_interfaces/action/PickBlock.action
+// generated code does not contain a copyright notice
+
+#include "geometry_msgs/msg/Point.idl"
+
+module cobot_interfaces {
+  module action {
+    @verbatim (language="comment", text=
+      "/arm/pick_block: find a block with the camera, grasp it and lift it to the carry pose.")
+    struct PickBlock_Goal {
+      @verbatim (language="comment", text=
+        "colour to pick; \"\" = the best graspable block of any colour")
+      string color;
+    };
+    struct PickBlock_Result {
+      boolean success;
+
+      string message;
+
+      @verbatim (language="comment", text=
+        "colour actually picked")
+      string color;
+
+      @verbatim (language="comment", text=
+        "where it was picked (top-face centre, base_link)")
+      @unit (value="m")
+      geometry_msgs::msg::Point position;
+    };
+    struct PickBlock_Feedback {
+      @verbatim (language="comment", text=
+        "e.g. \"locating\", \"approaching\", \"descending\", \"grasping\", \"lifting\"")
+      string stage;
+    };
+  };
+};

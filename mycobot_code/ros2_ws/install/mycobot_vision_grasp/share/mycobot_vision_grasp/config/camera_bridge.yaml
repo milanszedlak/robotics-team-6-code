@@ -1,0 +1,20 @@
+# Gazebo simulated camera → the same ROS topic names as a real RealSense D435i,
+# so the vision program needs no topic changes between simulation and the real robot
+- ros_topic_name: /camera/camera/color/image_raw
+  gz_topic_name: /d435i/image
+  ros_type_name: sensor_msgs/msg/Image
+  gz_type_name: gz.msgs.Image
+  direction: GZ_TO_ROS
+
+# Gazebo's depth and colour images are already aligned (same intrinsics) → aligned_depth_to_color
+- ros_topic_name: /camera/camera/aligned_depth_to_color/image_raw
+  gz_topic_name: /d435i/depth_image
+  ros_type_name: sensor_msgs/msg/Image
+  gz_type_name: gz.msgs.Image
+  direction: GZ_TO_ROS
+
+- ros_topic_name: /camera/camera/color/camera_info
+  gz_topic_name: /d435i/camera_info
+  ros_type_name: sensor_msgs/msg/CameraInfo
+  gz_type_name: gz.msgs.CameraInfo
+  direction: GZ_TO_ROS

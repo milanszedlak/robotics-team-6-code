@@ -1,0 +1,47 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from cobot_interfaces/msg/BlockTarget.msg
+// generated code does not contain a copyright notice
+
+#include "geometry_msgs/msg/Point.idl"
+#include "std_msgs/msg/Header.idl"
+
+module cobot_interfaces {
+  module msg {
+    typedef geometry_msgs::msg::Point geometry_msgs__msg__Point;
+    typedef geometry_msgs__msg__Point geometry_msgs__msg__Point__4[4];
+    @verbatim (language="comment", text=
+      "One block detected by the camera (published by the vision node, consumed by the arm node)" "\n"
+      "" "\n"
+      "Frame:     header.frame_id must be the camera optical frame, e.g. camera_color_optical_frame" "\n"
+      "           (x right, y down, z forward; units: metres)" "\n"
+      "Timestamp: header.stamp must be the capture time of the RGB image" "\n"
+      "           (copy header.stamp from the colour image)")
+    struct BlockTarget {
+      std_msgs::msg::Header header;
+
+      @verbatim (language="comment", text=
+        "lower-case colour name: \"red\" / \"blue\" / \"green\" / \"yellow\" ... (matches the basket colour)")
+      string color;
+
+      @verbatim (language="comment", text=
+        "vision node decides whether this block should be picked")
+      boolean should_grasp;
+
+      @verbatim (language="comment", text=
+        "0.0 ~ 1.0")
+      float confidence;
+
+      @verbatim (language="comment", text=
+        "centre of the block's TOP face")
+      @unit (value="m")
+      geometry_msgs::msg::Point center;
+
+      @verbatim (language="comment", text=
+        "the 4 corners of the top-face rotated bounding box, in order" "\n"
+        "(the order returned by cv2.boxPoints is fine)" "\n"
+        "If not available, set all 4 to 0; the arm keeps its current gripper angle")
+      @unit (value="m")
+      geometry_msgs__msg__Point__4 corners;
+    };
+  };
+};

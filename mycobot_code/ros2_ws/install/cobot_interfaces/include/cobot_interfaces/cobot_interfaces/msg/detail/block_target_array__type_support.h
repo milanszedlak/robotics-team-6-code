@@ -1,0 +1,1 @@
+/home/student/ros2_ws/build/cobot_interfaces/rosidl_generator_c/cobot_interfaces/msg/detail/block_target_array__type_support.h

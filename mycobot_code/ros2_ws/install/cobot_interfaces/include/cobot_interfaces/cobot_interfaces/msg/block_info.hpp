@@ -1,0 +1,1 @@
+/home/student/ros2_ws/build/cobot_interfaces/rosidl_generator_cpp/cobot_interfaces/msg/block_info.hpp

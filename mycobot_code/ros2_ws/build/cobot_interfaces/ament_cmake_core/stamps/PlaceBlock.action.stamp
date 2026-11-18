@@ -1,0 +1,15 @@
+# /arm/place_block: put down / drop the block currently held.
+#
+# Either a named pose (use_position = false):
+#   location = "place" (default, place_joints) | "carry" | "home"  -> move there and open the gripper
+# or a point (use_position = true):
+#   position = where the GRIPPER CENTRE should be when the fingers open, in base_link [m];
+#   the arm comes from above, descends vertically, opens, and lifts back up.
+string location
+bool use_position
+geometry_msgs/Point position
+---
+bool success
+string message
+---
+string stage                    # e.g. "moving", "descending", "releasing", "retreating"
