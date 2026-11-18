@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Team 6: experimental RED/GREEN/YELLOW storage-bin opening detector.
+"""Team 6: two-stage RED/GREEN/YELLOW bin detection (experimental).
 
-Separate from the stable block detector; uses the same RealSense colour and
-aligned-depth topics. Finds a CLOSED coloured rim around a non-coloured hole,
-fits a quadrilateral to the hole, and optionally estimates the centre of the
-opening plane from depth samples on the rim.
+Separate from the stable block detector; uses RealSense colour and aligned
+depth topics. From farther away, finds a COLOURED BIN BODY (coarse candidate,
+not a drop point). When close and the aperture is visible, fits a four-sided
+opening and estimates its rim-plane XYZ (experimental).
 
 Publishes EXPERIMENTAL diagnostics only:
   /vision/bins/debug_json            std_msgs/msg/String (JSON diagnostics)
@@ -28,7 +28,7 @@ import time
 import cv2
 import numpy as np
 
-VERSION = 'RGY-bin-openings-red-saturation-v3-2026-11-18'
+VERSION = 'RGY-bin-body-then-opening-v4-2026-11-18'
 RGB_TOPIC = '/camera/camera/color/image_raw'
 DEPTH_TOPIC = '/camera/camera/aligned_depth_to_color/image_raw'
 INFO_TOPIC = '/camera/camera/color/camera_info'
@@ -46,11 +46,17 @@ DRAW_COLOURS = {'Red': (0, 0, 255),
 HSV_RANGES = {
     'Red': [((0, 75, 45), (12, 255, 255)),
             ((169, 75, 45), (179, 255, 255))],
-    'Green': [((45, 90, 45), (102, 255, 255))],
+    'Green': [((38, 55, 35), (106, 255, 255))],
     'Yellow': [((18, 95, 65), (38, 255, 255))],
 }
 
-MIN_Z, MAX_Z = 0.20, 1.50
+MIN_Z, MAX_Z = 0.20, 1.50     # Valid depth for accurate opening plane
+BODY_MAX_Z = 3.0              # Coarse coloured-body recognition at longer range
+DEFAULT_OPENING_RANGE_M = 1.15  # Try precise opening once the body is near
+# Loose silhouette thresholds distinguish 20cm-class bins from 2/6cm blocks.
+# Approximations from perspective, not a measured bin dimension.
+MIN_BODY_LONG_M = 0.100
+MIN_BODY_SHORT_M = 0.052
 MAX_STAMP_GAP_S = 0.08
 RIM_MIN_SAMPLES = 45
 PLANE_TOLERANCE_M = 0.010
@@ -70,9 +76,11 @@ def colour_mask(frame, colour, hsv=None):
         b, g, r = cv2.split(frame)
         g, r, b = g.astype(np.int16), r.astype(np.int16), b.astype(np.int16)
         # Both true green (low B) and turquoise-green (high B) are valid.
-        mask = cv2.bitwise_and(mask, ((g-r >= 14) & (g-b >= -20)).astype(np.uint8)*255)
+        mask = cv2.bitwise_and(mask, ((g-r >= 12) & (g-b >= -28)).astype(np.uint8)*255)
+    close_size = 9 if colour == 'Green' else 7
     mask = cv2.morphologyEx(mask, cv2.MORPH_CLOSE,
-                            cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (7, 7)))
+                            cv2.getStructuringElement(cv2.MORPH_ELLIPSE,
+                                                      (close_size, close_size)))
     mask = cv2.morphologyEx(mask, cv2.MORPH_OPEN,
                             cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (3, 3)))
     return mask
@@ -186,7 +194,7 @@ def _extract_openings(mask, merge_fragments=False):
     return best
 
 
-def find_bin_opening(frame, colour, hsv=None):
+def find_bin_opening(frame, colour, hsv=None, mask=None):
     """Find bin aperture with a low-cost fallback for oblique painted rims.
 
     Normal detection is unchanged. When the visible hole is unusually small
@@ -196,7 +204,8 @@ def find_bin_opening(frame, colour, hsv=None):
     """
     if hsv is None:
         hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
-    mask = colour_mask(frame, colour, hsv=hsv)
+    if mask is None:
+        mask = colour_mask(frame, colour, hsv=hsv)
     base = _extract_openings(mask)
     # 0.09 corresponds to an unusually small opening relative to the
     # coloured silhouette; this may be a partially merged/occluded hole.
@@ -246,9 +255,141 @@ def find_bin_opening(frame, colour, hsv=None):
             sat_opening['method'] = 'red-saturation'
             return sat_opening, sat_mask
 
-    # Reject tiny apparent holes: their 2D centre can be badly misplaced
-    # when the view sees mostly the bin wall, not its full opening.
+    # Recover green openings where dim paint or a thin break in the rim
+    # prevents a closed-hole contour. Retain the original algorithm first.
+    if colour == 'Green':
+        kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (15, 15))
+        sealed = cv2.morphologyEx(mask, cv2.MORPH_CLOSE, kernel)
+        green_opening = _extract_openings(sealed)
+        h, w = mask.shape
+        if (green_opening is not None and
+                green_opening['hole_area_px'] >= max(2200, 0.007*w*h) and
+                green_opening['hole_ratio'] >= 0.065):
+            green_opening['method'] = 'green-sealed-rim'
+            return green_opening, sealed
+        # The green front face may be dark while the upper rim stays brighter.
+        # Use a frame-relative V threshold instead of only a fixed threshold.
+        values = hsv[:, :, 2][mask > 0]
+        if len(values) >= 500:
+            adaptive_v = int(np.clip(np.percentile(values, 54), 68, 125))
+            brighter = cv2.bitwise_and(
+                mask, cv2.inRange(hsv[:, :, 2], adaptive_v, 255))
+            brighter = cv2.morphologyEx(brighter, cv2.MORPH_CLOSE, kernel)
+            green_opening = _extract_openings(brighter, merge_fragments=True)
+            if (green_opening is not None and
+                    green_opening['hole_area_px'] >= max(2800, 0.009*w*h) and
+                    green_opening['hole_ratio'] >= 0.065):
+                green_opening['method'] = 'green-adaptive-rim'
+                return green_opening, brighter
+
+    # Reject tiny apparent holes; a visible side wall alone must never yield
+    # a guessed drop target.
     return None, mask
+
+
+
+def _body_depth_and_size(depth, encoding, intrinsics, mask, contour):
+    """Median coloured-surface depth and loose perspective size in metres.
+
+    The returned xyz is a *surface observation*, NOT the bin's geometric centre
+    and NEVER a release pose. Subsample mask pixels to control CPU cost.
+    """
+    if depth is None or intrinsics is None or depth.shape[:2] != mask.shape:
+        return None
+    fx, fy, cx, cy = map(float, intrinsics)
+    if min(fx, fy) <= 0 or encoding not in ('16UC1', '32FC1'):
+        return None
+    x, y, w, h = cv2.boundingRect(contour)
+    cmask = np.zeros((h, w), dtype=np.uint8)
+    shifted = contour.copy()
+    shifted[:, :, 0] -= x
+    shifted[:, :, 1] -= y
+    cv2.drawContours(cmask, [shifted], -1, 255, thickness=-1)
+    cmask = cv2.bitwise_and(cmask, mask[y:y+h, x:x+w])
+    ys, xs = np.nonzero(cmask[::3, ::3])
+    if len(xs) < 15:
+        return None
+    us = xs*3 + x
+    vs = ys*3 + y
+    zs = depth[vs, us].astype(np.float64)
+    if encoding == '16UC1':
+        zs *= 0.001
+    ok = np.isfinite(zs) & (zs >= MIN_Z) & (zs <= BODY_MAX_Z)
+    if np.count_nonzero(ok) < 15:
+        return None
+    us, vs, zs = us[ok], vs[ok], zs[ok]
+    z = float(np.median(zs))
+    # Body surface observation is deliberately named differently from
+    # the opening-centre XYZ. It cannot be reused for placing a block.
+    u, v = float(np.median(us)), float(np.median(vs))
+    xyz = ((u-cx)*z/fx, (v-cy)*z/fy, z)
+    ra, rb = cv2.minAreaRect(contour)[1]
+    longer, shorter = sorted((float(ra), float(rb)), reverse=True)
+    focal = np.sqrt(fx*fy)
+    return dict(depth_m=z, surface_xyz_m=tuple(map(float, xyz)),
+                long_m=longer*z/focal, short_m=shorter*z/focal)
+
+
+def find_bin_body(frame, colour, depth=None, encoding=None,
+                  intrinsics=None, mask=None):
+    """Find a sizeable coloured bin silhouette even when aperture unseen.
+
+    Return a conservative coloured BODY candidate for navigation/search only.
+    Never extrapolate or claim an opening from a partial or hidden silhouette.
+    """
+    if mask is None:
+        mask = colour_mask(frame, colour)
+    if colour == 'Green':
+        # Coarse green BODY needs a stricter hue than the opening search.
+        # Blue-tinted laptop screens often have H~100; real green paint in
+        # provided tests lies mostly H~65-90. Keep the opening mask broad.
+        hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
+        b, g, r = cv2.split(frame)
+        b, g, r = b.astype(np.int16), g.astype(np.int16), r.astype(np.int16)
+        green_body = cv2.inRange(hsv, (38, 90, 35), (94, 255, 255))
+        green_body &= (((g-r) >= 12) & ((g-b) >= -18)).astype(np.uint8)*255
+        mask = cv2.morphologyEx(green_body, cv2.MORPH_CLOSE,
+                     cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (9, 9)))
+    h, w = mask.shape
+    contours, _ = cv2.findContours(mask, cv2.RETR_EXTERNAL,
+                                   cv2.CHAIN_APPROX_SIMPLE)
+    candidates = []
+    for c in contours:
+        area = cv2.contourArea(c)
+        # Low area floor allows bins seen from farther away; depth-based
+        # size rejection below keeps 2cm and 6cm blocks out of BODY mode.
+        if area < max(260, 0.0009*w*h):
+            continue
+        x, y, bw, bh = cv2.boundingRect(c)
+        if bw < 23 or bh < 22:
+            continue
+        rotated = cv2.minAreaRect(c)[1]
+        if min(rotated) < 14:
+            continue
+        if area / max(1, bw*bh) < 0.18:
+            continue
+        depth_info = _body_depth_and_size(depth, encoding, intrinsics, mask, c)
+        if depth_info is not None:
+            if (depth_info['long_m'] < MIN_BODY_LONG_M or
+                    depth_info['short_m'] < MIN_BODY_SHORT_M):
+                continue
+        else:
+            # Without a valid depth estimate, avoid claiming a small colour
+            # patch as a bin. 2D candidate is debug-only, never navigation XYZ.
+            if area < max(1900, 0.006*w*h) or bw < 55 or bh < 42:
+                continue
+        candidates.append((area, c, (x, y, bw, bh), depth_info))
+    if not candidates:
+        return None
+    area, contour, bbox, info = max(candidates, key=lambda x: x[0])
+    x, y, bw, bh = bbox
+    m = cv2.moments(contour)
+    u = float(m['m10']/m['m00']) if m['m00'] else x+bw/2
+    v = float(m['m01']/m['m00']) if m['m00'] else y+bh/2
+    return dict(bbox=bbox, contour=contour, centre_uv=(u, v),
+                area_px=area, depth_info=info,
+                clipped=(x < 5 or y < 5 or x+bw >= w-5 or y+bh >= h-5))
+
 
 def rim_plane_centre(depth, encoding, intrinsics, mask, opening):
     """Estimate 3D opening-centre on the rim plane, NOT bin's interior floor.
@@ -322,63 +463,86 @@ def rim_plane_centre(depth, encoding, intrinsics, mask, opening):
 
 
 def annotate(frame, results):
-    """Draw one opening per colour, with 2D and (when valid) 3D status."""
+    """Draw one body or opening per colour, with unobstructed status labels."""
     drawn = frame.copy()
     h, w = drawn.shape[:2]
-    cv2.rectangle(drawn, (0, 0), (w, 65), (0, 0, 0), -1)
+    cv2.rectangle(drawn, (0, 0), (w, 74), (0, 0, 0), -1)
     cv2.putText(drawn, VERSION, (8, 17), cv2.FONT_HERSHEY_SIMPLEX,
-                0.47, (255, 255, 255), 1, cv2.LINE_AA)
+                0.46, (255, 255, 255), 1, cv2.LINE_AA)
     summary = []
+    bottom_lines = []
     for colour in COLOURS:
-        opening, xyz_info = results[colour]
-        colour_bgr = DRAW_COLOURS[colour]
-        if opening is None:
+        res = results[colour]
+        body, opening, xyz_info = res['body'], res['opening'], res['xyz_info']
+        col = DRAW_COLOURS[colour]
+        if body is None and opening is None:
             summary.append(f'{colour[0]}:--')
+            bottom_lines.append((col, f'{colour}: not visible'))
             continue
-        quad = opening['quad'].reshape((-1, 1, 2))
-        cv2.polylines(drawn, [quad], True, colour_bgr, 3, cv2.LINE_AA)
-        u, v = opening['centre_uv']
-        uv = (int(round(u)), int(round(v)))
-        cv2.drawMarker(drawn, uv, (255, 255, 255),
-                       cv2.MARKER_CROSS, 18, 2, cv2.LINE_AA)
-        label = f'{colour} BIN'
-        if opening.get('method') == 'merged-rim':
-            label += ' [OBLIQUE]'
-        elif opening.get('method') == 'red-saturation':
-            label += ' [RED-SAT]'
-        if xyz_info is not None:
-            xyz, support, rms = xyz_info
-            label += f' XYZ {xyz[0]:+.3f} {xyz[1]:+.3f} {xyz[2]:.3f}m'
-            summary.append(f'{colour[0]}:3D')
+        if opening is None:
+            summary.append(f'{colour[0]}:BODY')
+            x, y, bw, bh = body['bbox']
+            cv2.rectangle(drawn, (x, y), (x+bw, y+bh), col, 2, cv2.LINE_AA)
+            info = body['depth_info']
+            dist = f"~{info['depth_m']:.2f}m" if info is not None else 'no depth'
+            bottom_lines.append((col, f'{colour}: BODY {dist} | search only'))
         else:
-            label += ' 2D only'
-            summary.append(f'{colour[0]}:2D')
-        x = min(max(5, uv[0]-110), max(5, w-320))
-        y = max(82, min(h-10, int(v)-15))
-        cv2.putText(drawn, label, (x, y), cv2.FONT_HERSHEY_SIMPLEX,
-                    0.48, (0, 0, 0), 3, cv2.LINE_AA)
-        cv2.putText(drawn, label, (x, y), cv2.FONT_HERSHEY_SIMPLEX,
-                    0.48, colour_bgr, 1, cv2.LINE_AA)
-    cv2.putText(drawn, 'BIN OPENINGS: '+'  '.join(summary)+' | Debug only',
-                (8, 44), cv2.FONT_HERSHEY_SIMPLEX,
-                0.52, (255, 255, 255), 1, cv2.LINE_AA)
-    cv2.putText(drawn, '3D is a preliminary rim-plane estimate - NO arm control',
-                (8, 61), cv2.FONT_HERSHEY_SIMPLEX,
-                0.37, (210, 210, 210), 1, cv2.LINE_AA)
+            quad = opening['quad'].reshape((-1, 1, 2))
+            cv2.polylines(drawn, [quad], True, col, 3, cv2.LINE_AA)
+            u, v = opening['centre_uv']
+            cv2.drawMarker(drawn, (int(round(u)), int(round(v))),
+                           (255, 255, 255), cv2.MARKER_CROSS, 18, 2, cv2.LINE_AA)
+            if xyz_info is not None:
+                xyz, _, _ = xyz_info
+                summary.append(f'{colour[0]}:3D')
+                bottom_lines.append((col, f'{colour}: OPEN 3D  X{xyz[0]:+.2f} '
+                                             f'Y{xyz[1]:+.2f} Z{xyz[2]:.2f}m'))
+            else:
+                summary.append(f'{colour[0]}:2D')
+                bottom_lines.append((col, f'{colour}: OPEN 2D | no safe XYZ'))
+    cv2.putText(drawn, 'BINS: '+'  '.join(summary)+' | Debug only',
+                (8, 43), cv2.FONT_HERSHEY_SIMPLEX,
+                0.51, (255, 255, 255), 1, cv2.LINE_AA)
+    cv2.putText(drawn, 'BODY=search; OPEN=opening visible; no arm commands',
+                (8, 63), cv2.FONT_HERSHEY_SIMPLEX,
+                0.38, (210, 210, 210), 1, cv2.LINE_AA)
+    # Place three diagnostic rows above the real-time sync statistic at bottom.
+    # Text cannot overlap nearby bin openings at the top of the image.
+    panel_y = max(74, h-101)
+    overlay = drawn.copy()
+    cv2.rectangle(overlay, (0, panel_y), (w, h-27), (0, 0, 0), -1)
+    drawn = cv2.addWeighted(overlay, 0.58, drawn, 0.42, 0)
+    for i, (col, message) in enumerate(bottom_lines):
+        cv2.putText(drawn, message, (8, panel_y+20+i*20),
+                    cv2.FONT_HERSHEY_SIMPLEX, 0.47, col, 1, cv2.LINE_AA)
     return drawn
 
 
-def detect_all(frame, depth=None, encoding=None, intrinsics=None):
+def detect_all(frame, depth=None, encoding=None, intrinsics=None,
+               opening_range_m=DEFAULT_OPENING_RANGE_M):
     hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
     results = {}
     for colour in COLOURS:
-        opening, mask = find_bin_opening(frame, colour, hsv=hsv)
-        xyz_info = rim_plane_centre(depth, encoding, intrinsics, mask, opening)
-        results[colour] = (opening, xyz_info)
+        mask = colour_mask(frame, colour, hsv=hsv)
+        body = find_bin_body(frame, colour, depth, encoding, intrinsics, mask)
+        # A body far away must not trigger an unreliable opening/placement
+        # estimate. If body depth is unknown, still allow 2D opening detection
+        # so offline photographs remain useful for debugging.
+        far = (body is not None and body['depth_info'] is not None and
+               body['depth_info']['depth_m'] > opening_range_m)
+        opening, rim_mask = (None, mask) if far else find_bin_opening(
+            frame, colour, hsv=hsv, mask=mask)
+        xyz_info = rim_plane_centre(depth, encoding, intrinsics,
+                                    rim_mask, opening)
+        stage = ('opening_3d' if xyz_info is not None else
+                 'opening_2d' if opening is not None else
+                 'body_only' if body is not None else 'not_found')
+        results[colour] = dict(body=body, opening=opening,
+                               xyz_info=xyz_info, stage=stage)
     return results
 
 
-def run_ros(max_fps=15.0):
+def run_ros(max_fps=15.0, opening_range_m=DEFAULT_OPENING_RANGE_M):
     """Low-latency ROS2 input: timestamp-paired messages, latest-pair wins.
 
     ROS subscriptions spin in a short-callback background thread. The main
@@ -470,14 +634,30 @@ def run_ros(max_fps=15.0):
                           'nanosec': rgb_msg.header.stamp.nanosec},
                 'bins': []
             }
-            for colour, (opening, xyz_info) in results.items():
-                if opening is None:
+            for colour, res in results.items():
+                body, opening, xyz_info = (res['body'], res['opening'],
+                                           res['xyz_info'])
+                if body is None and opening is None:
                     continue
                 entry = {'color': colour.lower(),
-                         'opening_center_uv': [round(v, 1)
-                                               for v in opening['centre_uv']],
+                         'stage': res['stage'],
                          'valid_3d': xyz_info is not None,
-                         'opening_method': opening.get('method', 'closed-hole')}
+                         'opening_center_uv': None,
+                         'body_center_uv': None}
+                if body is not None:
+                    entry['body_center_uv'] = [round(v, 1)
+                                               for v in body['centre_uv']]
+                    entry['body_bbox_xywh'] = list(body['bbox'])
+                    entry['body_clipped'] = bool(body['clipped'])
+                    if body['depth_info'] is not None:
+                        info = body['depth_info']
+                        entry['body_surface_xyz_m'] = list(info['surface_xyz_m'])
+                        entry['body_surface_depth_m'] = info['depth_m']
+                        # No point topic for body: not an arm drop target.
+                if opening is not None:
+                    entry['opening_center_uv'] = [round(v, 1)
+                                                  for v in opening['centre_uv']]
+                    entry['opening_method'] = opening.get('method', 'closed-hole')
                 if xyz_info is not None:
                     xyz, support, rms = xyz_info
                     entry.update({'center_xyz_m': list(xyz),
@@ -533,7 +713,8 @@ def run_ros(max_fps=15.0):
                             depth = node.bridge.imgmsg_to_cv2(
                                 depth_msg, desired_encoding='passthrough')
                             results = detect_all(frame, depth,
-                                                 depth_msg.encoding, intrinsics)
+                                                 depth_msg.encoding, intrinsics,
+                                                 opening_range_m)
                             output = annotate(frame, results)
                             gap_ms = 1000*abs(node.stamp_s(rgb_msg)
                                               - node.stamp_s(depth_msg))
@@ -580,6 +761,8 @@ def run_ros(max_fps=15.0):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--image', help='Offline RGB image, no RealSense needed')
+    parser.add_argument('--opening-range', type=float, default=DEFAULT_OPENING_RANGE_M,
+                        help='Max coarse body depth for attempting opening XYZ (default 1.15m)')
     parser.add_argument('--output', help='Where to save annotated offline image')
     parser.add_argument('--max-fps', type=float, default=15.0,
                         help='Maximum detection iterations per second (default: 15)')
@@ -588,17 +771,18 @@ def main():
         frame = cv2.imread(args.image)
         if frame is None:
             parser.error('Cannot open input image')
-        results = detect_all(frame)
+        results = detect_all(frame, opening_range_m=args.opening_range)
         result_path = args.output or 'bin_openings_rgy_debug.png'
         if not cv2.imwrite(result_path, annotate(frame, results)):
             parser.error(f'Cannot write {result_path}')
         print('Version:', VERSION)
-        for colour, (opening, _) in results.items():
-            print(f'{colour}:', 'opening found' if opening is not None else 'not found',
-                  f"UV={opening['centre_uv']}" if opening else '')
+        for colour, res in results.items():
+            print(f'{colour}: {res["stage"]}',
+                  f"opening UV={res['opening']['centre_uv']}" if res['opening'] else
+                  f"body UV={res['body']['centre_uv']}" if res['body'] else '')
         print('Annotated image:', result_path)
     else:
-        run_ros(max_fps=args.max_fps)
+        run_ros(max_fps=args.max_fps, opening_range_m=args.opening_range)
 
 if __name__ == '__main__':
     main()
