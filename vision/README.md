@@ -115,3 +115,33 @@ Current interface notes:
 - should_grasp and confidence are not yet validated
   for autonomous grasp decisions.
 
+
+## Current Vision Programs - 2026-11-18
+
+Block detection:
+- File: vision/object_3d_detection.py
+- Detects red, green and yellow blocks.
+- Publishes /vision/blocks.
+- Provides 3D centre coordinates.
+- Yellow also provides estimated 3D corners.
+- Uses RELIABLE QoS for RGB and depth images.
+- Tested at approximately 15 Hz.
+
+Bin opening detection:
+- File: vision/bin_opening_rgy.py
+- Detects red, green and yellow bin openings.
+- Supports oblique camera views.
+- Includes red saturation filtering (v3).
+- Estimates bin opening XYZ coordinates.
+- Uses RELIABLE QoS.
+- Publishes experimental /vision/bins/debug_json.
+
+Bin detection is still experimental.
+A 2D opening does not guarantee valid 3D coordinates.
+Arm integration and safe dropping require further validation.
+
+RealSense configuration:
+- RGB: 640x480 at 15 FPS
+- Depth: 640x480 at 15 FPS
+- enable_sync: true
+- align_depth.enable: true
