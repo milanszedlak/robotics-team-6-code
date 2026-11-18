@@ -1,3 +1,15 @@
+
+
+## Canonical ROS 2 package (2026-11-18)
+
+The maintained detectors are packaged under `vision/team6_vision/`. After
+building and sourcing the workspace, launch with
+`ros2 run team6_vision object_detection` or
+`ros2 run team6_vision bin_detection --max-fps 15`.
+Earlier direct-Python instructions below are historical.
+
+See [package README](team6_vision/README.md).
+
 # Team 6 - RealSense Object Detection
 
 ## Overview
@@ -77,7 +89,7 @@ target position, freshness, reachability and grasp safety.
 1. Source ROS 2 Jazzy.
 2. Build and source the cobot_interfaces package.
 3. Start the RealSense camera driver with aligned depth enabled.
-4. Run the vision/object_3d_detection.py script.
+4. Run the vision/team6_vision/team6_vision/object_3d_detection.py script.
 5. Subscribe to /vision/blocks to receive detected targets.
 
 ## Version
@@ -119,7 +131,7 @@ Current interface notes:
 ## Current Vision Programs - 2026-11-18
 
 Block detection:
-- File: vision/object_3d_detection.py
+- File: vision/team6_vision/team6_vision/object_3d_detection.py
 - Detects red, green and yellow blocks.
 - Publishes /vision/blocks.
 - Provides 3D centre coordinates.
@@ -128,7 +140,7 @@ Block detection:
 - Tested at approximately 15 Hz.
 
 Bin opening detection:
-- File: vision/bin_opening_rgy.py
+- File: vision/team6_vision/team6_vision/bin_opening_rgy.py
 - Detects red, green and yellow bin openings.
 - Supports oblique camera views.
 - Includes red saturation filtering (v3).
