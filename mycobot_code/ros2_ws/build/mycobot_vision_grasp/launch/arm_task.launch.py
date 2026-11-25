@@ -1,1 +1,0 @@
-/home/student/ros2_ws/src/mycobot_vision_grasp/launch/arm_task.launch.py

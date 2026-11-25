@@ -1,6 +1,0 @@
-source;share/mycobot_vision_grasp/hook/pythonpath.ps1
-source;share/mycobot_vision_grasp/hook/pythonpath.dsv
-source;share/mycobot_vision_grasp/hook/pythonpath.sh
-source;share/mycobot_vision_grasp/hook/ament_prefix_path.ps1
-source;share/mycobot_vision_grasp/hook/ament_prefix_path.dsv
-source;share/mycobot_vision_grasp/hook/ament_prefix_path.sh

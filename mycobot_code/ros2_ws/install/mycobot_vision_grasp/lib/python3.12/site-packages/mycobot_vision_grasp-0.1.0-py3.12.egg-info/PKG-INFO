@@ -1,7 +1,0 @@
-Metadata-Version: 2.1
-Name: mycobot-vision-grasp
-Version: 0.1.0
-Summary: myCobot arm task: locate blocks with a depth camera, pick, hand off to vehicle, place
-Maintainer: user
-Maintainer-email: user@example.com
-License: Apache-2.0

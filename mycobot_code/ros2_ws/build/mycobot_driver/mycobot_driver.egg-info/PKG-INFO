@@ -1,7 +1,0 @@
-Metadata-Version: 2.1
-Name: mycobot-driver
-Version: 0.1.0
-Summary: ROS 2 driver for the myCobot 280 Pi (runs on the arm Pi; serial via pymycobot)
-Maintainer: team6
-Maintainer-email: business@arlanlabs.com
-License: MIT

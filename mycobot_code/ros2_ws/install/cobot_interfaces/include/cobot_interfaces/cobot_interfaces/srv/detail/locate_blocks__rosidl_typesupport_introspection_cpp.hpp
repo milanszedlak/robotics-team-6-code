@@ -1,1 +1,0 @@
-/home/student/ros2_ws/build/cobot_interfaces/rosidl_typesupport_introspection_cpp/cobot_interfaces/srv/detail/locate_blocks__rosidl_typesupport_introspection_cpp.hpp
