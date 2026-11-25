@@ -1,0 +1,27 @@
+mycobot_driver:
+  ros__parameters:
+    # ---------- Hardware ----------
+    backend: serial                    # serial = real arm; fake = simulated arm (any machine, no hardware)
+    serial_port: /dev/ttyAMA0          # myCobot 280 Pi: the servos are on the Pi's UART
+    baud: 1000000
+    publish_rate: 20.0                 # [Hz] /joint_states and /arm/status
+    gripper_poll_divider: 5            # read the gripper every 5th poll (serial time is precious)
+
+    # ---------- Names (must match the URDF / MoveIt config) ----------
+    joint_names: [joint1, joint2, joint3, joint4, joint5, joint6]
+    gripper_joint_name: gripper_joint
+
+    # ---------- Arm motion ----------
+    home_deg: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]   # /arm/home (straight up)
+    default_speed: 40                  # myCobot speed 1-100 for untimed moves (/arm/joint_command, /arm/home)
+    min_speed: 5
+    max_deg_per_s_at_speed_100: 160.0  # ★ rough servo speed at speed 100; used to turn timing into speed
+    min_command_period: 0.1            # [s] trajectory waypoints closer than this are thinned out
+    goal_tolerance_deg: 2.0            # every joint within this of the last point = trajectory done
+    goal_settle_timeout: 3.0           # [s] extra time allowed after the trajectory's end
+
+    # ---------- Gripper ----------
+    gripper_max_gap: 0.04              # ★ finger gap at value 100 [m] (same as the URDF)
+    gripper_speed: 50
+    gripper_move_time: 1.5             # [s] wait after an open / close command
+    gripper_tolerance: 5               # |value - target| <= this = reached_goal; else stalled (holding something)

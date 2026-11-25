@@ -1,7 +1,0 @@
-# /arm/locate_blocks: report every block the camera sees, in the arm base frame.
-string color        # only this colour; "" = all colours
-bool go_home        # true = move the arm to its home pose (out of the camera view) first
----
-bool success
-string message
-cobot_interfaces/BlockInfo[] blocks   # sorted: graspable first, then by confidence
