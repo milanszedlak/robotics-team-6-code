@@ -1,1 +1,0 @@
-/home/student/ros2_ws/build/cobot_interfaces/ament_cmake_core/cobot_interfacesConfig-version.cmake

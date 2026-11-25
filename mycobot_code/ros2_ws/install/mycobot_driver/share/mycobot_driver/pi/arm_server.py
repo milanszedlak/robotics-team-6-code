@@ -1,1 +1,0 @@
-/home/student/ros2_ws/build/mycobot_driver/pi/arm_server.py

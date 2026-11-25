@@ -1,2 +1,0 @@
-[console_scripts]
-mycobot_driver_node = mycobot_driver.driver_node:main

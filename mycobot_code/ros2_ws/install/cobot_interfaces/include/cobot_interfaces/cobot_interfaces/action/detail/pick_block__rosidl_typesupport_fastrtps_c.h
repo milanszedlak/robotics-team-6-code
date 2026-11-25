@@ -1,1 +1,0 @@
-/home/student/ros2_ws/build/cobot_interfaces/rosidl_typesupport_fastrtps_c/cobot_interfaces/action/detail/pick_block__rosidl_typesupport_fastrtps_c.h

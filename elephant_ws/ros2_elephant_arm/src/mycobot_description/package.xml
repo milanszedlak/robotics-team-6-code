@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>mycobot_description</name>
+  <version>0.2.0</version>
+  <description>URDF of the myCobot 280 Pi with gripper; frames and joint angles match the arm firmware exactly. Shared by the arm Pi (TF) and the NUC/laptop (MoveIt 2, RViz).</description>
+  <maintainer email="team6@example.com">team6</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>launch</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
+
+  <test_depend>python3-pytest</test_depend>
+  <test_depend>python3-numpy</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
